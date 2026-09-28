@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Rezeki Lancar : Bengkel Mebel Kayu Solid dan Mitra Produksi Interior Jepara</title>
-  <meta name="description" content="Bengkel mebel kayu solid di Jepara. Menerima eksekusi gambar kerja CAD dan 3D untuk arsitek dan desainer interior. Kayu oven kiln-dried garansi MC di bawah 12 persen." />
+  <title>Rezeki Lancar : Showcase Karya Mebel Custom Kayu Solid Jepara</title>
+  <meta name="description" content="Showcase 24 karya mebel custom kayu solid unggulan untuk villa, cafe, dan residensial mewah. Spesialis mitra produksi arsitek dan desainer interior di Jepara." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,12 +12,9 @@
   
   <style>
     /*
-      ANTISLOP DESIGN SYSTEM (R-01 to R-38 COMPLIANT)
-      Brand: Rezeki Lancar Furniture, Jepara
-      Palette: Warm Ivory (#fbf9f5), Deep Charcoal (#171513), Warm Sand (#f2ece4), Saddle Brown (#78350f)
-      Typography: Playfair Display (Headlines) + Plus Jakarta Sans (Interface/Body)
-      Accessibility: WCAG AAA 15:1 contrast, min 44px touch targets, zero tap latency
-      Dial: ENERGY 2 / RHYTHM 2 / MOTION 1
+      REZEKI LANCAR ATELIER SHOWCASE 2026
+      Bespoke Furniture Portfolio for Architects & Interior Designers
+      Clean, Pure CSS, 60fps Mobile Fluidity, Zero AI Slop
     */
 
     *, *::before, *::after {
@@ -28,14 +25,14 @@
     }
 
     :root {
-      --bg: #fbf9f5;
+      --bg: #faf8f5;
       --surface: #ffffff;
-      --surface-tint: #f3ede5;
+      --surface-tint: #f3ece4;
       --text: #171513;
       --text-muted: #5e5953;
-      --text-light: #8a8279;
+      --text-light: #8e867d;
       --border: #e3ded6;
-      --border-dark: #ccc5bb;
+      --border-dark: #cfc7bc;
       --accent: #78350f;
       --accent-hover: #582408;
       --dark-surface: #1e1b18;
@@ -70,15 +67,15 @@
 
     .container {
       width: 100%;
-      max-width: 1140px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 0 16px;
     }
     @media (min-width: 768px) {
-      .container { padding: 0 24px; }
+      .container { padding: 0 28px; }
     }
 
-    /* Top Strip (Static, non-sticky to save screen height) */
+    /* Top Strip */
     .top-strip {
       background: #2b180d;
       color: #fef3c7;
@@ -89,9 +86,9 @@
       letter-spacing: 0.3px;
     }
 
-    /* Site Header */
+    /* Header Nav */
     header.site-header {
-      background: rgba(251, 249, 245, 0.96);
+      background: rgba(250, 248, 245, 0.96);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
       position: sticky;
@@ -106,7 +103,7 @@
       height: 56px;
     }
     @media (min-width: 768px) {
-      .header-inner { height: 68px; }
+      .header-inner { height: 70px; }
     }
 
     .brand-group {
@@ -133,15 +130,10 @@
       margin-top: 2px;
     }
 
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
     .desktop-nav {
       display: none;
       align-items: center;
-      gap: 20px;
+      gap: 22px;
       font-size: 13px;
       font-weight: 600;
       color: var(--text-muted);
@@ -162,28 +154,28 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      min-height: 44px;
+      min-height: 40px;
       transition: background 0.15s, transform 0.1s;
     }
     .btn-cta-nav:active { transform: scale(0.96); }
     @media (min-width: 768px) {
-      .btn-cta-nav { padding: 10px 18px; font-size: 12px; }
+      .btn-cta-nav { padding: 10px 18px; font-size: 12px; min-height: 44px; }
       .btn-cta-nav:hover { background: var(--accent); }
     }
 
     /* Hero Section */
     .hero-section {
-      padding: 36px 0 28px;
+      padding: 40px 0 32px;
       border-bottom: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(243, 237, 229, 0.45) 0%, rgba(251, 249, 245, 1) 100%);
+      background: linear-gradient(180deg, rgba(243, 236, 228, 0.45) 0%, rgba(250, 248, 245, 1) 100%);
     }
     @media (min-width: 768px) {
-      .hero-section { padding: 64px 0 48px; }
+      .hero-section { padding: 68px 0 52px; }
     }
 
     .hero-eyebrow {
       font-size: 11px;
-      letter-spacing: 1.8px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       font-weight: 700;
       color: var(--accent);
@@ -202,12 +194,12 @@
 
     .hero-headline {
       font-family: var(--font-display);
-      font-size: clamp(24px, 5vw, 46px);
+      font-size: clamp(24px, 5.2vw, 48px);
       font-weight: 600;
       line-height: 1.25;
       letter-spacing: -0.5px;
       color: var(--text);
-      max-width: 880px;
+      max-width: 900px;
       margin-bottom: 16px;
     }
     .hero-headline em {
@@ -217,9 +209,9 @@
 
     .hero-description {
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.75;
       color: var(--text-muted);
-      max-width: 660px;
+      max-width: 680px;
       margin-bottom: 24px;
     }
     @media (min-width: 768px) {
@@ -235,7 +227,7 @@
     .btn-hero-primary {
       background: var(--accent);
       color: #ffffff;
-      padding: 12px 20px;
+      padding: 12px 22px;
       border-radius: 4px;
       font-size: 12px;
       font-weight: 700;
@@ -251,7 +243,7 @@
       border: 1px solid var(--border-dark);
       background: var(--surface);
       color: var(--text);
-      padding: 12px 18px;
+      padding: 12px 20px;
       border-radius: 4px;
       font-size: 12px;
       font-weight: 700;
@@ -273,17 +265,14 @@
     @media (min-width: 768px) {
       .metrics-bar {
         grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        gap: 24px;
         padding: 28px 0;
       }
     }
 
     .metric-cell {
       border-left: 2px solid var(--accent);
-      padding-left: 10px;
-    }
-    @media (min-width: 768px) {
-      .metric-cell { padding-left: 14px; }
+      padding-left: 12px;
     }
     .metric-value {
       font-family: var(--font-display);
@@ -305,13 +294,13 @@
       line-height: 1.3;
     }
 
-    /* About Section (Fluid Mobile Reflow) */
+    /* About Section */
     .about-section {
-      padding: 36px 0;
+      padding: 40px 0;
       border-bottom: 1px solid var(--border);
     }
     @media (min-width: 768px) {
-      .about-section { padding: 56px 0; }
+      .about-section { padding: 60px 0; }
     }
 
     .about-layout {
@@ -321,8 +310,8 @@
     }
     @media (min-width: 880px) {
       .about-layout {
-        grid-template-columns: 1.2fr 1fr;
-        gap: 40px;
+        grid-template-columns: 1.25fr 1fr;
+        gap: 44px;
         align-items: start;
       }
     }
@@ -389,10 +378,10 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 20px 16px;
+      padding: 22px 18px;
     }
     @media (min-width: 768px) {
-      .capabilities-box { padding: 26px 24px; }
+      .capabilities-box { padding: 28px 24px; }
     }
 
     .capabilities-title {
@@ -438,262 +427,224 @@
       .cap-detail { text-align: right; }
     }
 
-    /* Catalog Section */
-    .catalog-section {
-      padding: 36px 0 54px;
+    /* ==========================================================================
+       FLAGSHIP CUSTOM SHOWCASE SECTION (THE NEW ARCHITECTURAL EXHIBITION)
+       ========================================================================== */
+    .showcase-section {
+      padding: 44px 0 64px;
     }
     @media (min-width: 768px) {
-      .catalog-section { padding: 56px 0 72px; }
+      .showcase-section { padding: 68px 0 88px; }
     }
 
-    .catalog-head-group {
-      margin-bottom: 16px;
+    .showcase-header {
+      margin-bottom: 24px;
     }
-    .catalog-h2 {
+    .showcase-title {
       font-family: var(--font-display);
-      font-size: 23px;
+      font-size: 24px;
       letter-spacing: -0.5px;
+      color: var(--text);
     }
     @media (min-width: 768px) {
-      .catalog-h2 { font-size: 28px; }
+      .showcase-title { font-size: 32px; }
     }
-    .catalog-subtitle {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    /* Search Input */
-    .search-wrapper {
-      position: relative;
-      margin: 16px 0 10px;
-    }
-    .search-input {
-      width: 100%;
-      padding: 12px 16px 12px 40px;
+    .showcase-subtitle {
       font-size: 13px;
-      font-family: var(--font-sans);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: 4px;
-      color: var(--text);
-      outline: none;
-      min-height: 44px;
-      -webkit-appearance: none;
-    }
-    .search-input:focus {
-      border-color: var(--accent);
-    }
-    .search-icon-svg {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
-      color: var(--text-light);
-      pointer-events: none;
+      color: var(--text-muted);
+      margin-top: 6px;
+      max-width: 720px;
     }
 
-    /* Category Buttons (Momentum scroll, zero scrollbar) */
-    .category-scroll {
+    /* Space Filters (Pills) */
+    .filter-scroll-bar {
       display: flex;
-      gap: 6px;
+      gap: 8px;
       overflow-x: auto;
-      padding-bottom: 6px;
+      padding-bottom: 8px;
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
+      margin: 18px 0 24px;
     }
-    .category-scroll::-webkit-scrollbar { display: none; }
+    .filter-scroll-bar::-webkit-scrollbar { display: none; }
 
-    .cat-pill {
-      font-size: 11px;
+    .filter-pill {
+      font-size: 12px;
       font-weight: 600;
-      padding: 8px 14px;
+      padding: 9px 18px;
       border: 1px solid var(--border);
       background: var(--surface);
       border-radius: 30px;
       color: var(--text-muted);
       flex-shrink: 0;
-      min-height: 36px;
+      min-height: 40px;
       display: inline-flex;
       align-items: center;
+      transition: all 0.15s ease;
     }
-    .cat-pill:active { transform: scale(0.95); }
-    .cat-pill.active {
+    .filter-pill:active { transform: scale(0.96); }
+    .filter-pill.active {
       background: var(--text);
       color: #ffffff;
       border-color: var(--text);
     }
 
-    .catalog-meta-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      color: var(--text-muted);
-      margin: 14px 0;
-    }
-    .catalog-meta-row strong { color: var(--text); }
-
-    /* Product Grid */
-    .product-grid {
+    /* Showcase Grid (Large Editorial Cards) */
+    .showcase-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
     @media (min-width: 640px) {
-      .product-grid { gap: 14px; }
-    }
-    @media (min-width: 768px) {
-      .product-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .showcase-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     }
     @media (min-width: 1024px) {
-      .product-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+      .showcase-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
     }
 
-    .product-card {
+    .showcase-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 4px;
+      border-radius: 6px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       cursor: pointer;
-      transition: transform 0.15s ease, border-color 0.15s;
+      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.15s, box-shadow 0.15s;
     }
-    .product-card:active {
-      transform: scale(0.97);
+    .showcase-card:active {
+      transform: scale(0.98);
     }
     @media (hover: hover) {
-      .product-card:hover {
-        border-color: var(--text);
-        transform: translateY(-2px);
+      .showcase-card:hover {
+        border-color: var(--border-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
       }
     }
 
-    .card-media {
-      aspect-ratio: 1/1;
+    .card-photo-box {
+      aspect-ratio: 4/3;
       background: var(--surface-tint);
       position: relative;
       overflow: hidden;
     }
-    .card-media img {
+    .card-photo-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.4s ease;
     }
-    .card-badge {
+    @media (hover: hover) {
+      .showcase-card:hover .card-photo-box img {
+        transform: scale(1.04);
+      }
+    }
+
+    .card-series-tag {
       position: absolute;
-      top: 6px;
-      left: 6px;
+      top: 10px;
+      left: 10px;
       background: rgba(255, 255, 255, 0.94);
-      padding: 3px 6px;
-      border-radius: 2px;
-      font-size: 8px;
+      backdrop-filter: blur(4px);
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-size: 9px;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
       color: var(--accent);
       border: 1px solid rgba(0,0,0,0.06);
     }
 
-    .card-content {
-      padding: 10px 12px;
+    .card-info-box {
+      padding: 16px 18px 18px;
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    @media (min-width: 640px) {
-      .card-content { padding: 12px 14px; }
+
+    .card-space-tag {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-light);
     }
 
-    .card-title {
+    .card-item-title {
       font-family: var(--font-display);
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 600;
-      line-height: 1.3;
+      line-height: 1.35;
       color: var(--text);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      min-height: 34px;
+      margin: 4px 0 8px;
     }
     @media (min-width: 640px) {
-      .card-title { font-size: 14px; min-height: 38px; }
+      .card-item-title { font-size: 17px; min-height: 46px; }
     }
 
-    .card-dim {
-      font-size: 10px;
+    .card-dim-text {
+      font-size: 12px;
       color: var(--text-muted);
-      margin-top: 4px;
+      line-height: 1.4;
+      margin-bottom: 2px;
     }
-    @media (min-width: 640px) {
-      .card-dim { font-size: 11px; }
+    .card-mat-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 12px;
     }
 
-    .card-action-row {
+    .card-bottom-row {
       margin-top: 8px;
-      padding-top: 6px;
+      padding-top: 10px;
       border-top: 1px solid var(--surface-tint);
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
     }
-    .card-price {
+    .price-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .price-val {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .card-action-link {
       font-size: 11px;
       font-weight: 700;
       color: var(--text);
-    }
-    .card-cta {
-      font-size: 9px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--accent);
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
     }
 
-    .load-more-wrap {
-      text-align: center;
-      margin: 28px 0 0;
-    }
-    .btn-load-more {
-      display: inline-block;
-      background: var(--text);
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 12px 28px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      min-height: 44px;
-      transition: background 0.15s, transform 0.1s;
-    }
-    .btn-load-more:active { transform: scale(0.96); }
-    .btn-load-more:hover { background: var(--accent); }
-
-    /* Workflow Section (B2B for Architects) */
+    /* Workflow Section */
     .workflow-section {
       background: var(--dark-surface);
       color: var(--dark-text);
-      padding: 48px 0;
+      padding: 56px 0;
     }
     @media (min-width: 768px) {
-      .workflow-section { padding: 64px 0; }
+      .workflow-section { padding: 76px 0; }
     }
 
     .workflow-head-box {
       text-align: center;
-      max-width: 660px;
-      margin: 0 auto 36px;
+      max-width: 680px;
+      margin: 0 auto 40px;
     }
     .workflow-subtag {
-      font-size: 10px;
-      letter-spacing: 1.5px;
+      font-size: 11px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: #c4976c;
       font-weight: 700;
@@ -701,12 +652,12 @@
     }
     .workflow-h2 {
       font-family: var(--font-display);
-      font-size: 22px;
+      font-size: 24px;
       color: #ffffff;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     @media (min-width: 768px) {
-      .workflow-h2 { font-size: 28px; }
+      .workflow-h2 { font-size: 32px; }
     }
     .workflow-summary {
       font-size: 13px;
@@ -717,24 +668,24 @@
     .workflow-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 16px;
     }
     @media (min-width: 640px) {
-      .workflow-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .workflow-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
     }
     @media (min-width: 900px) {
-      .workflow-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+      .workflow-grid { grid-template-columns: repeat(4, 1fr); gap: 22px; }
     }
 
     .step-box {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 4px;
-      padding: 20px 18px;
+      padding: 22px 20px;
     }
     .step-idx {
       font-family: var(--font-display);
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
       color: #c4976c;
       margin-bottom: 6px;
@@ -755,29 +706,29 @@
     /* Site Footer */
     footer.site-footer {
       border-top: 1px solid var(--border);
-      padding: 40px 0 28px;
+      padding: 44px 0 32px;
       font-size: 12px;
       color: var(--text-muted);
     }
     .footer-layout {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
-      margin-bottom: 28px;
+      gap: 28px;
+      margin-bottom: 32px;
     }
     @media (min-width: 768px) {
-      .footer-layout { grid-template-columns: 2fr 1fr 1fr; gap: 36px; }
+      .footer-layout { grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
     }
 
     .footer-brand-title {
       font-family: var(--font-display);
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
       color: var(--text);
       margin-bottom: 6px;
     }
     .footer-col-header {
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: 1px;
       text-transform: uppercase;
       font-weight: 700;
@@ -785,26 +736,26 @@
       margin-bottom: 10px;
     }
 
-    /* Bottom Sheet / Detail Modal (Preserves Search, Scroll, and Filters) */
+    /* Detail Modal (Preserves Scroll & State) */
     .sheet-backdrop {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(18, 15, 13, 0.72);
-      backdrop-filter: blur(4px);
+      background: rgba(18, 15, 13, 0.75);
+      backdrop-filter: blur(5px);
       z-index: 100;
       align-items: flex-end;
       justify-content: center;
     }
     .sheet-backdrop.active { display: flex; }
     @media (min-width: 768px) {
-      .sheet-backdrop { align-items: center; padding: 20px; }
+      .sheet-backdrop { align-items: center; padding: 24px; }
     }
 
     .sheet-card {
       background: #ffffff;
       width: 100%;
-      max-height: 90vh;
+      max-height: 92vh;
       border-radius: 14px 14px 0 0;
       display: flex;
       flex-direction: column;
@@ -813,9 +764,9 @@
     }
     @media (min-width: 768px) {
       .sheet-card {
-        max-width: 600px;
+        max-width: 640px;
         border-radius: 6px;
-        max-height: 86vh;
+        max-height: 88vh;
         animation: sheetFade 0.2s ease-out;
       }
     }
@@ -843,11 +794,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 16px;
+      padding: 12px 18px;
       border-bottom: 1px solid var(--border);
-    }
-    @media (min-width: 768px) {
-      .sheet-nav-bar { padding: 14px 20px; }
     }
 
     .btn-sheet-dismiss {
@@ -862,11 +810,11 @@
 
     .sheet-scroll-body {
       overflow-y: auto;
-      padding: 16px;
+      padding: 18px;
       -webkit-overflow-scrolling: touch;
     }
     @media (min-width: 768px) {
-      .sheet-scroll-body { padding: 22px; }
+      .sheet-scroll-body { padding: 24px; }
     }
 
     .sheet-photo-wrap {
@@ -874,7 +822,7 @@
       background: var(--surface-tint);
       border-radius: 4px;
       overflow: hidden;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .sheet-photo-wrap img {
       width: 100%;
@@ -883,7 +831,7 @@
     }
 
     .sheet-tag-badge {
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -897,25 +845,28 @@
       color: var(--text);
       margin: 4px 0 6px;
     }
+    @media (min-width: 768px) {
+      .sheet-item-name { font-size: 24px; }
+    }
 
     .sheet-item-cost {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 800;
       color: var(--accent);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .sheet-specs-table {
       background: var(--surface-tint);
       border-radius: 4px;
-      padding: 10px 12px;
-      margin-bottom: 16px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
       font-size: 12px;
     }
     .spec-line {
       display: flex;
       justify-content: space-between;
-      padding: 4px 0;
+      padding: 5px 0;
       border-bottom: 1px solid rgba(0,0,0,0.04);
     }
     .spec-line:last-child { border-bottom: none; }
@@ -925,8 +876,8 @@
     .sheet-desc-text {
       font-size: 13px;
       color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 20px;
+      line-height: 1.7;
+      margin-bottom: 24px;
     }
 
     .btn-sheet-wa {
@@ -947,31 +898,13 @@
     }
     .btn-sheet-wa:active { transform: scale(0.98); }
     .btn-sheet-wa:hover { background: var(--accent); }
-
-    .sheet-sublink {
-      display: block;
-      text-align: center;
-      font-size: 11px;
-      color: var(--text-light);
-      margin-top: 10px;
-      text-decoration: underline;
-    }
   </style>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FurnitureStore", "name": "Rezeki Lancar Furniture", "alternateName": "Rezeki Lancar Jepara Woodworks", "description": "Bengkel manufaktur mebel kayu solid di Jepara. Mitra produksi rekanan arsitek dan desainer interior untuk loose furniture, cafe, villa, dan residensial.", "url": "https://muhammadrizkyworkingspace-lang.github.io/rezeki-lancar-furniture/", "telephone": "+6281234567890", "priceRange": "Rp 350.000 - Rp 25.000.000", "currenciesAccepted": "IDR", "paymentAccepted": "Cash, Bank Transfer, QRIS", "address": {"@type": "PostalAddress", "streetAddress": "Jalan Raya Mebel Tahunan", "addressLocality": "Jepara", "addressRegion": "Jawa Tengah", "postalCode": "59411", "addressCountry": "ID"}, "geo": {"@type": "GeoCoordinates", "latitude": "-6.5925", "longitude": "110.6789"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "08:00", "closes": "17:00"}], "areaServed": [{"@type": "AdministrativeArea", "name": "Daerah Khusus Ibukota Jakarta"}, {"@type": "AdministrativeArea", "name": "Bali"}, {"@type": "AdministrativeArea", "name": "Surabaya"}, {"@type": "AdministrativeArea", "name": "Bandung"}, {"@type": "Country", "name": "Indonesia"}], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Katalog Mebel Kayu Solid Jepara", "numberOfItems": 500}}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Berapa kadar air (MC) kayu yang digunakan di Rezeki Lancar Furniture?", "acceptedAnswer": {"@type": "Answer", "text": "Seluruh kayu solid (Jati, Mahoni, Mindi) melalui proses oven kiln-dried hingga kadar air mencapai di bawah 12% (MC < 12%). Standar ini menjamin mebel tidak akan retak, menyusut, atau melengkung saat dipasang di ruangan ber-AC atau iklim berbeda."}}, {"@type": "Question", "name": "Apakah bisa memesan mebel kustom dari gambar kerja CAD atau 3D SketchUp?", "acceptedAnswer": {"@type": "Answer", "text": "Ya, kami spesialis mitra produksi rekanan arsitek dan desainer interior. Anda cukup mengirimkan gambar kerja format AutoCAD (DWG), 3D SketchUp, atau PDF denah untuk kami hitungkan estimasi RAB dalam 1x24 jam."}}, {"@type": "Question", "name": "Bagaimana sistem pengiriman mebel dari Jepara ke Jakarta dan Bali?", "acceptedAnswer": {"@type": "Answer", "text": "Pengiriman menggunakan ekspedisi kargo khusus mebel dengan packing berlapis: foam sheet, kardus tebal, dan peti palet kayu tertutup untuk menjamin keamanan barang sampai di lokasi proyek tanpa cacat."}}, {"@type": "Question", "name": "Berapa lama estimasi waktu produksi pesanan mebel?", "acceptedAnswer": {"@type": "Answer", "text": "Waktu produksi loose furniture standar berkisar antara 2 hingga 4 minggu tergantung volume dan tingkat kerumitan finishing. Pelaporan progres berupa foto dan video fisik dikirimkan berkala di setiap tahapan produksi."}}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "WebSite", "name": "Rezeki Lancar Furniture", "url": "https://muhammadrizkyworkingspace-lang.github.io/rezeki-lancar-furniture/", "potentialAction": {"@type": "SearchAction", "target": "https://muhammadrizkyworkingspace-lang.github.io/rezeki-lancar-furniture/#koleksi-{search_term_string}", "query-input": "required name=search_term_string"}}
-  </script>
 </head>
 <body>
 
   <!-- Top Announcement Bar -->
   <aside class="top-strip" role="complementary">
-    JEPARA WOODWORKS : KAYU OVEN KILN-DRIED (MC DI BAWAH 12%) : TERIMA GAMBAR KERJA CAD &amp; 3D
+    JEPARA WOODWORKS : MITRA MANUFAKTUR CUSTOM FURNITURE RESIDENSIAL &amp; VILLA BALI
   </aside>
 
   <!-- Header Navigation -->
@@ -985,11 +918,11 @@
       <div class="nav-actions">
         <nav class="desktop-nav" aria-label="Menu Utama">
           <a href="#tentang">Tentang Workshop</a>
-          <a href="#katalog">Katalog (500)</a>
+          <a href="#karya-custom">Karya Unggulan (24)</a>
           <a href="#kerjasama">Mitra Arsitek</a>
         </nav>
-        <a href="https://wa.me/6281234567890?text=Halo%20Rezeki%20Lancar%2C%20saya%20mau%20konsultasi%20produksi%20mebel" target="_blank" class="btn-cta-nav">
-          <span>Konsultasi WA</span>
+        <a href="https://wa.me/6281234567890?text=Halo%20Rezeki%20Lancar%2C%20saya%20arsitek%2Fdesainer%20interior%20mau%20konsultasi%20produksi%20custom" target="_blank" class="btn-cta-nav">
+          <span>Konsultasi Proyek</span>
         </a>
       </div>
     </div>
@@ -1000,15 +933,15 @@
     <div class="container">
       <div class="hero-eyebrow">Workshop Mebel Solid Jepara</div>
       <h1 class="hero-headline">
-        Menerjemahkan visi ruang arsitek ke dalam <em>keaslian kayu solid</em> dengan ketelitian tukang Jepara.
+        Menerjemahkan gambar kerja arsitektur ke dalam <em>keaslian kayu solid</em> dengan presisi tukang Jepara.
       </h1>
       <p class="hero-description">
-        Rezeki Lancar adalah bengkel manufaktur mebel kayu solid di Jepara. Kami berfokus pada eksekusi loose furniture dan custom carpentry berkualitas tinggi untuk proyek arsitektur, residensial mewah, villa, dan cafe.
+        Rezeki Lancar adalah bengkel manufaktur mebel kayu solid di Jepara. Kami berfokus pada eksekusi loose furniture custom bermutu tinggi untuk proyek arsitektur, villa Bali, cafe estetik, dan residensial mewah.
       </p>
 
       <div class="hero-actions">
-        <a href="#katalog" class="btn-hero-primary">Eksplorasi 500 Karya</a>
-        <a href="#kerjasama" class="btn-hero-secondary">Alur Kerja Sama Arsitek</a>
+        <a href="#karya-custom" class="btn-hero-primary">Lihat 24 Karya Unggulan</a>
+        <a href="#kerjasama" class="btn-hero-secondary">Alur Gambar Kerja CAD</a>
       </div>
     </div>
   </section>
@@ -1025,8 +958,8 @@
         <div class="metric-caption">Sambungan Mortise &amp; Tenon</div>
       </div>
       <div class="metric-cell">
-        <div class="metric-value">TPK Legal</div>
-        <div class="metric-caption">Kayu Jati dan Mindi Legal</div>
+        <div class="metric-value">Jati &amp; Mindi</div>
+        <div class="metric-caption">Kayu Legal Perhutani Terkurasi</div>
       </div>
       <div class="metric-cell">
         <div class="metric-value">1x24 Jam</div>
@@ -1071,316 +1004,582 @@
           <div class="capabilities-title">Standar Spesifikasi Workshop</div>
           <div class="capability-item">
             <span class="cap-name">Material Baku</span>
-            <span class="cap-detail">Kayu Jati Solid, Mindi, Mahoni, Rotan</span>
+            <span class="cap-detail">Kayu Jati Solid, Mindi, Mahoni, Rotan Alami</span>
           </div>
           <div class="capability-item">
             <span class="cap-name">Perlakuan Kayu</span>
-            <span class="cap-detail">Chemical Anti-Rayap &amp; Kiln-Dried</span>
+            <span class="cap-detail">Chemical Anti-Rayap &amp; Kiln-Dried Chamber</span>
           </div>
           <div class="capability-item">
             <span class="cap-name">Standar Finishing</span>
-            <span class="cap-detail">Polyurethane (PU), NC Matte, Oil</span>
+            <span class="cap-detail">Polyurethane (PU), NC Matte, Natural Oil</span>
           </div>
           <div class="capability-item">
             <span class="cap-name">Kapasitas Proyek</span>
-            <span class="cap-detail">Residensial, Cafe, Villa Bali</span>
+            <span class="cap-detail">Residensial Mewah, Cafe, Villa Bali</span>
           </div>
           <div class="capability-item">
             <span class="cap-name">Proteksi Ekspedisi</span>
-            <span class="cap-detail">Packing Peti Palet Kayu Tertutup</span>
+            <span class="cap-detail">Packing Peti Palet Kayu Tertutup Seluruh Indonesia</span>
           </div>
         </aside>
       </div>
     </div>
   </section>
 
-  <!-- Complete 500-Item Catalog Section -->
-  <section class="catalog-section" id="katalog">
+  <!-- ==========================================================================
+       SHOWCASE KARYA CUSTOM UNGGULAN (LOOKBOOK 2026)
+       ========================================================================== -->
+  <section class="showcase-section" id="karya-custom">
     <div class="container">
-      <div class="catalog-head-group">
-        <span class="section-tag">Arsip Koleksi Lengkap</span>
-        <h2 class="catalog-h2">Katalog 500 Karya Mebel Kayu Solid</h2>
-        <p class="catalog-subtitle">Setiap karya memiliki deskripsi fungsional unik dan dapat dikustomisasi dimensi, jenis kayu, maupun warnanya.</p>
+      <div class="showcase-header">
+        <span class="section-tag">Lookbook &amp; Portofolio Workshop</span>
+        <h2 class="showcase-title">24 Karya Mebel Custom Unggulan</h2>
+        <p class="showcase-subtitle">
+          Koleksi kurasi desain loose furniture yang siap diadaptasi ukuran, pilihan kayu, dan warnanya sesuai gambar kerja proyek interior Anda.
+        </p>
       </div>
 
-      <!-- Search Input (Accessible label, clear min 44px touch area) -->
-      <div class="search-wrapper">
-        <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input 
-          type="search" 
-          id="searchInput" 
-          class="search-input" 
-          placeholder="Cari karya mebel (contoh: meja kerja, sofa, bench, credenza, cermin)..."
-          autocomplete="off"
-          aria-label="Cari produk mebel"
-        />
+      <!-- Space Filter Tabs -->
+      <div class="filter-scroll-bar" role="tablist" aria-label="Filter Ruangan">
+        <button class="filter-pill active" onclick="filterSpace('Semua')">Semua Karya (24)</button>
+        <button class="filter-pill" onclick="filterSpace('Dining & Cafe')">Ruang Makan &amp; Cafe (6)</button>
+        <button class="filter-pill" onclick="filterSpace('Living & Lounge')">Living Room &amp; Villa (6)</button>
+        <button class="filter-pill" onclick="filterSpace('Kamar Tidur')">Kamar Tidur Residensial (6)</button>
+        <button class="filter-pill" onclick="filterSpace('Ruang Kerja')">Ruang Kerja &amp; Storage (6)</button>
       </div>
 
-      <!-- Category Filter Pills -->
-      <div class="category-scroll" role="tablist" aria-label="Kategori Produk">
-        <button class="cat-pill active" onclick="filterByCat('Semua')">Semua (500)</button>
-        <button class="cat-pill" onclick="filterByCat('Kursi & Sofa')">Kursi &amp; Sofa</button>
-        <button class="cat-pill" onclick="filterByCat('Meja & Konsol')">Meja &amp; Konsol</button>
-        <button class="cat-pill" onclick="filterByCat('Lemari & Storage')">Lemari &amp; Storage</button>
-        <button class="cat-pill" onclick="filterByCat('Rak & Display')">Rak &amp; Display</button>
-        <button class="cat-pill" onclick="filterByCat('Cermin & Dekorasi')">Cermin &amp; Dekorasi</button>
+      <!-- Exhibition Grid -->
+      <div class="showcase-grid" id="showcaseGrid">
+        
+    <article class="showcase-card" onclick="openShowcaseDetail(1)" role="button" tabindex="0" data-cat="Dining & Cafe">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Makan-Ona-Natural.jpg" alt="Meja Makan Solid Teak Slab Ona Series" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Hospitality &amp; Dining Suite</span>
       </div>
-
-      <!-- Meta Bar -->
-      <div class="catalog-meta-row">
-        <div>Menampilkan <strong id="shownCount">16</strong> dari <strong id="matchCount">500</strong> karya</div>
-        <div>*Tap karya untuk melihat spesifikasi</div>
-      </div>
-
-      <!-- Products Grid -->
-      <div class="product-grid" id="productGrid">
-    <article class="product-card" onclick="openDetail(1)" role="button" tabindex="0" aria-label="Salami Mirror">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Aksesoris-Salami-Mirror-Uwitan.jpg" alt="Salami Mirror" loading="lazy" decoding="async" />
-        <span class="card-badge">Cermin &amp; Dekorasi Dinding</span>
-      </div>
-      <div class="card-content">
-        <h3 class="card-title">Salami Mirror</h3>
-        <p class="card-dim">Ukuran: 40 × 40 × 2 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 450.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Dining &amp; Cafe</span>
+          <h3 class="card-item-title">Meja Makan Solid Teak Slab Ona Series</h3>
+          <p class="card-dim-text">📐 200 × 90 × 76 cm (Custom Sesuai Denah)</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid Pilihan Oven (MC &lt; 12%)</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 4.800.000 - Rp 7.500.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(2)" role="button" tabindex="0" aria-label="Woodletter">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2018/07/aksesoris-woodletter-2.webp" alt="Woodletter" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(2)" role="button" tabindex="0" data-cat="Dining & Cafe">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Makan-Ayem-Natural.jpg" alt="Meja Makan Bundar Japandi Mondy" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Residential Dining Collection</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Woodletter</h3>
-        <p class="card-dim">Ukuran: 5 × 5 × 5 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 35.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Dining &amp; Cafe</span>
+          <h3 class="card-item-title">Meja Makan Bundar Japandi Mondy</h3>
+          <p class="card-dim-text">📐 Diameter 120 × Tinggi 75 cm (Kapasitas 4-5 Kursi)</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid Kiln-Dried</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 3.800.000 - Rp 5.200.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(3)" role="button" tabindex="0" aria-label="Cakra Arm Chair 3 Seater">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2019/01/SAM9546.jpg" alt="Cakra Arm Chair 3 Seater" loading="lazy" decoding="async" />
-        <span class="card-badge">Kursi &amp; Bangku</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(3)" role="button" tabindex="0" data-cat="Dining & Cafe">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Makan-Harumi-Natural.jpg" alt="Set Meja Cafe Bistro &amp; Bench Harumi" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Commercial &amp; F&amp;B Project</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Cakra Arm Chair 3 Seater</h3>
-        <p class="card-dim">Ukuran: 165 × 60 × 79 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 2.200.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Dining &amp; Cafe</span>
+          <h3 class="card-item-title">Set Meja Cafe Bistro &amp; Bench Harumi</h3>
+          <p class="card-dim-text">📐 160 × 80 × 75 cm + 2 Bench Panjang</p>
+          <p class="card-mat-text">🪵 Kayu Jati / Mindi Solid Kombinasi Besi Hollow</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 4.200.000 - Rp 6.500.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(4)" role="button" tabindex="0" aria-label="Papan Menu">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2023/07/sampul-scaled.jpg" alt="Papan Menu" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(4)" role="button" tabindex="0" data-cat="Dining & Cafe">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Kursi-Makan-Ona-Natural.jpg" alt="Kursi Makan Ergonomis Sandaran Lengkung Ona" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Bespoke Seating Series</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Papan Menu</h3>
-        <p class="card-dim">Ukuran: 32 × 32 × 2 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 195.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Dining &amp; Cafe</span>
+          <h3 class="card-item-title">Kursi Makan Ergonomis Sandaran Lengkung Ona</h3>
+          <p class="card-dim-text">📐 52 × 54 × 80 cm (Tinggi Dudukan 45 cm)</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid Pilihan</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 850.000 - Rp 1.450.000 / unit</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(5)" role="button" tabindex="0" aria-label="Jamur Mini Basket">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2021/02/1-aksesoris-jamur-mini-basket.jpeg" alt="Jamur Mini Basket" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(5)" role="button" tabindex="0" data-cat="Dining & Cafe">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Konsol-Mida-Natural.jpg" alt="Meja Konsol Foyer Minimalis Mida" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Entryway &amp; Accent Series</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Jamur Mini Basket</h3>
-        <p class="card-dim">Ukuran: 15 × 15 × 15 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 145.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Dining &amp; Cafe</span>
+          <h3 class="card-item-title">Meja Konsol Foyer Minimalis Mida</h3>
+          <p class="card-dim-text">📐 120 × 35 × 85 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid &amp; Top Marmer / Solid Wood</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 2.400.000 - Rp 3.600.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(6)" role="button" tabindex="0" aria-label="Tigo Keychain">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2025/10/IMG_7785-min.jpeg" alt="Tigo Keychain" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(6)" role="button" tabindex="0" data-cat="Dining & Cafe">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Kitchen-Island-Alana-Natural.jpg" alt="Island Table Multifungsi Alana Pantry" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Kitchen &amp; Pantry Collection</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Tigo Keychain</h3>
-        <p class="card-dim">Ukuran: 7,5 × 5,5 × 2 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 9.900</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Dining &amp; Cafe</span>
+          <h3 class="card-item-title">Island Table Multifungsi Alana Pantry</h3>
+          <p class="card-dim-text">📐 150 × 60 × 88 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid &amp; Multipleks Lapis Teakwood</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 4.500.000 - Rp 6.800.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(7)" role="button" tabindex="0" aria-label="Kitchen Shelf Natural">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2018/06/1-furniture-rak-kitchen-shelf-natural.jpg" alt="Kitchen Shelf Natural" loading="lazy" decoding="async" />
-        <span class="card-badge">Rak &amp; Storage</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(7)" role="button" tabindex="0" data-cat="Living & Lounge">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Kursi-Tamu-Cakra-Arm-Chair-3-Seater-Natural.jpg" alt="Sofa 3-Seater Rotan Alami Cakra Villa" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Tropical Villa Collection</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Kitchen Shelf Natural</h3>
-        <p class="card-dim">Ukuran: 59 × 46 × 111,5 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 2.450.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Living &amp; Lounge</span>
+          <h3 class="card-item-title">Sofa 3-Seater Rotan Alami Cakra Villa</h3>
+          <p class="card-dim-text">📐 180 × 75 × 78 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid &amp; Anyaman Rotan Alami Terkurasi</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 5.500.000 - Rp 7.800.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(8)" role="button" tabindex="0" aria-label="Kalender Uwitan 2026">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2023/01/IMG_0061-min.jpeg" alt="Kalender Uwitan 2026" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(8)" role="button" tabindex="0" data-cat="Living & Lounge">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Cabinet-Harumi-Credenza-Natural.jpg" alt="Credenza TV Rotan Japandi Harumi Series" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Modern Living Cabinetry</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Kalender Uwitan 2026</h3>
-        <p class="card-dim">Ukuran: 27 × 8,5 × 20 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 185.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Living &amp; Lounge</span>
+          <h3 class="card-item-title">Credenza TV Rotan Japandi Harumi Series</h3>
+          <p class="card-dim-text">📐 180 × 45 × 55 cm (Cocok untuk TV s/d 75 Inch)</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid &amp; Panel Pintu Rotan Webbing</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 3.800.000 - Rp 5.500.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(9)" role="button" tabindex="0" aria-label="Wall Decor  -  Set A Isi 3pcs">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2026/02/IMG_1908.jpg" alt="Wall Decor  -  Set A Isi 3pcs" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(9)" role="button" tabindex="0" data-cat="Living & Lounge">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Tamu-Ayem-Coffee-Table-Natural.jpg" alt="Coffee Table Organik Oval Ayem" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Living Accent Masterpiece</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Wall Decor  -  Set A Isi 3pcs</h3>
-        <p class="card-dim">Ukuran: 61 × 61 × 8 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 369.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Living &amp; Lounge</span>
+          <h3 class="card-item-title">Coffee Table Organik Oval Ayem</h3>
+          <p class="card-dim-text">📐 110 × 60 × 42 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid Oven Pilihan</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 1.850.000 - Rp 2.750.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(10)" role="button" tabindex="0" aria-label="Wall Decor  -  Set D Isi 4pcs">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2026/02/IMG_1884.jpg" alt="Wall Decor  -  Set D Isi 4pcs" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(10)" role="button" tabindex="0" data-cat="Living & Lounge">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Daybed-Salami-Sofa-Bed-Natural.jpg" alt="Daybed Lounger Salami Solid Wood" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Resort &amp; Relaxation Series</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Wall Decor  -  Set D Isi 4pcs</h3>
-        <p class="card-dim">Ukuran: 61 × 61 × 10 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 495.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Living &amp; Lounge</span>
+          <h3 class="card-item-title">Daybed Lounger Salami Solid Wood</h3>
+          <p class="card-dim-text">📐 200 × 85 × 70 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid &amp; Matras Busa Royal Foam D24</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 4.900.000 - Rp 6.800.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(11)" role="button" tabindex="0" aria-label="Wall Decor  -  Set 5 Isi 6pcs">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2025/12/IMG_1839.jpg" alt="Wall Decor  -  Set 5 Isi 6pcs" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(11)" role="button" tabindex="0" data-cat="Living & Lounge">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Furniture-Bench-Industrial-Black.jpg" alt="Bench Industrial Black Foyer dengan Rak Sepatu" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Entryway Function Series</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Wall Decor  -  Set 5 Isi 6pcs</h3>
-        <p class="card-dim">Ukuran: 60 × 2 × 60 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 695.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Living &amp; Lounge</span>
+          <h3 class="card-item-title">Bench Industrial Black Foyer dengan Rak Sepatu</h3>
+          <p class="card-dim-text">📐 100 × 35 × 48 cm</p>
+          <p class="card-mat-text">🪵 Dudukan Kayu Jati / Pine Solid &amp; Rangka Besi Hollow Matte</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 1.450.000 - Rp 2.200.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(12)" role="button" tabindex="0" aria-label="Wall Decor  -  Set B Isi 3pcs">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2026/02/IMG_1927.jpg" alt="Wall Decor  -  Set B Isi 3pcs" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(12)" role="button" tabindex="0" data-cat="Living & Lounge">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Kursi-Tamu-Cakra-Arm-Chair-1-Seater-Natural.jpg" alt="Lounge Armchair Cakra Single Seater" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Accent Seating Collection</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Wall Decor  -  Set B Isi 3pcs</h3>
-        <p class="card-dim">Ukuran: 51 × 51 × 8 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 325.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Living &amp; Lounge</span>
+          <h3 class="card-item-title">Lounge Armchair Cakra Single Seater</h3>
+          <p class="card-dim-text">📐 65 × 65 × 78 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid &amp; Anyaman Rotan Alami</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 1.750.000 - Rp 2.650.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(13)" role="button" tabindex="0" aria-label="Wall Decor  -  Set C Isi 3pcs">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2026/02/IMG_1901.jpg" alt="Wall Decor  -  Set C Isi 3pcs" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(13)" role="button" tabindex="0" data-cat="Kamar Tidur">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Tempat-Tidur-Jerujen-Bed-160-Natural.jpg" alt="Dipan Platform Minimalis Jerujen Bedframe" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Master Suite Bedroom</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Wall Decor  -  Set C Isi 3pcs</h3>
-        <p class="card-dim">Ukuran: 46 × 46 × 8 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 325.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Kamar Tidur</span>
+          <h3 class="card-item-title">Dipan Platform Minimalis Jerujen Bedframe</h3>
+          <p class="card-dim-text">📐 180 × 200 × 90 cm (Ukuran Kasur King)</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid Oven Kiln-Dried (MC &lt; 12%)</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 5.800.000 - Rp 8.500.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(14)" role="button" tabindex="0" aria-label="Robobox Natural">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2017/12/1-furniture-aksesoris-robobox-natural.jpg" alt="Robobox Natural" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(14)" role="button" tabindex="0" data-cat="Kamar Tidur">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Tempat-Tidur-Alana-Bed-3-Drawer-160-Natural.jpg" alt="Dipan Minimalis Alana dengan 3 Laci Rahasia" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Storage Bedframe Collection</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Robobox Natural</h3>
-        <p class="card-dim">Ukuran: 28 × 14 × 20 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 325.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Kamar Tidur</span>
+          <h3 class="card-item-title">Dipan Minimalis Alana dengan 3 Laci Rahasia</h3>
+          <p class="card-dim-text">📐 160 × 200 × 95 cm (Queen Size)</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid Pilihan</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 6.200.000 - Rp 8.900.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(15)" role="button" tabindex="0" aria-label="Nine Interphone Natural White">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2017/12/1-furniture-aksesoris-nine-interphone-natural-white.jpg" alt="Nine Interphone Natural White" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(15)" role="button" tabindex="0" data-cat="Kamar Tidur">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Lemari-Alana-Wardrobe-Pintu-Kaca-Natural.jpg" alt="Lemari Pakaian 3 Pintu Alana Glass Wardrobe" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Master Wardrobe Series</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Nine Interphone Natural White</h3>
-        <p class="card-dim">Ukuran: 30 × 10 × 33 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 325.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Kamar Tidur</span>
+          <h3 class="card-item-title">Lemari Pakaian 3 Pintu Alana Glass Wardrobe</h3>
+          <p class="card-dim-text">📐 160 × 60 × 210 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid &amp; Kaca Fluted / Polos</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 8.500.000 - Rp 14.500.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
     
-    <article class="product-card" onclick="openDetail(16)" role="button" tabindex="0" aria-label="Wooden Snack Box Natural White">
-      <div class="card-media">
-        <img src="https://uwitan.id/wp-content/uploads/2017/12/furniture-aksesoris-wooden-snack-box-nw-1.jpg" alt="Wooden Snack Box Natural White" loading="lazy" decoding="async" />
-        <span class="card-badge">Home Decor &amp; Living</span>
+    <article class="showcase-card" onclick="openShowcaseDetail(16)" role="button" tabindex="0" data-cat="Kamar Tidur">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Rias-Minima-Dressing-Table-Natural.jpg" alt="Meja Rias Minimalis Cermin Bulat Minima" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Vanity Dressing Suite</span>
       </div>
-      <div class="card-content">
-        <h3 class="card-title">Wooden Snack Box Natural White</h3>
-        <p class="card-dim">Ukuran: 42 × 28 × 22 cm</p>
-        <div class="card-action-row">
-          <span class="card-price">Rp 385.000</span>
-          <span class="card-cta">Lihat Detail</span>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Kamar Tidur</span>
+          <h3 class="card-item-title">Meja Rias Minimalis Cermin Bulat Minima</h3>
+          <p class="card-dim-text">📐 100 × 45 × 135 cm (Termasuk Cermin)</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid &amp; Kaca Cermin Bevel</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 2.800.000 - Rp 4.100.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
         </div>
       </div>
     </article>
-    </div>
-
-      <!-- Load More Button -->
-      <div class="load-more-wrap">
-        <button id="loadMoreBtn" class="btn-load-more" onclick="loadMoreProducts()">Muat 20 Karya Berikutnya</button>
+    
+    <article class="showcase-card" onclick="openShowcaseDetail(17)" role="button" tabindex="0" data-cat="Kamar Tidur">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Nakas-1-Drawer-Solid-Natural.jpg" alt="Nakas Kamar Tidur Salami 2 Laci" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Bedside Table Series</span>
+      </div>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Kamar Tidur</span>
+          <h3 class="card-item-title">Nakas Kamar Tidur Salami 2 Laci</h3>
+          <p class="card-dim-text">📐 45 × 40 × 52 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 950.000 - Rp 1.550.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
+        </div>
+      </div>
+    </article>
+    
+    <article class="showcase-card" onclick="openShowcaseDetail(18)" role="button" tabindex="0" data-cat="Kamar Tidur">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Cermin-Ona-Putar-Standing-Mirror-Natural.jpg" alt="Cermin Dinding Badan Standing Mirror Ona" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Architectural Mirror Series</span>
+      </div>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Kamar Tidur</span>
+          <h3 class="card-item-title">Cermin Dinding Badan Standing Mirror Ona</h3>
+          <p class="card-dim-text">📐 60 × 170 cm</p>
+          <p class="card-mat-text">🪵 Bingkai Kayu Jati Solid Utuh</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 1.450.000 - Rp 2.100.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
+        </div>
+      </div>
+    </article>
+    
+    <article class="showcase-card" onclick="openShowcaseDetail(19)" role="button" tabindex="0" data-cat="Ruang Kerja">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/06/1-Furnitiure-Salami-Meja-Kerja-2-Laci-Natural.jpg" alt="Meja Kerja WFH Eksekutif Salami Solid" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Executive Workspace Collection</span>
+      </div>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Ruang Kerja</span>
+          <h3 class="card-item-title">Meja Kerja WFH Eksekutif Salami Solid</h3>
+          <p class="card-dim-text">📐 150 × 65 × 76 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid Pilihan TPK</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 4.200.000 - Rp 6.200.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
+        </div>
+      </div>
+    </article>
+    
+    <article class="showcase-card" onclick="openShowcaseDetail(20)" role="button" tabindex="0" data-cat="Ruang Kerja">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Rak-Buku-Sejen-Bookshelf-Natural.jpg" alt="Rak Buku Dinding Modular Sejen Bookshelf" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Library &amp; Display Storage</span>
+      </div>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Ruang Kerja</span>
+          <h3 class="card-item-title">Rak Buku Dinding Modular Sejen Bookshelf</h3>
+          <p class="card-dim-text">📐 120 × 30 × 180 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 4.800.000 - Rp 7.200.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
+        </div>
+      </div>
+    </article>
+    
+    <article class="showcase-card" onclick="openShowcaseDetail(21)" role="button" tabindex="0" data-cat="Ruang Kerja">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Chest-4-Drawer-Natural.jpg" alt="Credenza Kantor &amp; Arsip Multi-Drawer" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Office Storage Series</span>
+      </div>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Ruang Kerja</span>
+          <h3 class="card-item-title">Credenza Kantor &amp; Arsip Multi-Drawer</h3>
+          <p class="card-dim-text">📐 140 × 45 × 85 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid Berkualitas</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 5.200.000 - Rp 7.500.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
+        </div>
+      </div>
+    </article>
+    
+    <article class="showcase-card" onclick="openShowcaseDetail(22)" role="button" tabindex="0" data-cat="Ruang Kerja">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Kerja-Liliput-Natural.jpg" alt="Meja Belajar &amp; Kerja Compact Liliput" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Compact Studio Workspace</span>
+      </div>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Ruang Kerja</span>
+          <h3 class="card-item-title">Meja Belajar &amp; Kerja Compact Liliput</h3>
+          <p class="card-dim-text">📐 100 × 50 × 75 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid Oven</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 2.100.000 - Rp 3.200.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
+        </div>
+      </div>
+    </article>
+    
+    <article class="showcase-card" onclick="openShowcaseDetail(23)" role="button" tabindex="0" data-cat="Ruang Kerja">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Lemari-Sepatu-Koru-Shoe-Cabinet-Natural.jpg" alt="Lemari Kabinet Sepatu Koru Grand Series" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Foyer Storage Architecture</span>
+      </div>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Ruang Kerja</span>
+          <h3 class="card-item-title">Lemari Kabinet Sepatu Koru Grand Series</h3>
+          <p class="card-dim-text">📐 120 × 38 × 110 cm (Kapasitas 24 Pasang Sepatu)</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid &amp; Kisi Sirkulasi Udara</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 4.500.000 - Rp 6.500.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
+        </div>
+      </div>
+    </article>
+    
+    <article class="showcase-card" onclick="openShowcaseDetail(24)" role="button" tabindex="0" data-cat="Ruang Kerja">
+      <div class="card-photo-box">
+        <img src="https://uwitan.id/wp-content/uploads/2020/04/1-Rak-Tangga-Ladder-Shelf-Natural.jpg" alt="Rak Display Minimalis Ladder Shelf 5 Tingkat" loading="lazy" decoding="async" />
+        <span class="card-series-tag">Vertical Display Series</span>
+      </div>
+      <div class="card-info-box">
+        <div>
+          <span class="card-space-tag">Ruang Kerja</span>
+          <h3 class="card-item-title">Rak Display Minimalis Ladder Shelf 5 Tingkat</h3>
+          <p class="card-dim-text">📐 60 × 35 × 180 cm</p>
+          <p class="card-mat-text">🪵 Kayu Jati Solid Pilihan</p>
+        </div>
+        <div class="card-bottom-row">
+          <div>
+            <span class="price-label">Estimasi RAB:</span>
+            <div class="price-val">Rp 1.650.000 - Rp 2.400.000</div>
+          </div>
+          <span class="card-action-link">Detail &amp; Custom →</span>
+        </div>
+      </div>
+    </article>
+    
       </div>
     </div>
   </section>
@@ -1449,209 +1648,128 @@
     </div>
   </footer>
 
-  <!-- Detail Bottom-Sheet / Modal (State Preserving, URL Hash Driven) -->
-  <div class="sheet-backdrop" id="detailSheet" onclick="if(event.target===this)closeDetail()">
-    <div class="sheet-card" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <!-- Detail Bottom-Sheet / Modal (State Preserving) -->
+  <div class="sheet-backdrop" id="showcaseModal" onclick="if(event.target===this)closeShowcaseDetail()">
+    <div class="sheet-card" role="dialog" aria-modal="true" aria-labelledby="mTitle">
       <div class="sheet-handle-bar"></div>
       
       <div class="sheet-nav-bar">
-        <button class="btn-sheet-dismiss" onclick="closeDetail()" aria-label="Tutup detail">
+        <button class="btn-sheet-dismiss" onclick="closeShowcaseDetail()" aria-label="Tutup detail karya">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           <span>Tutup</span>
         </button>
-        <span style="font-size:11px; color:var(--text-light); font-weight:600;" id="sheetId"></span>
+        <span style="font-size:11px; color:var(--text-light); font-weight:600;" id="mSeries"></span>
       </div>
 
       <div class="sheet-scroll-body">
         <div class="sheet-photo-wrap">
-          <img id="sheetImg" src="" alt="" />
+          <img id="mImg" src="" alt="" />
         </div>
 
-        <span class="sheet-tag-badge" id="sheetCat"></span>
-        <h2 class="sheet-item-name" id="sheetTitle"></h2>
-        <div class="sheet-item-cost" id="sheetPrice"></div>
+        <span class="sheet-tag-badge" id="mCategory"></span>
+        <h2 class="sheet-item-name" id="mTitle"></h2>
+        <div class="sheet-item-cost" id="mPrice"></div>
 
         <div class="sheet-specs-table">
           <div class="spec-line">
-            <span class="spec-prop">Dimensi (P×L×T)</span>
-            <span class="spec-val" id="sheetDim"></span>
+            <span class="spec-prop">Dimensi Standar</span>
+            <span class="spec-val" id="mDim"></span>
           </div>
           <div class="spec-line">
-            <span class="spec-prop">Material Bahan</span>
-            <span class="spec-val" id="sheetMat"></span>
+            <span class="spec-prop">Material Kayu</span>
+            <span class="spec-val" id="mMat"></span>
           </div>
           <div class="spec-line">
-            <span class="spec-prop">Jenis Finishing</span>
-            <span class="spec-val" id="sheetFin"></span>
+            <span class="spec-prop">Standar Finishing</span>
+            <span class="spec-val" id="mFin"></span>
           </div>
           <div class="spec-line">
-            <span class="spec-prop">Konstruksi Pasak</span>
-            <span class="spec-val" id="sheetKon"></span>
+            <span class="spec-prop">Konstruksi</span>
+            <span class="spec-val" id="mKon"></span>
           </div>
           <div class="spec-line">
-            <span class="spec-prop">Asal Produksi</span>
-            <span class="spec-val">Workshop Jepara</span>
+            <span class="spec-prop">Waktu Produksi</span>
+            <span class="spec-val" id="mTime"></span>
           </div>
         </div>
 
-        <p class="sheet-desc-text" id="sheetDesc"></p>
+        <p class="sheet-desc-text" id="mDesc"></p>
 
-        <a id="sheetWaBtn" href="#" target="_blank" class="btn-sheet-wa">
-          <span>Konsultasikan Karya Ini via WhatsApp</span>
+        <a id="mWaBtn" href="#" target="_blank" class="btn-sheet-wa">
+          <span>Konsultasi &amp; Penawaran RAB Karya Ini via WhatsApp</span>
         </a>
-        
-        <a id="sheetFullLink" href="#" target="_blank" class="sheet-sublink">Buka halaman web terpisah</a>
       </div>
     </div>
   </div>
 
-  <!-- Ultra-Fast Catalog Engine -->
+  <!-- Showcase Engine -->
   <script>
-    const initialItems = [{"id": 1, "t": "Salami Mirror", "c": "Cermin & Dekorasi Dinding", "p": "Rp 450.000", "d": "40 × 40 × 2 cm", "m": "Mirror, Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "5,4 kg", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Aksesoris-Salami-Mirror-Uwitan.jpg", "desc": "Cermin dinding Salami Mirror dengan dimensi 40 × 40 × 2 cm. Bingkai kayu Mirror, Pine Wood bertekstur natural membingkai pantulan kaca jernih, menciptakan ilusi ruangan yang lebih luas dan terang. Dilengkapi sistem gantungan kokoh untuk pemasangan dinding yang aman.", "slug": "001-salami-mirror", "url": "produk/001-salami-mirror.html"}, {"id": 2, "t": "Woodletter", "c": "Home Decor & Living", "p": "Rp 35.000", "d": "5 × 5 × 5 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "0,5625 kg", "img": "https://uwitan.id/wp-content/uploads/2018/07/aksesoris-woodletter-2.webp", "desc": "Woodletter berdimensi 5 × 5 × 5 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "002-woodletter", "url": "produk/002-woodletter.html"}, {"id": 3, "t": "Cakra Arm Chair 3 Seater", "c": "Kursi & Bangku", "p": "Rp 2.200.000", "d": "165 × 60 × 79 cm", "m": "Foam, Rattan", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "181,7 kg", "img": "https://uwitan.id/wp-content/uploads/2019/01/SAM9546.jpg", "desc": "Tempat duduk ergonomis Cakra Arm Chair 3 Seater dirancang dengan perpaduan kenyamanan dan kekuatan struktur kayu solid. Dimensi 165 × 60 × 79 cm memberikan proporsi duduk yang proporsional untuk ruang tamu, sudut santai, maupun area komersial cafe. Sambungan rangka diperkuat konstruksi kayu presisi dengan sentuhan finishing NC Lacquer yang menonjolkan keaslian material Foam, Rattan.", "slug": "003-cakra-arm-chair-3-seater", "url": "produk/003-cakra-arm-chair-3-seater.html"}, {"id": 4, "t": "Papan Menu", "c": "Home Decor & Living", "p": "Rp 195.000", "d": "32 × 32 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Knockdown", "b": "2,3 kg", "img": "https://uwitan.id/wp-content/uploads/2023/07/sampul-scaled.jpg", "desc": "Papan Menu berdimensi 32 × 32 × 2 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "004-papan-menu", "url": "produk/004-papan-menu.html"}, {"id": 5, "t": "Jamur Mini Basket", "c": "Home Decor & Living", "p": "Rp 145.000", "d": "15 × 15 × 15 cm", "m": "Rattan", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "1 kg", "img": "https://uwitan.id/wp-content/uploads/2021/02/1-aksesoris-jamur-mini-basket.jpeg", "desc": "Jamur Mini Basket berdimensi 15 × 15 × 15 cm yang memadukan fungsionalitas dan nilai estetika kayu Rattan. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "005-jamur-mini-basket", "url": "produk/005-jamur-mini-basket.html"}, {"id": 6, "t": "Tigo Keychain", "c": "Home Decor & Living", "p": "Rp 9.900", "d": "7,5 × 5,5 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "1 kg", "img": "https://uwitan.id/wp-content/uploads/2025/10/IMG_7785-min.jpeg", "desc": "Tigo Keychain berdimensi 7,5 × 5,5 × 2 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "006-tigo-keychain", "url": "produk/006-tigo-keychain.html"}, {"id": 7, "t": "Kitchen Shelf Natural", "c": "Rak & Storage", "p": "Rp 2.450.000", "d": "59 × 46 × 111,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "70,6 kg", "img": "https://uwitan.id/wp-content/uploads/2018/06/1-furniture-rak-kitchen-shelf-natural.jpg", "desc": "Rak penyimpanan terbuka Kitchen Shelf Natural (dimensi 59 × 46 × 111,5 cm) yang memudahkan display buku, tanaman hias, maupun dekorasi interior. Struktur rangka Pine Wood kokoh dengan finishing NC Lacquer, memberikan kesan ruangan yang lebih lapang dan tertata estetik.", "slug": "007-kitchen-shelf-natural", "url": "produk/007-kitchen-shelf-natural.html"}, {"id": 8, "t": "Kalender Uwitan 2026", "c": "Home Decor & Living", "p": "Rp 185.000", "d": "27 × 8,5 × 20 cm", "m": "Pine Wood, Recycle Polimer Sheet", "f": "NC Lacquer / Natural", "k": "Full Assembly", "b": "N/A", "img": "https://uwitan.id/wp-content/uploads/2023/01/IMG_0061-min.jpeg", "desc": "Kalender Uwitan 2026 berdimensi 27 × 8,5 × 20 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood, Recycle Polimer Sheet. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "008-kalender-uwitan-2026", "url": "produk/008-kalender-uwitan-2026.html"}, {"id": 9, "t": "Wall Decor  -  Set A Isi 3pcs", "c": "Home Decor & Living", "p": "Rp 369.000", "d": "61 × 61 × 8 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "k": "Full Assembly", "b": "25 kg", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1908.jpg", "desc": "Wall Decor  -  Set A Isi 3pcs berdimensi 61 × 61 × 8 cm yang memadukan fungsionalitas dan nilai estetika kayu Rattan. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "009-wall-decor-set-a-isi-3pcs", "url": "produk/009-wall-decor-set-a-isi-3pcs.html"}, {"id": 10, "t": "Wall Decor  -  Set D Isi 4pcs", "c": "Home Decor & Living", "p": "Rp 495.000", "d": "61 × 61 × 10 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "k": "Full Assembly", "b": "30 kg", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1884.jpg", "desc": "Wall Decor  -  Set D Isi 4pcs berdimensi 61 × 61 × 10 cm yang memadukan fungsionalitas dan nilai estetika kayu Rattan. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "010-wall-decor-set-d-isi-4pcs", "url": "produk/010-wall-decor-set-d-isi-4pcs.html"}, {"id": 11, "t": "Wall Decor  -  Set 5 Isi 6pcs", "c": "Home Decor & Living", "p": "Rp 695.000", "d": "60 × 2 × 60 cm", "m": "Kayu Solid", "f": "NC Lacquer / Natural", "k": "Assembled / Knockdown", "b": "-", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_1839.jpg", "desc": "Wall Decor  -  Set 5 Isi 6pcs berdimensi 60 × 2 × 60 cm yang memadukan fungsionalitas dan nilai estetika kayu Kayu Solid. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "011-wall-decor-set-5-isi-6pcs", "url": "produk/011-wall-decor-set-5-isi-6pcs.html"}, {"id": 12, "t": "Wall Decor  -  Set B Isi 3pcs", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "51 × 51 × 8 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "k": "Full Assembly", "b": "25 kg", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1927.jpg", "desc": "Wall Decor  -  Set B Isi 3pcs berdimensi 51 × 51 × 8 cm yang memadukan fungsionalitas dan nilai estetika kayu Rattan. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "012-wall-decor-set-b-isi-3pcs", "url": "produk/012-wall-decor-set-b-isi-3pcs.html"}, {"id": 13, "t": "Wall Decor  -  Set C Isi 3pcs", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "46 × 46 × 8 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "k": "Full Assembly", "b": "25 kg", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1901.jpg", "desc": "Wall Decor  -  Set C Isi 3pcs berdimensi 46 × 46 × 8 cm yang memadukan fungsionalitas dan nilai estetika kayu Rattan. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "013-wall-decor-set-c-isi-3pcs", "url": "produk/013-wall-decor-set-c-isi-3pcs.html"}, {"id": 14, "t": "Robobox Natural", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "28 × 14 × 20 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "5,89 kg", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-furniture-aksesoris-robobox-natural.jpg", "desc": "Robobox Natural berdimensi 28 × 14 × 20 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood, Plywood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "014-robobox-natural", "url": "produk/014-robobox-natural.html"}, {"id": 15, "t": "Nine Interphone Natural White", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "30 × 10 × 33 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "5,733333333 kg", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-furniture-aksesoris-nine-interphone-natural-white.jpg", "desc": "Nine Interphone Natural White berdimensi 30 × 10 × 33 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "015-nine-interphone-natural-white", "url": "produk/015-nine-interphone-natural-white.html"}, {"id": 16, "t": "Wooden Snack Box Natural White", "c": "Home Decor & Living", "p": "Rp 385.000", "d": "42 × 28 × 22 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "11,74833333 kg", "img": "https://uwitan.id/wp-content/uploads/2017/12/furniture-aksesoris-wooden-snack-box-nw-1.jpg", "desc": "Wooden Snack Box Natural White berdimensi 42 × 28 × 22 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "016-wooden-snack-box-natural-white", "url": "produk/016-wooden-snack-box-natural-white.html"}];
-    let fullCatalog = initialItems;
-    let activeCat = 'Semua';
-    let searchQuery = '';
-    let currentPage = 1;
-    const pageSize = 20;
-    let filteredList = [];
+    const flagshipData = [{"id": 1, "title": "Meja Makan Solid Teak Slab Ona Series", "series": "Hospitality & Dining Suite", "category": "Dining & Cafe", "dimensions": "200 × 90 × 76 cm (Custom Sesuai Denah)", "material": "Kayu Jati Solid Pilihan Oven (MC < 12%)", "finishing": "Natural Polyurethane Matte (Tahan Noda & Panas)", "construction": "Purus Pasak Mortise & Tenon dengan Penguat Kaki Besi/Kayu", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.800.000 - Rp 7.500.000", "description": "Meja makan kayu jati solid dengan proporsi ramping bergaya modern kontemporer. Dirancang khusus untuk ruang makan residensial maupun area indoor cafe prestisius. Permukaan meja dilapisi finishing PU tahan air dan panas tanpa menutupi keaslian alur serat kayu jati pilihan.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Makan-Ona-Natural.jpg"}, {"id": 2, "title": "Meja Makan Bundar Japandi Mondy", "series": "Residential Dining Collection", "category": "Dining & Cafe", "dimensions": "Diameter 120 × Tinggi 75 cm (Kapasitas 4-5 Kursi)", "material": "Kayu Jati Solid Kiln-Dried", "finishing": "NC Lacquer Natural Wood Touch", "construction": "Kaki Palang Silang Stabil Pasak Kayu", "lead_time": "2 - 3 Minggu", "price_range": "Rp 3.800.000 - Rp 5.200.000", "description": "Meja makan bundar berdesain intim yang memaksimalkan sirkulasi ruang makan berukuran compact. Konstruksi kaki silang presisi memberikan ruang kaki yang leluasa tanpa goyang.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Makan-Ayem-Natural.jpg"}, {"id": 3, "title": "Set Meja Cafe Bistro & Bench Harumi", "series": "Commercial & F&B Project", "category": "Dining & Cafe", "dimensions": "160 × 80 × 75 cm + 2 Bench Panjang", "material": "Kayu Jati / Mindi Solid Kombinasi Besi Hollow", "finishing": "Matte Outdoor-Grade Coating", "construction": "Heavy Duty Welded Base & Solid Wood Top", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.200.000 - Rp 6.500.000", "description": "Satu set meja makan komersial dan bangku panjang untuk kafe, resto, atau area dining semi-outdoor. Dirancang tahan pemakaian intensitas tinggi dengan perawatan yang sangat mudah.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Makan-Harumi-Natural.jpg"}, {"id": 4, "title": "Kursi Makan Ergonomis Sandaran Lengkung Ona", "series": "Bespoke Seating Series", "category": "Dining & Cafe", "dimensions": "52 × 54 × 80 cm (Tinggi Dudukan 45 cm)", "material": "Kayu Jati Solid Pilihan", "finishing": "Smooth Sanded Satin Natural", "construction": "Sambungan Finger Joint & Dowel Kayu Keras", "lead_time": "1 - 2 Minggu", "price_range": "Rp 850.000 - Rp 1.450.000 / unit", "description": "Kursi makan dengan lengkung sandaran punggung yang dirancang presisi mengikuti postur tulang belakang. Nyaman diduduki untuk sesi makan panjang dan perbincangan santai.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Kursi-Makan-Ona-Natural.jpg"}, {"id": 5, "title": "Meja Konsol Foyer Minimalis Mida", "series": "Entryway & Accent Series", "category": "Dining & Cafe", "dimensions": "120 × 35 × 85 cm", "material": "Kayu Jati Solid & Top Marmer / Solid Wood", "finishing": "Clear Natural Matte", "construction": "Rangka Kayu Solid Ramping Kokoh", "lead_time": "2 Minggu", "price_range": "Rp 2.400.000 - Rp 3.600.000", "description": "Meja konsol ramping untuk koridor pintu masuk rumah atau backdrop dinding ruang makan. Dilengkapi laci kecil tersembunyi untuk menyimpan kunci dan pernak-pernik.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Konsol-Mida-Natural.jpg"}, {"id": 6, "title": "Island Table Multifungsi Alana Pantry", "series": "Kitchen & Pantry Collection", "category": "Dining & Cafe", "dimensions": "150 × 60 × 88 cm", "material": "Kayu Jati Solid & Multipleks Lapis Teakwood", "finishing": "PU Food-Grade Safe Natural", "construction": "Kabinet Terintegrasi dengan Rak Bawah", "lead_time": "3 Minggu", "price_range": "Rp 4.500.000 - Rp 6.800.000", "description": "Meja pulau dapur (kitchen island) yang berfungsi ganda sebagai area santap sarapan dan meja persiapan memasak. Bagian bawah dilengkapi rak penyimpanan piring dan peralatan dapur.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Kitchen-Island-Alana-Natural.jpg"}, {"id": 7, "title": "Sofa 3-Seater Rotan Alami Cakra Villa", "series": "Tropical Villa Collection", "category": "Living & Lounge", "dimensions": "180 × 75 × 78 cm", "material": "Kayu Jati Solid & Anyaman Rotan Alami Terkurasi", "finishing": "Honey Teak Waterbased Protection", "construction": "Rangka Pasak Jati dengan Dudukan Busa High Density", "lead_time": "3 Minggu", "price_range": "Rp 5.500.000 - Rp 7.800.000", "description": "Sofa santai tiga dudukan bergaya tropis modern khas villa Ubud dan Canggu Bali. Memadukan kehangatan kayu jati dengan anyaman rotan asli serta bantalan kain linen yang empuk dan sejuk.", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Kursi-Tamu-Cakra-Arm-Chair-3-Seater-Natural.jpg"}, {"id": 8, "title": "Credenza TV Rotan Japandi Harumi Series", "series": "Modern Living Cabinetry", "category": "Living & Lounge", "dimensions": "180 × 45 × 55 cm (Cocok untuk TV s/d 75 Inch)", "material": "Kayu Jati Solid & Panel Pintu Rotan Webbing", "finishing": "Bleached Natural / Natural Matte", "construction": "Engsel Slow Motion & Sambungan Purus Kayu", "lead_time": "2 - 3 Minggu", "price_range": "Rp 3.800.000 - Rp 5.500.000", "description": "Koleksi credenza TV paling diminati arsitek. Desain pintu geser rotan webbing memberikan sirkulasi udara optimal untuk perangkat elektronik di dalamnya, sekaligus menyamarkan kabel dengan rapi.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Cabinet-Harumi-Credenza-Natural.jpg"}, {"id": 9, "title": "Coffee Table Organik Oval Ayem", "series": "Living Accent Masterpiece", "category": "Living & Lounge", "dimensions": "110 × 60 × 42 cm", "material": "Kayu Jati Solid Oven Pilihan", "finishing": "NC Lacquer Silky Smooth", "construction": "Kaki Meruncing Skandinavia Terpasak Kokoh", "lead_time": "1 - 2 Minggu", "price_range": "Rp 1.850.000 - Rp 2.750.000", "description": "Meja kopi berbentuk oval tanpa sudut tajam, aman untuk keluarga dengan anak kecil. Bentuknya yang dinamis memberikan sentuhan visual lembut di tengah area sofa ruang keluarga.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Tamu-Ayem-Coffee-Table-Natural.jpg"}, {"id": 10, "title": "Daybed Lounger Salami Solid Wood", "series": "Resort & Relaxation Series", "category": "Living & Lounge", "dimensions": "200 × 85 × 70 cm", "material": "Kayu Jati Solid & Matras Busa Royal Foam D24", "finishing": "Natural Teak Oil Finishing", "construction": "Konstruksi Balok Solid Anti-Derit", "lead_time": "3 Minggu", "price_range": "Rp 4.900.000 - Rp 6.800.000", "description": "Daybed santai multifungsi untuk sudut baca ruang tamu atau teras belakang menghadap taman. Dilengkapi sandaran tangan berprofil ergonomis dan kasur daybed empuk.", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Daybed-Salami-Sofa-Bed-Natural.jpg"}, {"id": 11, "title": "Bench Industrial Black Foyer dengan Rak Sepatu", "series": "Entryway Function Series", "category": "Living & Lounge", "dimensions": "100 × 35 × 48 cm", "material": "Dudukan Kayu Jati / Pine Solid & Rangka Besi Hollow Matte", "finishing": "Powder Coating Anti Karat + NC Lacquer Wood", "construction": "Baut Tanam Heavy Duty & Sambungan Las Halus", "lead_time": "1 - 2 Minggu", "price_range": "Rp 1.450.000 - Rp 2.200.000", "description": "Solusi fungsional untuk area pintu masuk. Berfungsi sebagai bangku tempat duduk saat memakai sepatu sekaligus rak penyimpanan terbuka yang membuat foyer selalu tertata rapi.", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Furniture-Bench-Industrial-Black.jpg"}, {"id": 12, "title": "Lounge Armchair Cakra Single Seater", "series": "Accent Seating Collection", "category": "Living & Lounge", "dimensions": "65 × 65 × 78 cm", "material": "Kayu Jati Solid & Anyaman Rotan Alami", "finishing": "Matte Natural Teak", "construction": "Ergonomic Curve Backrest", "lead_time": "1 - 2 Minggu", "price_range": "Rp 1.750.000 - Rp 2.650.000", "description": "Kursi santai tunggal dengan sandaran melengkung yang memeluk tubuh. Sempurna dipadukan dengan meja kopi marmer atau sebagai statement chair di sudut kamar tidur.", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Kursi-Tamu-Cakra-Arm-Chair-1-Seater-Natural.jpg"}, {"id": 13, "title": "Dipan Platform Minimalis Jerujen Bedframe", "series": "Master Suite Bedroom", "category": "Kamar Tidur", "dimensions": "180 × 200 × 90 cm (Ukuran Kasur King)", "material": "Kayu Jati Solid Oven Kiln-Dried (MC < 12%)", "finishing": "Closed Pore Satin Natural Teak", "construction": "Knockdown Presisi Sistem Baut Tanam Baja", "lead_time": "3 Minggu", "price_range": "Rp 5.800.000 - Rp 8.500.000", "description": "Rangka tempat tidur platform bergaya Jepang modern dengan ketinggian rendah yang menenangkan. Dilengkapi kisi-kisi headboard estetik dan konstruksi palang kayu bawah tebal yang dijamin 100% bebas suara derit.", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Tempat-Tidur-Jerujen-Bed-160-Natural.jpg"}, {"id": 14, "title": "Dipan Minimalis Alana dengan 3 Laci Rahasia", "series": "Storage Bedframe Collection", "category": "Kamar Tidur", "dimensions": "160 × 200 × 95 cm (Queen Size)", "material": "Kayu Jati Solid Pilihan", "finishing": "NC Lacquer Natural Wood", "construction": "Rel Laci Double Track Ball Bearing", "lead_time": "3 Minggu", "price_range": "Rp 6.200.000 - Rp 8.900.000", "description": "Tempat tidur fungsional untuk kamar tidur minimalis. Di bawah rangka matras terdapat 3 laci penyimpanan besar untuk sprei, selimut, atau pakaian tanpa memakan luas ruangan.", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Tempat-Tidur-Alana-Bed-3-Drawer-160-Natural.jpg"}, {"id": 15, "title": "Lemari Pakaian 3 Pintu Alana Glass Wardrobe", "series": "Master Wardrobe Series", "category": "Kamar Tidur", "dimensions": "160 × 60 × 210 cm", "material": "Kayu Jati Solid & Kaca Fluted / Polos", "finishing": "PU Matte Natural Teak", "construction": "Engsel Soft Close & Sekat Gantungan Baju Kuningan", "lead_time": "3 - 4 Minggu", "price_range": "Rp 8.500.000 - Rp 14.500.000", "description": "Lemari pakaian berukuran penuh dengan kombinasi pintu kayu solid dan panel kaca elegan. Bagian dalam dirancang khusus untuk busana gaun panjang, gantungan jas, dan rak baju lipat.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Lemari-Alana-Wardrobe-Pintu-Kaca-Natural.jpg"}, {"id": 16, "title": "Meja Rias Minimalis Cermin Bulat Minima", "series": "Vanity Dressing Suite", "category": "Kamar Tidur", "dimensions": "100 × 45 × 135 cm (Termasuk Cermin)", "material": "Kayu Jati Solid & Kaca Cermin Bevel", "finishing": "Satin Smooth Finish", "construction": "Laci Sekat Kosmetik Terintegrasi", "lead_time": "2 Minggu", "price_range": "Rp 2.800.000 - Rp 4.100.000", "description": "Meja rias compact dengan cermin bulat besar dan laci terorganisir untuk makeup dan perhiasan. Siluet kakinya yang ramping membuat kamar tidur terasa luas.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Rias-Minima-Dressing-Table-Natural.jpg"}, {"id": 17, "title": "Nakas Kamar Tidur Salami 2 Laci", "series": "Bedside Table Series", "category": "Kamar Tidur", "dimensions": "45 × 40 × 52 cm", "material": "Kayu Jati Solid", "finishing": "Natural Teak NC Lacquer", "construction": "Tarikan Coak Minimalis & Sambungan Ekor Burung", "lead_time": "1 - 2 Minggu", "price_range": "Rp 950.000 - Rp 1.550.000", "description": "Nakas samping tempat tidur untuk meletakkan lampu tidur, buku, dan gawai. Desain tanpa handel menonjolkan kerapian pertukangan kayu modern.", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Nakas-1-Drawer-Solid-Natural.jpg"}, {"id": 18, "title": "Cermin Dinding Badan Standing Mirror Ona", "series": "Architectural Mirror Series", "category": "Kamar Tidur", "dimensions": "60 × 170 cm", "material": "Bingkai Kayu Jati Solid Utuh", "finishing": "Natural Teak Wood Grain", "construction": "Dudukan Penyangga Kokoh / Bracket Dinding", "lead_time": "1 Minggu", "price_range": "Rp 1.450.000 - Rp 2.100.000", "description": "Cermin sebadan penuh dengan bingkai kayu jati solid profil bulat halus. Bisa diletakkan berdiri dengan penyangga kokoh atau digantung rata pada dinding kamar tidur.", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Cermin-Ona-Putar-Standing-Mirror-Natural.jpg"}, {"id": 19, "title": "Meja Kerja WFH Eksekutif Salami Solid", "series": "Executive Workspace Collection", "category": "Ruang Kerja", "dimensions": "150 × 65 × 76 cm", "material": "Kayu Jati Solid Pilihan TPK", "finishing": "Polyurethane Matte Anti-Gores", "construction": "Kanal Manajemen Kabel & 2 Laci Lapang", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.200.000 - Rp 6.200.000", "description": "Meja kerja kayu solid dirancang untuk arsitek, eksekutif, dan profesional WFH. Dilengkapi kompartemen tersembunyi untuk merapikan colokan listrik dan kabel monitor agar meja selalu bersih dan estetik.", "img": "https://uwitan.id/wp-content/uploads/2020/06/1-Furnitiure-Salami-Meja-Kerja-2-Laci-Natural.jpg"}, {"id": 20, "title": "Rak Buku Dinding Modular Sejen Bookshelf", "series": "Library & Display Storage", "category": "Ruang Kerja", "dimensions": "120 × 30 × 180 cm", "material": "Kayu Jati Solid", "finishing": "Natural Touch NC Matte", "construction": "Sistem Sekat Tanam Beban 150 kg", "lead_time": "3 Minggu", "price_range": "Rp 4.800.000 - Rp 7.200.000", "description": "Rak buku berpola asimetris yang elegan untuk memajang buku arsitektur, binder dokumen, dan karya seni koleksi. Struktur rak diperkuat penahan dinding tersembunyi.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Rak-Buku-Sejen-Bookshelf-Natural.jpg"}, {"id": 21, "title": "Credenza Kantor & Arsip Multi-Drawer", "series": "Office Storage Series", "category": "Ruang Kerja", "dimensions": "140 × 45 × 85 cm", "material": "Kayu Jati Solid Berkualitas", "finishing": "Closed Pore Satin Natural", "construction": "Susunan 4 Laci Dokumen & 2 Pintu Tertutup", "lead_time": "3 Minggu", "price_range": "Rp 5.200.000 - Rp 7.500.000", "description": "Kabinet penyimpanan arsip kantor dan dokumen legal. Desain luarnya yang mewah cocok ditempatkan di ruang kerja pimpinan atau studio arsitek.", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Chest-4-Drawer-Natural.jpg"}, {"id": 22, "title": "Meja Belajar & Kerja Compact Liliput", "series": "Compact Studio Workspace", "category": "Ruang Kerja", "dimensions": "100 × 50 × 75 cm", "material": "Kayu Jati Solid Oven", "finishing": "Natural Waterbased Smooth", "construction": "Rangka Ringan Kokoh Pasak Kayu", "lead_time": "1 - 2 Minggu", "price_range": "Rp 2.100.000 - Rp 3.200.000", "description": "Meja kerja berukuran efisien untuk apartemen studio atau kamar anak. Memaksimalkan kenyamanan belajar tanpa membuat sudut ruangan terasa sempit.", "img": "https://uwitan.id/wp-content/uploads/2020/05/1-Meja-Kerja-Liliput-Natural.jpg"}, {"id": 23, "title": "Lemari Kabinet Sepatu Koru Grand Series", "series": "Foyer Storage Architecture", "category": "Ruang Kerja", "dimensions": "120 × 38 × 110 cm (Kapasitas 24 Pasang Sepatu)", "material": "Kayu Jati Solid & Kisi Sirkulasi Udara", "finishing": "Natural Teak Finishing", "construction": "Pintu Louver Berongga Sirkulasi Anti-Bau", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.500.000 - Rp 6.500.000", "description": "Kabinet sepatu berkapasitas besar dengan pintu bergaris kisi (louver) yang menjaga sirkulasi udara di dalam lemari tetap segar dan bebas kelembapan.", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Lemari-Sepatu-Koru-Shoe-Cabinet-Natural.jpg"}, {"id": 24, "title": "Rak Display Minimalis Ladder Shelf 5 Tingkat", "series": "Vertical Display Series", "category": "Ruang Kerja", "dimensions": "60 × 35 × 180 cm", "material": "Kayu Jati Solid Pilihan", "finishing": "Natural NC Lacquer", "construction": "Desain Bersandar Dinding (Leaning Shelf) Stabil", "lead_time": "1 Minggu", "price_range": "Rp 1.650.000 - Rp 2.400.000", "description": "Rak bertingkat lima dengan kedalaman ambalan yang berjenjang. Pilihan favorit desainer untuk sudut hijau tanaman indoor dan display buku.", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Rak-Tangga-Ladder-Shelf-Natural.jpg"}];
+    let activeSpace = 'Semua';
 
-    const grid = document.getElementById('productGrid');
-    const shownCount = document.getElementById('shownCount');
-    const matchCount = document.getElementById('matchCount');
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
-    const searchInput = document.getElementById('searchInput');
-
-    // Quiet background fetch
-    fetch('./katalog_data.json')
-      .then(res => res.json())
-      .then(data => {
-        fullCatalog = data;
-        checkUrlHash();
-      })
-      .catch(err => console.log('Catalog load error', err));
-
-    function filterByCat(cat) {
-      activeCat = cat;
-      document.querySelectorAll('.cat-pill').forEach(btn => {
-        btn.classList.toggle('active', btn.innerText.includes(cat));
-      });
-      applyFilter();
-    }
-
-    searchInput.addEventListener('input', e => {
-      searchQuery = e.target.value.toLowerCase().trim();
-      applyFilter();
-    });
-
-    function applyFilter() {
-      if (!fullCatalog || fullCatalog.length === 0) return;
-      
-      filteredList = fullCatalog.filter(item => {
-        const matchC = (activeCat === 'Semua') || (item.c === activeCat);
-        const matchQ = (searchQuery === '') || 
-                       item.t.toLowerCase().includes(searchQuery) || 
-                       (item.d && item.d.toLowerCase().includes(searchQuery));
-        return matchC && matchQ;
-      });
-      
-      currentPage = 1;
-      renderGrid();
-    }
-
-    function renderGrid() {
-      const limit = currentPage * pageSize;
-      const visible = filteredList.slice(0, limit);
-
-      grid.innerHTML = '';
-      visible.forEach(item => {
-        const card = document.createElement('article');
-        card.className = 'product-card';
-        card.onclick = () => openDetail(item.id);
-        card.innerHTML = `
-          <div class="card-media">
-            <img src="${item.img}" alt="${item.t}" loading="lazy" decoding="async" />
-            <span class="card-badge">${item.c}</span>
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">${item.t}</h3>
-            <p class="card-dim">Ukuran: ${item.d}</p>
-            <div class="card-action-row">
-              <span class="card-price">${item.p}</span>
-              <span class="card-cta">Lihat Detail</span>
-            </div>
-          </div>
-        `;
-        grid.appendChild(card);
+    function filterSpace(space) {
+      activeSpace = space;
+      document.querySelectorAll('.filter-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.innerText.includes(space));
       });
 
-      shownCount.innerText = visible.length;
-      matchCount.innerText = filteredList.length;
-
-      if (limit >= filteredList.length) {
-        loadMoreBtn.style.display = 'none';
-      } else {
-        loadMoreBtn.style.display = 'inline-block';
-        loadMoreBtn.innerText = `Muat ${Math.min(pageSize, filteredList.length - limit)} Karya Berikutnya`;
-      }
+      document.querySelectorAll('.showcase-card').forEach(card => {
+        const cardCat = card.getAttribute('data-cat');
+        if (space === 'Semua' || cardCat === space) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     }
 
-    function loadMoreProducts() {
-      if (!fullCatalog || fullCatalog.length === 0) return;
-      currentPage++;
-      renderGrid();
+    function openShowcaseDetail(id) {
+      const item = flagshipData.find(x => x.id === id);
+      if (!item) return;
+
+      document.getElementById('mSeries').innerText = item.series;
+      document.getElementById('mImg').src = item.img;
+      document.getElementById('mCategory').innerText = item.category;
+      document.getElementById('mTitle').innerText = item.title;
+      document.getElementById('mPrice').innerText = 'Estimasi: ' + item.price_range;
+      document.getElementById('mDim').innerText = item.dimensions;
+      document.getElementById('mMat').innerText = item.material;
+      document.getElementById('mFin').innerText = item.finishing;
+      document.getElementById('mKon').innerText = item.construction;
+      document.getElementById('mTime').innerText = item.lead_time;
+      document.getElementById('mDesc').innerText = item.description;
+
+      const waText = encodeURIComponent(`Halo Rezeki Lancar Furniture, saya tertarik dengan karya custom: ${item.title} (${item.dimensions}). Mohon rincian RAB workshop & opsi kayu untuk proyek kami.`);
+      document.getElementById('mWaBtn').href = `https://wa.me/6281234567890?text=${waText}`;
+
+      document.getElementById('showcaseModal').classList.add('active');
+      window.history.pushState({ id: item.id }, '', '#karya-' + item.id);
     }
 
-    // Detail Modal (Works on millisecond 0 for initial items, zero lag!)
-    function openDetail(id) {
-      const item = fullCatalog.find(x => x.id === id) || initialItems.find(x => x.id === id) || {};
-      if (!item.t) return;
-
-      document.getElementById('sheetId').innerText = 'Koleksi #' + item.id;
-      document.getElementById('sheetImg').src = item.img;
-      document.getElementById('sheetCat').innerText = item.c;
-      document.getElementById('sheetTitle').innerText = item.t;
-      document.getElementById('sheetPrice').innerText = item.p;
-      document.getElementById('sheetDim').innerText = item.d;
-      document.getElementById('sheetMat').innerText = item.m;
-      document.getElementById('sheetFin').innerText = item.f;
-      document.getElementById('sheetKon').innerText = item.k || 'Mortise & Tenon Pasak Kayu';
-      document.getElementById('sheetDesc').innerText = item.desc;
-      
-      const msg = encodeURIComponent(`Halo Rezeki Lancar Furniture, saya tertarik dengan karya ${item.t} (${item.d}). Mohon info penawaran harga dan opsi kayu.`);
-      document.getElementById('sheetWaBtn').href = `https://wa.me/6281234567890?text=${msg}`;
-      document.getElementById('sheetFullLink').href = './' + item.url;
-
-      document.getElementById('detailSheet').classList.add('active');
-      window.history.pushState({ id: item.id }, '', '#koleksi-' + item.id);
-    }
-
-    function closeDetail() {
-      document.getElementById('detailSheet').classList.remove('active');
-      if (window.location.hash.startsWith('#koleksi-')) {
+    function closeShowcaseDetail() {
+      document.getElementById('showcaseModal').classList.remove('active');
+      if (window.location.hash.startsWith('#karya-')) {
         window.history.pushState('', '', window.location.pathname);
       }
     }
 
-    window.addEventListener('popstate', (e) => {
-      if (document.getElementById('detailSheet').classList.contains('active')) {
-        document.getElementById('detailSheet').classList.remove('active');
+    window.addEventListener('popstate', () => {
+      if (document.getElementById('showcaseModal').classList.contains('active')) {
+        document.getElementById('showcaseModal').classList.remove('active');
       }
     });
 
-    function checkUrlHash() {
-      const hash = window.location.hash;
-      if (hash && hash.startsWith('#koleksi-')) {
-        const id = parseInt(hash.replace('#koleksi-', ''));
-        if (id) openDetail(id);
-      }
-    }
-
-    // Close modal on Escape key (R-32 accessibility requirement)
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && document.getElementById('detailSheet').classList.contains('active')) {
-        closeDetail();
+      if (e.key === 'Escape' && document.getElementById('showcaseModal').classList.contains('active')) {
+        closeShowcaseDetail();
       }
     });
+
+    // Check hash on load
+    if (window.location.hash && window.location.hash.startsWith('#karya-')) {
+      const hId = parseInt(window.location.hash.replace('#karya-', ''));
+      if (hId) openShowcaseDetail(hId);
+    }
   </script>
 </body>
 </html>
