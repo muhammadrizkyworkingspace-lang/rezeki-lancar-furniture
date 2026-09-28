@@ -86,29 +86,30 @@
       letter-spacing: 0.3px;
     }
 
-    /* Header Nav */
+    /* Header Nav (Flawless Desktop & Mobile Dropdown) */
     header.site-header {
-      background: rgba(250, 248, 245, 0.96);
-      backdrop-filter: blur(8px);
+      background: rgba(250, 248, 245, 0.98);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 90;
       width: 100%;
     }
     .header-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 56px;
+      min-height: 58px;
     }
     @media (min-width: 768px) {
-      .header-inner { height: 70px; }
+      .header-inner { min-height: 70px; }
     }
 
     .brand-group {
       display: flex;
       flex-direction: column;
+      flex-shrink: 0;
     }
     .brand-logo {
       font-family: var(--font-display);
@@ -123,44 +124,147 @@
     }
     .brand-subline {
       font-size: 9px;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       color: var(--accent);
       font-weight: 700;
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
+    /* Desktop Navigation */
     .desktop-nav {
       display: none;
       align-items: center;
-      gap: 22px;
+      gap: 24px;
+    }
+    @media (min-width: 860px) {
+      .desktop-nav { display: flex; }
+    }
+    .nav-link {
       font-size: 13px;
       font-weight: 600;
       color: var(--text-muted);
+      transition: color 0.15s ease;
+      position: relative;
+      padding: 6px 0;
+    }
+    .nav-link:hover { color: var(--accent); }
+
+    /* Right Actions */
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     @media (min-width: 768px) {
-      .desktop-nav { display: flex; }
+      .nav-actions { gap: 14px; }
     }
-    .desktop-nav a:hover { color: var(--accent); }
 
     .btn-cta-nav {
       display: inline-flex;
       align-items: center;
+      gap: 6px;
       background: var(--text);
-      color: #ffffff;
-      padding: 8px 14px;
+      color: #ffffff !important;
+      padding: 8px 12px;
       border-radius: 4px;
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      min-height: 40px;
+      min-height: 38px;
       transition: background 0.15s, transform 0.1s;
     }
     .btn-cta-nav:active { transform: scale(0.96); }
     @media (min-width: 768px) {
-      .btn-cta-nav { padding: 10px 18px; font-size: 12px; min-height: 44px; }
+      .btn-cta-nav { padding: 9px 16px; font-size: 12px; min-height: 42px; }
       .btn-cta-nav:hover { background: var(--accent); }
+    }
+    .nav-wa-icon {
+      width: 15px;
+      height: 15px;
+    }
+    @media (max-width: 360px) {
+      .btn-cta-text { display: none; }
+      .btn-cta-nav { padding: 8px 10px; }
+    }
+
+    /* Mobile Menu Toggle Button */
+    .btn-menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .btn-menu-toggle:active { transform: scale(0.95); }
+    @media (min-width: 860px) {
+      .btn-menu-toggle { display: none; }
+    }
+
+    /* Mobile Nav Panel (Slide down dropdown) */
+    .mobile-nav-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 2px solid var(--accent);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      padding: 16px 20px 20px;
+      animation: menuSlide 0.2s ease-out;
+    }
+    .mobile-nav-panel.open { display: block; }
+    @keyframes menuSlide {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mobile-nav-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 14px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      border-bottom: 1px solid var(--surface-tint);
+    }
+    .mobile-nav-item:active {
+      background: var(--surface-tint);
+    }
+    .mobile-nav-item.highlight {
+      background: var(--accent);
+      color: #ffffff;
+      margin-top: 8px;
+      border-bottom: none;
+    }
+    .nav-arrow { font-size: 13px; color: var(--text-light); }
+    .mobile-nav-item.highlight .nav-arrow { color: #ffffff; }
+
+    .mobile-nav-foot {
+      margin-top: 14px;
+      padding-top: 10px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-light);
+    }
+
+    /* Scroll Margins for Anchor Links */
+    #tentang, #karya-custom, #kerjasama {
+      scroll-margin-top: 80px;
     }
 
     /* Hero Section */
@@ -428,7 +532,7 @@
     }
 
     /* ==========================================================================
-       FLAGSHIP CUSTOM SHOWCASE SECTION (THE NEW ARCHITECTURAL EXHIBITION)
+       SHOWCASE KARYA CUSTOM UNGGULAN
        ========================================================================== */
     .showcase-section {
       padding: 44px 0 64px;
@@ -736,7 +840,7 @@
       margin-bottom: 10px;
     }
 
-    /* Detail Modal (Preserves Scroll & State) */
+    /* Detail Modal */
     .sheet-backdrop {
       display: none;
       position: fixed;
@@ -915,15 +1019,50 @@
         <span class="brand-subline">Atelier Mebel Jepara</span>
       </a>
 
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Menu Utama">
+        <a href="#tentang" class="nav-link">Tentang Workshop</a>
+        <a href="#karya-custom" class="nav-link">Karya Unggulan</a>
+        <a href="#kerjasama" class="nav-link">Mitra Arsitek</a>
+      </nav>
+
+      <!-- Right Actions -->
       <div class="nav-actions">
-        <nav class="desktop-nav" aria-label="Menu Utama">
-          <a href="#tentang">Tentang Workshop</a>
-          <a href="#karya-custom">Karya Unggulan (24)</a>
-          <a href="#kerjasama">Mitra Arsitek</a>
-        </nav>
-        <a href="https://wa.me/6281234567890?text=Halo%20Rezeki%20Lancar%2C%20saya%20arsitek%2Fdesainer%20interior%20mau%20konsultasi%20produksi%20custom" target="_blank" class="btn-cta-nav">
-          <span>Konsultasi Proyek</span>
+        <a href="https://wa.me/6281234567890?text=Halo%20Rezeki%20Lancar%2C%20saya%20arsitek%2Fdesainer%20interior%20mau%20konsultasi%20produksi%20custom" target="_blank" class="btn-cta-nav" aria-label="Konsultasi WhatsApp">
+          <svg class="nav-wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span class="btn-cta-text">Konsultasi WA</span>
         </a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="btn-menu-toggle" id="menuToggleBtn" onclick="toggleMobileMenu()" aria-label="Buka Menu Navigasi" aria-expanded="false">
+          <svg class="menu-open-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg class="menu-close-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Down Menu Overlay -->
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+      <div class="mobile-nav-links">
+        <a href="#tentang" onclick="closeMobileMenu()" class="mobile-nav-item">
+          <span>Tentang Workshop</span>
+          <span class="nav-arrow">→</span>
+        </a>
+        <a href="#karya-custom" onclick="closeMobileMenu()" class="mobile-nav-item">
+          <span>24 Karya Custom Unggulan</span>
+          <span class="nav-arrow">→</span>
+        </a>
+        <a href="#kerjasama" onclick="closeMobileMenu()" class="mobile-nav-item">
+          <span>Alur Mitra Arsitek</span>
+          <span class="nav-arrow">→</span>
+        </a>
+        <a href="https://wa.me/6281234567890?text=Halo%20Rezeki%20Lancar%2C%20saya%20arsitek%2Fdesainer%20interior%20mau%20konsultasi%20produksi%20custom" target="_blank" onclick="closeMobileMenu()" class="mobile-nav-item highlight">
+          <span>Konsultasi WhatsApp Langsung</span>
+          <span class="nav-arrow">→</span>
+        </a>
+      </div>
+      <div class="mobile-nav-foot">
+        <div>Atelier Mebel Solid Jepara • Jawa Tengah</div>
       </div>
     </div>
   </header>
@@ -1028,7 +1167,7 @@
   </section>
 
   <!-- ==========================================================================
-       SHOWCASE KARYA CUSTOM UNGGULAN (LOOKBOOK 2026)
+       SHOWCASE KARYA CUSTOM UNGGULAN
        ========================================================================== -->
   <section class="showcase-section" id="karya-custom">
     <div class="container">
@@ -1702,11 +1841,39 @@
     </div>
   </div>
 
-  <!-- Showcase Engine -->
+  <!-- Showcase & Navigation Engine -->
   <script>
     const flagshipData = [{"id": 1, "title": "Ona Dining Table", "series": "Hospitality & Dining Suite", "category": "Dining & Cafe", "dimensions": "140 × 65 × 75 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Full Assembly", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.800.000 - Rp 6.800.000", "description": "Meja makan keluarga Ona Dining Table dengan dimensi 140 × 65 × 75 cm. Menghadirkan kehangatan serat kayu alami Pine Wood, Plywood sebagai pusat kebersamaan ruang makan rumah atau hospitality. Rangka kokoh dengan kaki stabil dan permukaan meja berlapisan NC Lacquer yang tahan tumpahan serta mudah dibersihkan.", "img": "assets/showcase/showcase_01.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2023/01/CHO00289-scaled.jpg"}, {"id": 2, "title": "Harumi Dining Table", "series": "Residential Dining Collection", "category": "Dining & Cafe", "dimensions": "31 × 80 × 75 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Full Assembly", "lead_time": "2 - 3 Minggu", "price_range": "Rp 3.800.000 - Rp 5.500.000", "description": "Meja makan keluarga Harumi Dining Table dengan dimensi 31 × 80 × 75 cm. Menghadirkan kehangatan serat kayu alami Pine Wood, Plywood sebagai pusat kebersamaan ruang makan rumah atau hospitality. Rangka kokoh dengan kaki stabil dan permukaan meja berlapisan NC Lacquer yang tahan tumpahan serta mudah dibersihkan.", "img": "assets/showcase/showcase_02.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2021/09/1-furniture-meja-harumi-dining-table.jpg"}, {"id": 3, "title": "Bona Dining Table", "series": "Cafe & Bistro Series", "category": "Dining & Cafe", "dimensions": "170 × 81 × 76 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.200.000 - Rp 5.900.000", "description": "Meja makan keluarga Bona Dining Table dengan dimensi 170 × 81 × 76 cm. Menghadirkan kehangatan serat kayu alami Pine Wood sebagai pusat kebersamaan ruang makan rumah atau hospitality. Rangka kokoh dengan kaki stabil dan permukaan meja berlapisan NC Lacquer yang tahan tumpahan serta mudah dibersihkan.", "img": "assets/showcase/showcase_03.jpeg", "remote_img": "https://uwitan.id/wp-content/uploads/2025/11/IMG_0203-01-min.jpeg"}, {"id": 4, "title": "Alana Island Table", "series": "Kitchen & Pantry Collection", "category": "Dining & Cafe", "dimensions": "160 × 75 × 90 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Full Assembly", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.500.000 - Rp 6.800.000", "description": "Alana Island Table dengan dimensi 160 × 75 × 90 cm. Pilihan ideal sebagai meja aksen pendamping sofa, koridor foyer, maupun bedside table. Mengedepankan siluet proporsional dari material Pine Wood yang diperhalus melalui proses finishing NC Lacquer berkualitas workshop Jepara.", "img": "assets/showcase/showcase_04.jpeg", "remote_img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_7196-min.jpeg"}, {"id": 5, "title": "Sintesa Bistro Chair", "series": "Bespoke Seating Series", "category": "Dining & Cafe", "dimensions": "48 × 52 × 90 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 850.000 - Rp 1.450.000", "description": "Tempat duduk ergonomis Sintesa Bistro Chair dirancang dengan perpaduan kenyamanan dan kekuatan struktur kayu solid. Dimensi 48 × 52 × 90 cm memberikan proporsi duduk yang proporsional untuk ruang tamu, sudut santai, maupun area komersial cafe. Sambungan rangka diperkuat konstruksi kayu presisi dengan sentuhan finishing NC Lacquer yang menonjolkan keaslian material Rattan.", "img": "assets/showcase/showcase_05.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2020/11/furniture-sintesa-bistro-chair-1.jpg"}, {"id": 6, "title": "Salami Stool - Bangku Makan Minimalis", "series": "Bar & Dining Seating", "category": "Dining & Cafe", "dimensions": "29 × 29 × 44 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 650.000 - Rp 950.000", "description": "Tempat duduk ergonomis Salami Stool  -  Bangku Makan Minimalis dirancang dengan perpaduan kenyamanan dan kekuatan struktur kayu solid. Dimensi 29 × 29 × 44 cm memberikan proporsi duduk yang proporsional untuk ruang tamu, sudut santai, maupun area komersial cafe. Sambungan rangka diperkuat konstruksi kayu presisi dengan sentuhan finishing NC Lacquer yang menonjolkan keaslian material Pine Wood.", "img": "assets/showcase/showcase_06.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2019/01/1-Furniture-Salami-Stool-Uwitan.jpg"}, {"id": 7, "title": "Cakra Arm Chair 3 Seater", "series": "Tropical Villa Collection", "category": "Living & Lounge", "dimensions": "165 × 60 × 79 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 5.500.000 - Rp 7.800.000", "description": "Tempat duduk ergonomis Cakra Arm Chair 3 Seater dirancang dengan perpaduan kenyamanan dan kekuatan struktur kayu solid. Dimensi 165 × 60 × 79 cm memberikan proporsi duduk yang proporsional untuk ruang tamu, sudut santai, maupun area komersial cafe. Sambungan rangka diperkuat konstruksi kayu presisi dengan sentuhan finishing NC Lacquer yang menonjolkan keaslian material Foam, Rattan.", "img": "assets/showcase/showcase_07.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2019/01/SAM9546.jpg"}, {"id": 8, "title": "Cakra Arm Chair 1 Seater", "series": "Accent Seating Collection", "category": "Living & Lounge", "dimensions": "60 × 60 × 79 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 1.750.000 - Rp 2.650.000", "description": "Tempat duduk ergonomis Cakra Arm Chair 1 Seater dirancang dengan perpaduan kenyamanan dan kekuatan struktur kayu solid. Dimensi 60 × 60 × 79 cm memberikan proporsi duduk yang proporsional untuk ruang tamu, sudut santai, maupun area komersial cafe. Sambungan rangka diperkuat konstruksi kayu presisi dengan sentuhan finishing NC Lacquer yang menonjolkan keaslian material Foam, Rattan.", "img": "assets/showcase/showcase_08.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2018/01/1-furniture-kursi-cakra-arm-chair.jpg"}, {"id": 9, "title": "Bench Industrial Black", "series": "Entryway Function Series", "category": "Living & Lounge", "dimensions": "80 × 30 × 50 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 1.450.000 - Rp 2.200.000", "description": "Tempat duduk ergonomis Bench Industrial Black dirancang dengan perpaduan kenyamanan dan kekuatan struktur kayu solid. Dimensi 80 × 30 × 50 cm memberikan proporsi duduk yang proporsional untuk ruang tamu, sudut santai, maupun area komersial cafe. Sambungan rangka diperkuat konstruksi kayu presisi dengan sentuhan finishing NC Lacquer yang menonjolkan keaslian material Metal, Pine Wood.", "img": "assets/showcase/showcase_09.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2017/12/1.-Furniture-Bench-Bench-Industrial-Black.jpg"}, {"id": 10, "title": "Bench Sponge L Cream", "series": "Comfort Bench Series", "category": "Living & Lounge", "dimensions": "130 × 32 × 45 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 1.850.000 - Rp 2.800.000", "description": "Tempat duduk ergonomis Bench Sponge L Cream dirancang dengan perpaduan kenyamanan dan kekuatan struktur kayu solid. Dimensi 130 × 32 × 45 cm memberikan proporsi duduk yang proporsional untuk ruang tamu, sudut santai, maupun area komersial cafe. Sambungan rangka diperkuat konstruksi kayu presisi dengan sentuhan finishing NC Lacquer yang menonjolkan keaslian material Pine Wood, Premium Sponge.", "img": "assets/showcase/showcase_10.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2018/06/1.-Furniture-Bench-Bench-Sponge-L-Cream.jpg"}, {"id": 11, "title": "Ayem Coffee Table", "series": "Living Accent Masterpiece", "category": "Living & Lounge", "dimensions": "99,5 × 50 × 50,5 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Full Assembly", "lead_time": "2 - 3 Minggu", "price_range": "Rp 1.850.000 - Rp 2.750.000", "description": "Ayem Coffee Table dengan dimensi 99,5 × 50 × 50,5 cm. Pilihan ideal sebagai meja aksen pendamping sofa, koridor foyer, maupun bedside table. Mengedepankan siluet proporsional dari material Pine Wood yang diperhalus melalui proses finishing NC Lacquer berkualitas workshop Jepara.", "img": "assets/showcase/showcase_11.jpeg", "remote_img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_6879-min.jpeg"}, {"id": 12, "title": "Cakra Arm Chair 2 Seater", "series": "Villa Veranda Series", "category": "Living & Lounge", "dimensions": "115 × 60 × 79 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 3.800.000 - Rp 5.200.000", "description": "Tempat duduk ergonomis Cakra Arm Chair 2 Seater dirancang dengan perpaduan kenyamanan dan kekuatan struktur kayu solid. Dimensi 115 × 60 × 79 cm memberikan proporsi duduk yang proporsional untuk ruang tamu, sudut santai, maupun area komersial cafe. Sambungan rangka diperkuat konstruksi kayu presisi dengan sentuhan finishing NC Lacquer yang menonjolkan keaslian material Foam, Rattan.", "img": "assets/showcase/showcase_12.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2019/01/furniture-kursi-cakra-arm-chair-1.jpg"}, {"id": 13, "title": "Jerujen Bed 160", "series": "Master Suite Bedroom", "category": "Kamar Tidur", "dimensions": "160 × 200 × 85 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 5.800.000 - Rp 8.500.000", "description": "Rangka tempat tidur Jerujen Bed 160 berukuran 160 × 200 × 85 cm. Dibuat dari material Pine Wood oven kering dengan sambungan pasak tradisional anti-derit untuk kenyamanan istirahat maksimal. Finishing NC Lacquer memberikan ketahanan jangka panjang dan nuansa kamar tidur yang menenangkan.", "img": "assets/showcase/showcase_13.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2023/05/DSC02966-scaled.jpg"}, {"id": 14, "title": "Alana Bed 3 Drawer 160", "series": "Storage Bedframe Collection", "category": "Kamar Tidur", "dimensions": "205 × 165 × 25 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 6.200.000 - Rp 8.900.000", "description": "Alana Bed 3 Drawer 160 berdimensi 205 × 165 × 25 cm dengan susunan laci penyimpanan praktis untuk merapikan pakaian, berkas, atau perlengkapan rumah. Struktur rangka Pine Wood yang stabil dengan tarikan ergonomis dan lapisan pelindung NC Lacquer.", "img": "assets/showcase/showcase_14.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2019/10/1-Furniture-Dipan-Alana-Bed-3-Drawer-160.jpg"}, {"id": 15, "title": "Salami Sofa Bed Headboard & Arm", "series": "Daybed Lounger Suite", "category": "Kamar Tidur", "dimensions": "165 × 80 × 50 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Full Assembly", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.900.000 - Rp 6.800.000", "description": "Tempat duduk ergonomis Salami Sofa Bed Headboard & Arm dirancang dengan perpaduan kenyamanan dan kekuatan struktur kayu solid. Dimensi 165 × 80 × 50 cm memberikan proporsi duduk yang proporsional untuk ruang tamu, sudut santai, maupun area komersial cafe. Sambungan rangka diperkuat konstruksi kayu presisi dengan sentuhan finishing NC Lacquer yang menonjolkan keaslian material Pine Wood.", "img": "assets/showcase/showcase_15.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2023/03/IMG_5801-scaled.jpg"}, {"id": 16, "title": "Alana Wardrobe Pintu Kaca", "series": "Master Wardrobe Series", "category": "Kamar Tidur", "dimensions": "80 × 50 × 200 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 8.500.000 - Rp 14.500.000", "description": "Unit penyimpanan Alana Wardrobe Pintu Kaca berukuran 80 × 50 × 200 cm. Dirancang untuk mengoptimalkan kerapian ruangan tanpa memakan banyak tempat. Kompartemen penyimpanan presisi berbahan Pine Wood, Plywood dengan engsel dan rel berkualitas, dilapisi finishing NC Lacquer yang melindungi kayu dari kelembapan.", "img": "assets/showcase/showcase_16.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2020/03/1-furniture-lemari-alana-wardrobe-2-pintu-kaca.jpg"}, {"id": 17, "title": "Minima Dressing Table - Meja Rias Minimalis", "series": "Vanity Dressing Suite", "category": "Kamar Tidur", "dimensions": "70 × 36 × 126 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Full Assembly", "lead_time": "2 - 3 Minggu", "price_range": "Rp 2.800.000 - Rp 4.100.000", "description": "Minima Dressing Table  -  Meja Rias Minimalis dengan dimensi 70 × 36 × 126 cm. Pilihan ideal sebagai meja aksen pendamping sofa, koridor foyer, maupun bedside table. Mengedepankan siluet proporsional dari material Pine Wood yang diperhalus melalui proses finishing NC Lacquer berkualitas workshop Jepara.", "img": "assets/showcase/showcase_17.jpeg", "remote_img": "https://uwitan.id/wp-content/uploads/2024/08/1000103841-01-min.jpeg"}, {"id": 18, "title": "Ona Putar Standing Mirror", "series": "Architectural Mirror Series", "category": "Kamar Tidur", "dimensions": "45,5 × 45,5 × 173 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Full Assembly", "lead_time": "2 - 3 Minggu", "price_range": "Rp 1.450.000 - Rp 2.100.000", "description": "Rak penyimpanan terbuka Ona Putar Standing Mirror (dimensi 45,5 × 45,5 × 173 cm) yang memudahkan display buku, tanaman hias, maupun dekorasi interior. Struktur rangka Cermin, Pine Wood kokoh dengan finishing NC Lacquer, memberikan kesan ruangan yang lebih lapang dan tertata estetik.", "img": "assets/showcase/showcase_18.png", "remote_img": "https://uwitan.id/wp-content/uploads/2024/11/WhatsApp-Image-2024-10-31-at-2.49.17-PM.png"}, {"id": 19, "title": "Salami Meja Kerja 2 Laci Natural", "series": "Executive Workspace Collection", "category": "Ruang Kerja", "dimensions": "140 × 45 × 75 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.200.000 - Rp 6.200.000", "description": "Meja kerja Salami Meja Kerja 2 Laci Natural berdimensi 140 × 45 × 75 cm yang fungsional dan lapang untuk produktivitas harian. Dirancang dengan garis desain bersih bergaya minimalis modern, memudahkan penataan perangkat kerja, laptop, dan dokumen. Menggunakan bahan Pine Wood berkualitas oven kering dengan proteksi finishing NC Lacquer yang halus dan tahan gores.", "img": "assets/showcase/showcase_19.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2020/06/1-Furnitiure-Salami-Meja-Kerja-2-Laci-Natural.jpg"}, {"id": 20, "title": "Sejen Bookshelf", "series": "Library & Display Storage", "category": "Ruang Kerja", "dimensions": "42 × 42 × 180 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Full Assembly", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.800.000 - Rp 7.200.000", "description": "Rak penyimpanan terbuka Sejen Bookshelf (dimensi 42 × 42 × 180 cm) yang memudahkan display buku, tanaman hias, maupun dekorasi interior. Struktur rangka Pine Wood kokoh dengan finishing NC Lacquer, memberikan kesan ruangan yang lebih lapang dan tertata estetik.", "img": "assets/showcase/showcase_20.jpeg", "remote_img": "https://uwitan.id/wp-content/uploads/2025/08/20250820142546_IMG_7207-min.jpeg"}, {"id": 21, "title": "Harumi Credenza", "series": "Modern Living Cabinetry", "category": "Ruang Kerja", "dimensions": "80 × 35 × 95 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Full Assembly", "lead_time": "2 - 3 Minggu", "price_range": "Rp 3.800.000 - Rp 5.500.000", "description": "Unit penyimpanan Harumi Credenza berukuran 80 × 35 × 95 cm. Dirancang untuk mengoptimalkan kerapian ruangan tanpa memakan banyak tempat. Kompartemen penyimpanan presisi berbahan Pine Wood, Plywood, Rattan dengan engsel dan rel berkualitas, dilapisi finishing NC Lacquer yang melindungi kayu dari kelembapan.", "img": "assets/showcase/showcase_21.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2021/09/Furniture-Harumi-Cabinet-02.jpg"}, {"id": 22, "title": "Chest 4 Drawer", "series": "Office Storage Series", "category": "Ruang Kerja", "dimensions": "41 × 33 × 102 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.200.000 - Rp 6.100.000", "description": "Chest 4 Drawer berdimensi 41 × 33 × 102 cm dengan susunan laci penyimpanan praktis untuk merapikan pakaian, berkas, atau perlengkapan rumah. Struktur rangka Pine Wood, Rattan yang stabil dengan tarikan ergonomis dan lapisan pelindung NC Lacquer.", "img": "assets/showcase/showcase_22.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2025/12/20220609-CHO09560-2-scaled.jpg"}, {"id": 23, "title": "Koru Shoe Cabinet - Lemari Sepatu Besar Minimalis", "series": "Foyer Storage Architecture", "category": "Ruang Kerja", "dimensions": "50 × 30 × 137 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Full Assembly", "lead_time": "2 - 3 Minggu", "price_range": "Rp 4.500.000 - Rp 6.500.000", "description": "Unit penyimpanan Koru Shoe Cabinet  -  Lemari Sepatu Besar Minimalis berukuran 50 × 30 × 137 cm. Dirancang untuk mengoptimalkan kerapian ruangan tanpa memakan banyak tempat. Kompartemen penyimpanan presisi berbahan Pine Wood dengan engsel dan rel berkualitas, dilapisi finishing NC Lacquer yang melindungi kayu dari kelembapan.", "img": "assets/showcase/showcase_23.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2023/11/CHO09962-scaled.jpg"}, {"id": 24, "title": "Ladder Shelf Natural", "series": "Vertical Display Series", "category": "Ruang Kerja", "dimensions": "41,5 × 43 × 75 cm", "material": "Kayu Jati Solid TPK (Kiln-Dried Oven MC < 12%)", "finishing": "NC Lacquer", "construction": "Assembled / Knockdown", "lead_time": "2 - 3 Minggu", "price_range": "Rp 1.650.000 - Rp 2.400.000", "description": "Rak penyimpanan terbuka Ladder Shelf Natural (dimensi 41,5 × 43 × 75 cm) yang memudahkan display buku, tanaman hias, maupun dekorasi interior. Struktur rangka Pine Wood kokoh dengan finishing NC Lacquer, memberikan kesan ruangan yang lebih lapang dan tertata estetik.", "img": "assets/showcase/showcase_24.jpg", "remote_img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_5590-scaled.jpg"}];
     let activeSpace = 'Semua';
 
+    // Mobile Menu Controls
+    function toggleMobileMenu() {
+      const panel = document.getElementById('mobileNavPanel');
+      const isOpen = panel.classList.toggle('open');
+      document.querySelector('.menu-open-icon').style.display = isOpen ? 'none' : 'block';
+      document.querySelector('.menu-close-icon').style.display = isOpen ? 'block' : 'none';
+      document.getElementById('menuToggleBtn').setAttribute('aria-expanded', isOpen);
+    }
+
+    function closeMobileMenu() {
+      const panel = document.getElementById('mobileNavPanel');
+      if (panel) {
+        panel.classList.remove('open');
+        document.querySelector('.menu-open-icon').style.display = 'block';
+        document.querySelector('.menu-close-icon').style.display = 'none';
+        document.getElementById('menuToggleBtn').setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    // Close mobile menu on outside click
+    document.addEventListener('click', (e) => {
+      const header = document.querySelector('.site-header');
+      if (header && !header.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Space Filter
     function filterSpace(space) {
       activeSpace = space;
       document.querySelectorAll('.filter-pill').forEach(btn => {
@@ -1757,11 +1924,15 @@
       if (document.getElementById('showcaseModal').classList.contains('active')) {
         document.getElementById('showcaseModal').classList.remove('active');
       }
+      closeMobileMenu();
     });
 
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && document.getElementById('showcaseModal').classList.contains('active')) {
-        closeShowcaseDetail();
+      if (e.key === 'Escape') {
+        if (document.getElementById('showcaseModal').classList.contains('active')) {
+          closeShowcaseDetail();
+        }
+        closeMobileMenu();
       }
     });
 
