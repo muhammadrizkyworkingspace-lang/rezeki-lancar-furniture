@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://muhammadrizkyworkingspace-lang.github.io/rezeki-lancar-furniture/sitemap.xml
