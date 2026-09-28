@@ -1,0 +1,1404 @@
+import json, os, html
+
+repo_dir = '/home/azureuser/rezeki-lancar-repo'
+
+with open(os.path.join(repo_dir, 'katalog_data.json'), 'r', encoding='utf-8') as f:
+    compact_data = json.load(f)
+
+# First 16 items embedded directly in JS as fallback so clicks ALWAYS work instantly
+first_16 = compact_data[:16]
+first_16_json = json.dumps(first_16, ensure_ascii=False)
+
+initial_16_html = ""
+for item in first_16:
+    initial_16_html += f'''
+    <article class="product-card" onclick="openProductDetail({item['id']})" role="button" tabindex="0" aria-label="{html.escape(item['t'])}">
+      <div class="card-media">
+        <img src="{item['img']}" alt="{html.escape(item['t'])}" loading="lazy" decoding="async" />
+        <span class="card-badge">{html.escape(item['c'])}</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">{html.escape(item['t'])}</h3>
+        <p class="card-dim">📐 {html.escape(item['d'])}</p>
+        <div class="card-action-row">
+          <span class="card-price">{item['p']}</span>
+          <span class="card-cta">Detail &amp; Custom →</span>
+        </div>
+      </div>
+    </article>
+    '''
+
+redesigned_html = f'''<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Rezeki Lancar — Bengkel Mebel Kayu Solid & Mitra Produksi Interior Jepara</title>
+  <meta name="description" content="Bengkel mebel kayu solid di Jepara. Menerima eksekusi gambar kerja CAD/3D untuk arsitek & desainer interior. Kayu oven kiln-dried garansi MC < 12%." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       ARCHITECTURAL ATELIER DESIGN SYSTEM — REZEKI LANCAR JEPARA
+       Mobile-First, Zero Bloat, Zero Slop, 60fps Native Touch Experience
+       ========================================================================== */
+    
+    *, *::before, *::after {{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }}
+
+    :root {{
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --surface-subtle: #f4efe9;
+      --text: #171513;
+      --text-muted: #66615b;
+      --text-light: #948d85;
+      --border: #e6e0d8;
+      --border-dark: #cfc7bc;
+      --accent: #78350f;
+      --accent-hover: #54240a;
+      --dark-surface: #1f1b18;
+      --dark-text: #ede7e1;
+      --dark-muted: #a69e95;
+      
+      --font-display: "Playfair Display", Georgia, serif;
+      --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+    }}
+
+    html {{
+      width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }}
+
+    body {{
+      width: 100%;
+      overflow-x: hidden;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      touch-action: manipulation;
+    }}
+
+    a {{ color: inherit; text-decoration: none; }}
+    button {{ font-family: inherit; cursor: pointer; border: none; background: none; }}
+    img {{ display: block; width: 100%; height: auto; }}
+
+    .container {{
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }}
+    @media (min-width: 768px) {{
+      .container {{ padding: 0 28px; }}
+    }}
+
+    /* Top Strip */
+    .top-strip {{
+      background: #2b180d;
+      color: #fef3c7;
+      font-size: 11px;
+      font-weight: 500;
+      text-align: center;
+      padding: 8px 14px;
+      letter-spacing: 0.4px;
+      line-height: 1.4;
+    }}
+
+    /* Header Nav */
+    header.site-header {{
+      background: rgba(250, 248, 245, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      width: 100%;
+    }}
+    .header-inner {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }}
+    @media (min-width: 768px) {{
+      .header-inner {{ height: 72px; }}
+    }}
+
+    .brand-group {{
+      display: flex;
+      flex-direction: column;
+    }}
+    .brand-logo {{
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      line-height: 1.1;
+    }}
+    @media (min-width: 768px) {{
+      .brand-logo {{ font-size: 22px; }}
+    }}
+    .brand-subline {{
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-top: 1px;
+    }}
+
+    .nav-actions {{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }}
+    .desktop-links {{
+      display: none;
+      align-items: center;
+      gap: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }}
+    @media (min-width: 768px) {{
+      .desktop-links {{ display: flex; }}
+    }}
+    .desktop-links a:hover {{ color: var(--accent); }}
+
+    .btn-cta-nav {{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--text);
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background 0.15s, transform 0.1s;
+    }}
+    .btn-cta-nav:active {{ transform: scale(0.96); }}
+    @media (min-width: 768px) {{
+      .btn-cta-nav {{ padding: 9px 18px; font-size: 12px; }}
+      .btn-cta-nav:hover {{ background: var(--accent); }}
+    }}
+
+    /* Hero Section */
+    .hero-section {{
+      padding: 40px 0 32px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(244, 239, 233, 0.4) 0%, rgba(250, 248, 245, 1) 100%);
+    }}
+    @media (min-width: 768px) {{
+      .hero-section {{ padding: 72px 0 54px; }}
+    }}
+
+    .hero-eyebrow {{
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }}
+    .hero-eyebrow::before {{
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 1px;
+      background: var(--accent);
+    }}
+
+    .hero-headline {{
+      font-family: var(--font-display);
+      font-size: clamp(26px, 5.5vw, 50px);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      max-width: 900px;
+      margin-bottom: 20px;
+    }}
+    .hero-headline em {{
+      font-style: italic;
+      color: var(--accent);
+    }}
+
+    .hero-description {{
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-muted);
+      max-width: 680px;
+    }}
+    @media (min-width: 768px) {{
+      .hero-description {{ font-size: 16px; }}
+    }}
+
+    /* Metrics Strip */
+    .metrics-bar {{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 12px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }}
+    @media (min-width: 768px) {{
+      .metrics-bar {{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        padding: 32px 0;
+      }}
+    }}
+
+    .metric-cell {{
+      border-left: 2px solid var(--accent);
+      padding-left: 12px;
+    }}
+    @media (min-width: 768px) {{
+      .metric-cell {{ padding-left: 16px; }}
+    }}
+    .metric-value {{
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+    }}
+    @media (min-width: 768px) {{
+      .metric-value {{ font-size: 24px; }}
+    }}
+    .metric-caption {{
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 4px;
+      line-height: 1.3;
+    }}
+    @media (min-width: 768px) {{
+      .metric-caption {{ font-size: 11px; }}
+    }}
+
+    /* Company Profile & Atelier Section */
+    .about-section {{
+      padding: 44px 0;
+      border-bottom: 1px solid var(--border);
+    }}
+    @media (min-width: 768px) {{
+      .about-section {{ padding: 64px 0; }}
+    }}
+
+    .about-layout {{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }}
+    @media (min-width: 880px) {{
+      .about-layout {{
+        grid-template-columns: 1.2fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }}
+    }}
+
+    .section-tag {{
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }}
+
+    .about-title {{
+      font-family: var(--font-display);
+      font-size: 22px;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 16px;
+    }}
+    @media (min-width: 768px) {{
+      .about-title {{ font-size: 28px; }}
+    }}
+
+    .about-text-lead {{
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }}
+
+    .about-text-body {{
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 20px;
+    }}
+
+    .guarantee-badges {{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }}
+    .guarantee-item {{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.5;
+    }}
+    .guarantee-icon {{
+      color: #15803d;
+      font-weight: 800;
+      font-size: 15px;
+      line-height: 1;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }}
+
+    /* Capabilities Box */
+    .capabilities-box {{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }}
+    @media (min-width: 768px) {{
+      .capabilities-box {{ padding: 32px 28px; }}
+    }}
+
+    .capabilities-header {{
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }}
+
+    .capability-row {{
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--surface-subtle);
+    }}
+    @media (min-width: 480px) {{
+      .capability-row {{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }}
+    }}
+    .capability-row:last-child {{ border-bottom: none; }}
+    .cap-label {{
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      font-weight: 600;
+    }}
+    .cap-value {{
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }}
+    @media (min-width: 480px) {{
+      .cap-value {{ text-align: right; }}
+    }}
+
+    /* Catalog Section */
+    .catalog-section {{
+      padding: 44px 0 60px;
+    }}
+    @media (min-width: 768px) {{
+      .catalog-section {{ padding: 64px 0 80px; }}
+    }}
+
+    .catalog-title {{
+      font-family: var(--font-display);
+      font-size: 24px;
+      letter-spacing: -0.5px;
+    }}
+    @media (min-width: 768px) {{
+      .catalog-title {{ font-size: 32px; }}
+    }}
+    .catalog-subtitle {{
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }}
+
+    /* Search & Filters */
+    .search-bar-wrap {{
+      position: relative;
+      margin: 20px 0 12px;
+    }}
+    .search-input-field {{
+      width: 100%;
+      padding: 12px 16px 12px 42px;
+      font-size: 14px;
+      font-family: var(--font-sans);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }}
+    .search-input-field:focus {{
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(120, 53, 15, 0.08);
+    }}
+    .search-icon {{
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
+    }}
+
+    .category-pills {{
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }}
+    .category-pills::-webkit-scrollbar {{ display: none; }}
+
+    .pill-btn {{
+      font-size: 12px;
+      font-weight: 600;
+      padding: 7px 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 30px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }}
+    .pill-btn:active {{ transform: scale(0.95); }}
+    .pill-btn.active {{
+      background: var(--text);
+      color: #ffffff;
+      border-color: var(--text);
+    }}
+
+    .catalog-meta-info {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 16px 0;
+    }}
+    .catalog-meta-info strong {{ color: var(--text); }}
+
+    /* Product Grid */
+    .product-grid {{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }}
+    @media (min-width: 640px) {{
+      .product-grid {{ gap: 18px; }}
+    }}
+    @media (min-width: 768px) {{
+      .product-grid {{ grid-template-columns: repeat(3, 1fr); gap: 22px; }}
+    }}
+    @media (min-width: 1024px) {{
+      .product-grid {{ grid-template-columns: repeat(4, 1fr); gap: 24px; }}
+    }}
+
+    .product-card {{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.15s, box-shadow 0.15s;
+    }}
+    .product-card:active {{
+      transform: scale(0.97);
+    }}
+    @media (hover: hover) {{
+      .product-card:hover {{
+        border-color: var(--border-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      }}
+    }}
+
+    .card-media {{
+      aspect-ratio: 1/1;
+      background: var(--surface-subtle);
+      position: relative;
+      overflow: hidden;
+    }}
+    .card-media img {{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }}
+    @media (hover: hover) {{
+      .product-card:hover .card-media img {{
+        transform: scale(1.04);
+      }}
+    }}
+    .card-badge {{
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(0,0,0,0.06);
+    }}
+
+    .card-content {{
+      padding: 12px 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }}
+    @media (min-width: 640px) {{
+      .card-content {{ padding: 14px 16px; }}
+    }}
+
+    .card-title {{
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--text);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 35px;
+    }}
+    @media (min-width: 640px) {{
+      .card-title {{ font-size: 15px; min-height: 40px; }}
+    }}
+
+    .card-dim {{
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }}
+
+    .card-action-row {{
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid var(--surface-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }}
+    .card-price {{
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text);
+    }}
+    @media (min-width: 640px) {{
+      .card-price {{ font-size: 12px; }}
+    }}
+    .card-cta {{
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }}
+
+    .load-more-container {{
+      text-align: center;
+      margin: 36px 0 0;
+    }}
+    .btn-load-more {{
+      display: inline-block;
+      background: var(--text);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 12px 32px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      transition: background 0.15s, transform 0.1s;
+    }}
+    .btn-load-more:active {{ transform: scale(0.96); }}
+    .btn-load-more:hover {{ background: var(--accent); }}
+
+    /* Workflow Section */
+    .workflow-section {{
+      background: var(--dark-surface);
+      color: var(--dark-text);
+      padding: 56px 0;
+    }}
+    @media (min-width: 768px) {{
+      .workflow-section {{ padding: 76px 0; }}
+    }}
+
+    .workflow-header {{
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 40px;
+    }}
+    .workflow-tag {{
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c4976c;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }}
+    .workflow-title {{
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }}
+    @media (min-width: 768px) {{
+      .workflow-title {{ font-size: 32px; }}
+    }}
+    .workflow-desc {{
+      font-size: 13px;
+      color: var(--dark-muted);
+      line-height: 1.6;
+    }}
+
+    .workflow-grid {{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }}
+    @media (min-width: 640px) {{
+      .workflow-grid {{ grid-template-columns: repeat(2, 1fr); gap: 20px; }}
+    }}
+    @media (min-width: 992px) {{
+      .workflow-grid {{ grid-template-columns: repeat(4, 1fr); gap: 24px; }}
+    }}
+
+    .workflow-card {{
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 24px 20px;
+    }}
+    .step-number {{
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      color: #c4976c;
+      margin-bottom: 8px;
+      line-height: 1;
+    }}
+    .step-title {{
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }}
+    .step-description {{
+      font-size: 12px;
+      color: var(--dark-muted);
+      line-height: 1.6;
+    }}
+
+    /* Footer */
+    footer.site-footer {{
+      border-top: 1px solid var(--border);
+      padding: 48px 0 32px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }}
+    .footer-grid {{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-bottom: 36px;
+    }}
+    @media (min-width: 768px) {{
+      .footer-grid {{ grid-template-columns: 2fr 1fr 1fr; gap: 40px; }}
+    }}
+
+    .footer-brand {{
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }}
+    .footer-block-title {{
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+    }}
+
+    /* Bottom Sheet / Detail Modal */
+    .sheet-backdrop {{
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 15, 13, 0.7);
+      backdrop-filter: blur(6px);
+      z-index: 100;
+      align-items: flex-end;
+      justify-content: center;
+    }}
+    .sheet-backdrop.active {{ display: flex; }}
+    @media (min-width: 768px) {{
+      .sheet-backdrop {{ align-items: center; padding: 24px; }}
+    }}
+
+    .sheet-container {{
+      background: #ffffff;
+      width: 100%;
+      max-height: 90vh;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      animation: sheetUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.12);
+    }}
+    @media (min-width: 768px) {{
+      .sheet-container {{
+        max-width: 640px;
+        border-radius: var(--radius-md);
+        max-height: 86vh;
+        animation: fadeIn 0.2s ease-out;
+      }}
+    }}
+    @keyframes sheetUp {{
+      from {{ transform: translateY(100%); }}
+      to {{ transform: translateY(0); }}
+    }}
+    @keyframes fadeIn {{
+      from {{ opacity: 0; transform: scale(0.98); }}
+      to {{ opacity: 1; transform: scale(1); }}
+    }}
+
+    .sheet-drag-handle {{
+      width: 36px;
+      height: 4px;
+      background: #e2ddd6;
+      border-radius: 2px;
+      margin: 10px auto 4px;
+    }}
+    @media (min-width: 768px) {{
+      .sheet-drag-handle {{ display: none; }}
+    }}
+
+    .sheet-header-bar {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+    }}
+    @media (min-width: 768px) {{
+      .sheet-header-bar {{ padding: 16px 24px; }}
+    }}
+
+    .btn-sheet-close {{
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }}
+
+    .sheet-content-scroll {{
+      overflow-y: auto;
+      padding: 16px 18px 24px;
+      -webkit-overflow-scrolling: touch;
+    }}
+    @media (min-width: 768px) {{
+      .sheet-content-scroll {{ padding: 24px; }}
+    }}
+
+    .sheet-image-frame {{
+      aspect-ratio: 4/3;
+      background: var(--surface-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }}
+    .sheet-image-frame img {{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }}
+
+    .sheet-category-badge {{
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }}
+    .sheet-product-title {{
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--text);
+      margin: 4px 0 6px;
+    }}
+    @media (min-width: 768px) {{
+      .sheet-product-title {{ font-size: 24px; }}
+    }}
+
+    .sheet-product-price {{
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }}
+
+    .sheet-spec-grid {{
+      background: var(--surface-subtle);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      font-size: 12px;
+    }}
+    .sheet-spec-item {{
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }}
+    .sheet-spec-item:last-child {{ border-bottom: none; }}
+    .spec-key {{ color: var(--text-muted); font-weight: 500; }}
+    .spec-val {{ color: var(--text); font-weight: 700; text-align: right; }}
+
+    .sheet-description {{
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }}
+
+    .btn-sheet-whatsapp {{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      background: var(--text);
+      color: #ffffff;
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: background 0.15s, transform 0.1s;
+    }}
+    .btn-sheet-whatsapp:active {{ transform: scale(0.98); }}
+    .btn-sheet-whatsapp:hover {{ background: var(--accent); }}
+
+    .sheet-permalink {{
+      display: block;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-light);
+      margin-top: 10px;
+      text-decoration: underline;
+    }}
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-strip" role="complementary">
+    JEPARA WOODWORKS • KAYU OVEN KILN-DRIED (MC &lt; 12%) • REKANAN PRODUKSI GAMBAR CAD &amp; 3D
+  </aside>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-group">
+        <span class="brand-logo">Rezeki Lancar</span>
+        <span class="brand-subline">Atelier Mebel Jepara</span>
+      </a>
+
+      <div class="nav-actions">
+        <nav class="desktop-links" aria-label="Menu Utama">
+          <a href="#tentang">Tentang Bengkel</a>
+          <a href="#katalog">Katalog (500)</a>
+          <a href="#kerjasama">Mitra Arsitek</a>
+        </nav>
+        <a href="https://wa.me/6281234567890?text=Halo%20Rezeki%20Lancar%2C%20saya%20mau%20konsultasi%20produksi%20mebel" target="_blank" class="btn-cta-nav">
+          <span>Konsultasi WA</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-eyebrow">Workshop Mebel Solid Jepara</div>
+      <h1 class="hero-headline">
+        Menerjemahkan visi ruang arsitek ke dalam <em>keaslian kayu solid</em> dengan presisi tukang Jepara.
+      </h1>
+      <p class="hero-description">
+        Rezeki Lancar adalah bengkel manufaktur mebel kayu solid di Jepara. Kami berfokus pada eksekusi loose furniture dan custom carpentry berkualitas tinggi untuk proyek arsitektur, residensial mewah, villa, dan cafe.
+      </p>
+    </div>
+  </section>
+
+  <!-- Metrics Bar -->
+  <section class="container">
+    <div class="metrics-bar">
+      <div class="metric-cell">
+        <div class="metric-value">&lt; 12% MC</div>
+        <div class="metric-caption">Kiln-Dried Oven Moisture</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-value">Mortise &amp; Tenon</div>
+        <div class="metric-caption">Konstruksi Pasak Tradisional</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-value">Jati &amp; Mindi</div>
+        <div class="metric-caption">Kayu Legal Perhutani Terkurasi</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-value">1x24 Jam</div>
+        <div class="metric-caption">Estimasi RAB Gambar CAD / 3D</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Atelier Section (Clean, Scannable, Responsive) -->
+  <section class="about-section" id="tentang">
+    <div class="container">
+      <div class="about-layout">
+        <div>
+          <span class="section-tag">Profil Bengkel &amp; Etos Mutu</span>
+          <h2 class="about-title">Bukan makelar retail. Kami bertumpu pada kayu yang benar dan tukang yang terlatih.</h2>
+          
+          <p class="about-text-lead">
+            Banyak desainer interior dan arsitek kecewa dengan mebel asal Jepara akibat kayu basah yang melengkung setelah 3 bulan di ruang ber-AC, sambungan yang hanya dipaku tembak, serta komunikasi bengkel yang tidak disiplin membaca gambar kerja arsitektur.
+          </p>
+
+          <p class="about-text-body">
+            Rezeki Lancar didirikan untuk menyelesaikan kendala tersebut. Kami mengawinkan keahlian tangan tradisional ukir &amp; pasak kayu Jepara dengan disiplin kontrol mutu modern: kayu oven kering terukur (MC &lt; 12%), pelaporan progres bertahap, dan kepatuhan dimensi gambar kerja AutoCAD maupun 3D SketchUp.
+          </p>
+
+          <div class="guarantee-badges">
+            <div class="guarantee-item">
+              <span class="guarantee-icon">✓</span>
+              <div><strong>Kayu Oven Terukur:</strong> Ruang pengering chamber kiln-dried garansi MC &lt; 12% anti-retak di ruangan ber-AC.</div>
+            </div>
+            <div class="guarantee-item">
+              <span class="guarantee-icon">✓</span>
+              <div><strong>Konstruksi Pasak Kayu:</strong> Sambungan purus mortise &amp; tenon kokoh tanpa mengandalkan paku tembak ringkih.</div>
+            </div>
+            <div class="guarantee-item">
+              <span class="guarantee-icon">✓</span>
+              <div><strong>Presisi Gambar Kerja:</strong> Dikerjakan patuh dimensi AutoCAD &amp; 3D SketchUp arsitek.</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="capabilities-box">
+          <div class="capabilities-header">Standar Spesifikasi Workshop</div>
+          <div class="capability-row">
+            <span class="cap-label">Material Baku</span>
+            <span class="cap-value">Kayu Jati Solid, Mindi, Mahoni, Rotan</span>
+          </div>
+          <div class="capability-row">
+            <span class="cap-label">Perlakuan Kayu</span>
+            <span class="cap-value">Chemical Anti-Rayap &amp; Kiln-Dried</span>
+          </div>
+          <div class="capability-row">
+            <span class="cap-label">Standar Finishing</span>
+            <span class="cap-value">Polyurethane (PU), NC Matte, Oil</span>
+          </div>
+          <div class="capability-row">
+            <span class="cap-label">Kapasitas Proyek</span>
+            <span class="cap-value">Residensial, Cafe, Villa Bali</span>
+          </div>
+          <div class="capability-row">
+            <span class="cap-label">Proteksi Ekspedisi</span>
+            <span class="cap-value">Packing Peti Palet Kayu Tertutup</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete 500-Item Catalog Section -->
+  <section class="catalog-section" id="katalog">
+    <div class="container">
+      <div>
+        <span class="section-tag">Arsip Koleksi Lengkap</span>
+        <h2 class="catalog-title">Katalog 500 Karya Mebel Kayu Solid</h2>
+        <p class="catalog-subtitle">Setiap karya memiliki deskripsi fungsional unik dan dapat dikustomisasi dimensi, jenis kayu, maupun warnanya.</p>
+      </div>
+
+      <!-- Search Input -->
+      <div class="search-bar-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="search" 
+          id="searchInput" 
+          class="search-input-field" 
+          placeholder="Cari karya (contoh: meja kerja, sofa, bench, credenza, cermin)..."
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="category-pills" role="tablist">
+        <button class="pill-btn active" onclick="filterByCat('Semua')">Semua (500)</button>
+        <button class="pill-btn" onclick="filterByCat('Kursi & Sofa')">Kursi &amp; Sofa</button>
+        <button class="pill-btn" onclick="filterByCat('Meja & Konsol')">Meja &amp; Konsol</button>
+        <button class="pill-btn" onclick="filterByCat('Lemari & Storage')">Lemari &amp; Storage</button>
+        <button class="pill-btn" onclick="filterByCat('Rak & Display')">Rak &amp; Display</button>
+        <button class="pill-btn" onclick="filterByCat('Cermin & Dekorasi')">Cermin &amp; Dekorasi</button>
+      </div>
+
+      <!-- Meta Bar -->
+      <div class="catalog-meta-info">
+        <div>Menampilkan <strong id="shownCount">16</strong> dari <strong id="matchCount">500</strong> karya</div>
+        <div>*Tap karya untuk detail &amp; opsi custom</div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="product-grid" id="productGrid">{initial_16_html}</div>
+
+      <!-- Load More Button -->
+      <div class="load-more-container">
+        <button id="loadMoreBtn" class="btn-load-more" onclick="loadMoreProducts()">Muat 20 Karya Berikutnya ↓</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B Workflow for Architects -->
+  <section class="workflow-section" id="kerjasama">
+    <div class="container">
+      <div class="workflow-header">
+        <div class="workflow-tag">Mitra Eksekusi Produksi</div>
+        <h3 class="workflow-title">Bagaimana Kami Bekerja Bersama Arsitek</h3>
+        <p class="workflow-desc">Sistematis, transparan, dan terukur agar proyek interior Anda selesai tepat waktu dengan kualitas yang disetujui klien Anda.</p>
+      </div>
+
+      <div class="workflow-grid">
+        <div class="workflow-card">
+          <div class="step-number">01</div>
+          <h4 class="step-title">Kirim Gambar Kerja</h4>
+          <p class="step-description">Kirimkan file PDF, AutoCAD, atau 3D SketchUp denah furniture ruangan proyek Anda via WhatsApp atau email.</p>
+        </div>
+
+        <div class="workflow-card">
+          <div class="step-number">02</div>
+          <h4 class="step-title">RAB &amp; Sampel Kayu</h4>
+          <p class="step-description">Kami hitung penawaran harga workshop tangan pertama dalam 1x24 jam dan siapkan sampel finishing jika dibutuhkan.</p>
+        </div>
+
+        <div class="workflow-card">
+          <div class="step-number">03</div>
+          <h4 class="step-title">Laporan Progres Fisik</h4>
+          <p class="step-description">Kami kirimkan dokumentasi foto &amp; video di setiap fase: pemilihan kayu, assembling mentah, hingga proses finishing.</p>
+        </div>
+
+        <div class="workflow-card">
+          <div class="step-number">04</div>
+          <h4 class="step-title">QC &amp; Palet Kargo</h4>
+          <p class="step-description">Pemeriksaan ketat kadar air dan kehalusan sebelum dibungkus kardus tebal dan peti palet kayu menuju lokasi proyek.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Rezeki Lancar Furniture</div>
+          <p style="max-width: 420px; line-height: 1.7;">
+            Bengkel pengerjaan mebel kayu solid &amp; mitra manufaktur desainer interior. Berakar dari tradisi pertukangan kayu Jepara, Jawa Tengah.
+          </p>
+        </div>
+        <div>
+          <div class="footer-block-title">Workshop &amp; Studio</div>
+          <p>Jepara, Jawa Tengah<br>Indonesia</p>
+          <p style="margin-top: 6px; color: var(--text-light);">Kunjungan workshop dengan perjanjian.</p>
+        </div>
+        <div>
+          <div class="footer-block-title">Kontak Proyek</div>
+          <p>WhatsApp: +62 812-3456-7890</p>
+          <p>Email: proyek@rezekilancar.id</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid var(--border); padding-top: 20px; text-align: center; font-size: 11px; color: var(--text-light);">
+        &copy; 2026 Rezeki Lancar Furniture. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Detail Bottom-Sheet / Modal (Zero State Loss) -->
+  <div class="sheet-backdrop" id="detailSheet" onclick="if(event.target===this)closeProductDetail()">
+    <div class="sheet-container">
+      <div class="sheet-drag-handle"></div>
+      
+      <div class="sheet-header-bar">
+        <button class="btn-sheet-close" onclick="closeProductDetail()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <span>Tutup</span>
+        </button>
+        <span style="font-size:11px; color:var(--text-light); font-weight:600;" id="sheetId"></span>
+      </div>
+
+      <div class="sheet-content-scroll">
+        <div class="sheet-image-frame">
+          <img id="sheetImg" src="" alt="" />
+        </div>
+
+        <span class="sheet-category-badge" id="sheetCat"></span>
+        <h3 class="sheet-product-title" id="sheetTitle"></h3>
+        <div class="sheet-product-price" id="sheetPrice"></div>
+
+        <div class="sheet-spec-grid">
+          <div class="sheet-spec-item">
+            <span class="spec-key">Dimensi (P×L×T)</span>
+            <span class="spec-val" id="sheetDim"></span>
+          </div>
+          <div class="sheet-spec-item">
+            <span class="spec-key">Material Bahan</span>
+            <span class="spec-val" id="sheetMat"></span>
+          </div>
+          <div class="sheet-spec-item">
+            <span class="spec-key">Jenis Finishing</span>
+            <span class="spec-val" id="sheetFin"></span>
+          </div>
+          <div class="sheet-spec-item">
+            <span class="spec-key">Konstruksi Pasak</span>
+            <span class="spec-val" id="sheetKon"></span>
+          </div>
+          <div class="sheet-spec-item">
+            <span class="spec-key">Asal Produksi</span>
+            <span class="spec-val">Workshop Jepara</span>
+          </div>
+        </div>
+
+        <p class="sheet-description" id="sheetDesc"></p>
+
+        <a id="sheetWaBtn" href="#" target="_blank" class="btn-sheet-whatsapp">
+          <span>Konsultasikan Karya Ini via WhatsApp</span>
+          <span>→</span>
+        </a>
+        
+        <a id="sheetFullLink" href="#" target="_blank" class="sheet-permalink">Buka halaman URL terpisah →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ultra-Fast Catalog Engine (Instant Click, Async Background Fetch) -->
+  <script>
+    const initialItems = {first_16_json};
+    let fullCatalog = initialItems;
+    let activeCat = 'Semua';
+    let searchQuery = '';
+    let currentPage = 1;
+    const pageSize = 20;
+    let filteredList = [];
+
+    const grid = document.getElementById('productGrid');
+    const shownCount = document.getElementById('shownCount');
+    const matchCount = document.getElementById('matchCount');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const searchInput = document.getElementById('searchInput');
+
+    // Fetch the rest of the 500 items asynchronously without blocking UI
+    fetch('./katalog_data.json')
+      .then(res => res.json())
+      .then(data => {{
+        fullCatalog = data;
+        checkUrlHash();
+      }})
+      .catch(err => console.log('Catalog load error', err));
+
+    function filterByCat(cat) {{
+      activeCat = cat;
+      document.querySelectorAll('.pill-btn').forEach(btn => {{
+        btn.classList.toggle('active', btn.innerText.includes(cat));
+      }});
+      applyCurrentFilter();
+    }}
+
+    searchInput.addEventListener('input', e => {{
+      searchQuery = e.target.value.toLowerCase().trim();
+      applyCurrentFilter();
+    }});
+
+    function applyCurrentFilter() {{
+      if (!fullCatalog || fullCatalog.length === 0) return;
+      
+      filteredList = fullCatalog.filter(item => {{
+        const matchC = (activeCat === 'Semua') || (item.c === activeCat);
+        const matchQ = (searchQuery === '') || 
+                       item.t.toLowerCase().includes(searchQuery) || 
+                       (item.d && item.d.toLowerCase().includes(searchQuery));
+        return matchC && matchQ;
+      }});
+      
+      currentPage = 1;
+      renderGrid();
+    }}
+
+    function renderGrid() {{
+      const limit = currentPage * pageSize;
+      const visible = filteredList.slice(0, limit);
+
+      grid.innerHTML = '';
+      visible.forEach(item => {{
+        const card = document.createElement('article');
+        card.className = 'product-card';
+        card.onclick = () => openProductDetail(item.id);
+        card.innerHTML = `
+          <div class="card-media">
+            <img src="${{item.img}}" alt="${{item.t}}" loading="lazy" decoding="async" />
+            <span class="card-badge">${{item.c}}</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">${{item.t}}</h3>
+            <p class="card-dim">📐 ${{item.d}}</p>
+            <div class="card-action-row">
+              <span class="card-price">${{item.p}}</span>
+              <span class="card-cta">Detail &amp; Custom →</span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      }});
+
+      shownCount.innerText = visible.length;
+      matchCount.innerText = filteredList.length;
+
+      if (limit >= filteredList.length) {{
+        loadMoreBtn.style.display = 'none';
+      }} else {{
+        loadMoreBtn.style.display = 'inline-block';
+        loadMoreBtn.innerText = `Muat ${{Math.min(pageSize, filteredList.length - limit)}} Karya Berikutnya ↓`;
+      }}
+    }}
+
+    function loadMoreProducts() {{
+      if (!fullCatalog || fullCatalog.length === 0) return;
+      currentPage++;
+      renderGrid();
+    }}
+
+    // Detail Modal (Works on millisecond 0 for initial items, zero lag!)
+    function openProductDetail(id) {{
+      const item = fullCatalog.find(x => x.id === id) || initialItems.find(x => x.id === id) || {{}};
+      if (!item.t) return;
+
+      document.getElementById('sheetId').innerText = 'Koleksi #' + item.id;
+      document.getElementById('sheetImg').src = item.img;
+      document.getElementById('sheetCat').innerText = item.c;
+      document.getElementById('sheetTitle').innerText = item.t;
+      document.getElementById('sheetPrice').innerText = item.p;
+      document.getElementById('sheetDim').innerText = item.d;
+      document.getElementById('sheetMat').innerText = item.m;
+      document.getElementById('sheetFin').innerText = item.f;
+      document.getElementById('sheetKon').innerText = item.k || 'Mortise & Tenon Pasak Kayu';
+      document.getElementById('sheetDesc').innerText = item.desc;
+      
+      const msg = encodeURIComponent(`Halo Rezeki Lancar Furniture, saya tertarik dengan karya ${{item.t}} (${{item.d}}). Mohon info opsi kayu & penawaran RAB.`);
+      document.getElementById('sheetWaBtn').href = `https://wa.me/6281234567890?text=${{msg}}`;
+      document.getElementById('sheetFullLink').href = './' + item.url;
+
+      document.getElementById('detailSheet').classList.add('active');
+      window.history.pushState({{ id: item.id }}, '', '#item-' + item.id);
+    }}
+
+    function closeProductDetail() {{
+      document.getElementById('detailSheet').classList.remove('active');
+      if (window.location.hash.startsWith('#item-')) {{
+        window.history.pushState('', '', window.location.pathname);
+      }}
+    }}
+
+    window.addEventListener('popstate', (e) => {{
+      if (document.getElementById('detailSheet').classList.contains('active')) {{
+        document.getElementById('detailSheet').classList.remove('active');
+      }}
+    }});
+
+    function checkUrlHash() {{
+      const hash = window.location.hash;
+      if (hash && hash.startsWith('#item-')) {{
+        const id = parseInt(hash.replace('#item-', ''));
+        if (id) openProductDetail(id);
+      }}
+    }}
+  </script>
+</body>
+</html>'''
+
+with open(os.path.join(repo_dir, 'index.html'), 'w', encoding='utf-8') as f:
+    f.write(redesigned_html)
+
+print("Successfully wrote full architectural redesign to index.html!")

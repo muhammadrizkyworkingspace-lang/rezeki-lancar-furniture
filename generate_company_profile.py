@@ -1,0 +1,706 @@
+import json, os, html
+
+repo_dir = '/home/azureuser/rezeki-lancar-repo'
+
+with open(os.path.join(repo_dir, 'katalog_500.json'), 'r', encoding='utf-8') as f:
+    products = json.load(f)
+
+# Filter 24 curated, highest quality architectural items for the flagship showcase
+curated = []
+seen_types = set()
+for p in products:
+    t = p['nama_produk'].lower()
+    # Prioritize solid wood tables, armchairs, credenzas, benches, beds
+    if any(k in t for k in ['bench', 'meja', 'kursi', 'sofa', 'cabinet', 'drawer', 'credenza', 'rak', 'bed', 'dipan']):
+        curated.append({
+            'title': p['nama_produk'],
+            'category': p['kategori'],
+            'dim': p['dimensi'],
+            'material': p['material'],
+            'finishing': p['finishing'],
+            'price': p['harga_pasar'],
+            'img': p['url_gambar'],
+            'desc': p.get('deskripsi') or 'Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi.'
+        })
+    if len(curated) >= 24:
+        break
+
+curated_json = json.dumps(curated, ensure_ascii=False)
+
+html_content = f'''<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rezeki Lancar — Bengkel Mebel Kayu Solid & Mitra Produksi Interior Jepara</title>
+  <meta name="description" content="Bengkel kayu keluarga di Jepara. Mitra eksekusi produksi mebel custom kayu solid kiln-dried untuk arsitek, desainer interior, dan proyek residensial mewah." />
+  <style>
+    /* Architectural Editorial Style. Zero AI Slop. Zero External CDN Bloat. <6KB total CSS. */
+    *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    
+    :root {{
+      --bg: #f9f7f4;
+      --card-bg: #ffffff;
+      --text: #1a1816;
+      --text-muted: #6b6661;
+      --border: #e3ded8;
+      --accent: #2e2620;
+      --wood-dark: #3b281c;
+      --font-serif: "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Noto Serif", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }}
+
+    body {{
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }}
+
+    a {{ color: inherit; text-decoration: none; }}
+    button {{ font-family: inherit; cursor: pointer; border: none; background: none; }}
+
+    .wrap {{ max-width: 1140px; margin: 0 auto; padding: 0 24px; }}
+
+    /* Navigation */
+    nav {{
+      border-bottom: 1px solid var(--border);
+      background: rgba(249, 247, 244, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }}
+    .nav-bar {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }}
+    .brand-mark {{
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }}
+    .brand-sub {{
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: -2px;
+    }}
+    .nav-links {{
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }}
+    .nav-links a:hover {{ color: var(--text); }}
+    .btn-contact {{
+      border: 1px solid var(--text);
+      padding: 8px 16px;
+      border-radius: 2px;
+      color: var(--text) !important;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }}
+    .btn-contact:hover {{
+      background: var(--text);
+      color: #fff !important;
+    }}
+
+    /* Hero / Company Statement */
+    .hero {{
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--border);
+    }}
+    .hero-label {{
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }}
+    .hero-title {{
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      max-width: 900px;
+      color: var(--text);
+      margin-bottom: 28px;
+    }}
+    .hero-title em {{
+      font-style: italic;
+      font-family: var(--font-serif);
+    }}
+    .hero-lead {{
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 680px;
+    }}
+
+    /* Numbers / Atelier Specs Bar */
+    .specs-strip {{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }}
+    @media(min-width: 768px) {{
+      .specs-strip {{ grid-template-columns: repeat(4, 1fr); }}
+    }}
+    .spec-item {{
+      border-left: 2px solid var(--text);
+      padding-left: 16px;
+    }}
+    .spec-num {{
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+    }}
+    .spec-label {{
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }}
+
+    /* About Company Profile Section */
+    .section-about {{
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }}
+    .about-grid {{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }}
+    @media(min-width: 860px) {{
+      .about-grid {{ grid-template-columns: 1fr 1fr; align-items: start; }}
+    }}
+    .about-h {{
+      font-family: var(--font-serif);
+      font-size: 28px;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      color: var(--text);
+    }}
+    .about-body p {{
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }}
+    .pillar-box {{
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 32px;
+      border-radius: 4px;
+    }}
+    .pillar-title {{
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text);
+    }}
+    .pillar-list {{
+      list-style: none;
+    }}
+    .pillar-list li {{
+      font-size: 13px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+    }}
+    .pillar-list li:last-child {{ border-bottom: none; }}
+    .pillar-list strong {{ color: var(--text); }}
+
+    /* Curated Works Gallery */
+    .section-gallery {{
+      padding: 80px 0;
+    }}
+    .section-head {{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 40px;
+    }}
+    @media(min-width: 640px) {{
+      .section-head {{ flex-direction: row; justify-content: space-between; align-items: flex-end; }}
+    }}
+    .section-title {{
+      font-family: var(--font-serif);
+      font-size: 32px;
+      letter-spacing: -0.5px;
+    }}
+    .section-sub {{
+      font-size: 13px;
+      color: var(--text-muted);
+    }}
+    
+    .curated-grid {{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }}
+    @media(min-width: 640px) {{
+      .curated-grid {{ grid-template-columns: repeat(2, 1fr); }}
+    }}
+    @media(min-width: 992px) {{
+      .curated-grid {{ grid-template-columns: repeat(3, 1fr); }}
+    }}
+    
+    .work-card {{
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+    }}
+    .work-card:hover {{ border-color: var(--text); }}
+    .work-img-box {{
+      aspect-ratio: 4/3;
+      background: #f0ece6;
+      overflow: hidden;
+      position: relative;
+    }}
+    .work-img {{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }}
+    .work-card:hover .work-img {{
+      transform: scale(1.03);
+    }}
+    .work-info {{
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }}
+    .work-meta {{
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }}
+    .work-name {{
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }}
+    .work-dim {{
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }}
+    .work-foot {{
+      border-top: 1px solid #f2ede8;
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+    }}
+    .work-price {{
+      font-weight: 700;
+      color: var(--text);
+    }}
+    .work-inquire {{
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }}
+
+    /* Workflow for Architects */
+    .section-flow {{
+      background: #24201d;
+      color: #ede8e3;
+      padding: 80px 0;
+    }}
+    .flow-head {{
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 56px;
+    }}
+    .flow-head h3 {{
+      font-family: var(--font-serif);
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: #f7f4f0;
+    }}
+    .flow-head p {{ font-size: 14px; color: #a39c94; }}
+    .flow-steps {{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }}
+    @media(min-width: 768px) {{
+      .flow-steps {{ grid-template-columns: repeat(4, 1fr); }}
+    }}
+    .step-card {{
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 24px;
+      border-radius: 2px;
+    }}
+    .step-num {{
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: #c4976c;
+      margin-bottom: 12px;
+    }}
+    .step-name {{
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #fff;
+    }}
+    .step-desc {{
+      font-size: 12px;
+      color: #a39c94;
+      line-height: 1.6;
+    }}
+
+    /* Footer & Workshop Location */
+    footer {{
+      border-top: 1px solid var(--border);
+      padding: 60px 0 40px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }}
+    .foot-grid {{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }}
+    @media(min-width: 768px) {{
+      .foot-grid {{ grid-template-columns: 2fr 1fr 1fr; }}
+    }}
+    .foot-h {{
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+    }}
+
+    /* Modal */
+    .modal-backdrop {{
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 18, 16, 0.75);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }}
+    .modal-backdrop.open {{ display: flex; }}
+    .modal-window {{
+      background: #ffffff;
+      max-width: 640px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 28px;
+      position: relative;
+      border-radius: 2px;
+    }}
+    .modal-close-btn {{
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 24px;
+      color: var(--text-muted);
+      cursor: pointer;
+    }}
+    .modal-media {{
+      aspect-ratio: 4/3;
+      width: 100%;
+      object-fit: cover;
+      background: #f0ece6;
+      margin-bottom: 20px;
+    }}
+    .btn-wa-modal {{
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--text);
+      color: #ffffff;
+      padding: 14px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 24px;
+    }}
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="wrap nav-bar">
+      <div>
+        <div class="brand-mark">Rezeki Lancar</div>
+        <div class="brand-sub">Bengkel Mebel Kayu Jepara</div>
+      </div>
+      <div class="nav-links">
+        <a href="#tentang">Tentang Bengkel</a>
+        <a href="#koleksi">Karya Pilihan</a>
+        <a href="#kerjasama">Mitra Arsitek</a>
+        <a href="https://wa.me/6281234567890?text=Halo%20Rezeki%20Lancar%2C%20saya%20mau%20konsultasi%20produksi%20mebel" target="_blank" class="btn-contact">Konsultasi WA</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Statement -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-label">Atelier Mebel Solid • Est. Jepara</div>
+      <h1 class="hero-title">
+        Menerjemahkan visi arsitek ke dalam <em>ketulusan kayu solid</em> dengan presisi tangan pengrajin Jepara.
+      </h1>
+      <p class="hero-lead">
+        Rezeki Lancar adalah bengkel mebel keluarga di Jepara. Kami tidak memproduksi mebel massal cepat saji. Fokus kami adalah pengerjaan loose furniture dan custom carpentry berkualitas tinggi untuk proyek residensial, villa, dan komersial terpilih.
+      </p>
+    </div>
+  </section>
+
+  <!-- Workshop Standards Strip -->
+  <section class="wrap">
+    <div class="specs-strip">
+      <div class="spec-item">
+        <div class="spec-num">&lt; 12% MC</div>
+        <div class="spec-label">Kiln-Dried Oven Moisture</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-num">Mortise &amp; Tenon</div>
+        <div class="spec-label">Konstruksi Pasak Kayu Tradisional</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-num">Jati &amp; Mindi</div>
+        <div class="spec-label">Kayu Legal Perhutani Terkurasi</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-num">1x24 Jam</div>
+        <div class="spec-label">Estimasi RAB Gambar CAD / 3D</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Profile Section -->
+  <section class="section-about wrap" id="tentang">
+    <div class="about-grid">
+      <div class="about-body">
+        <div class="hero-label">Profil Perusahaan &amp; Etos Kerja</div>
+        <h2 class="about-h">Bukan makelar retail. Kami bertumpu pada kayu yang benar dan tukang yang terlatih.</h2>
+        <p>
+          Banyak proyek interior kecewa dengan mebel asal Jepara akibat kayu mentah yang melengkung setelah 3 bulan di ruang ber-AC, sambungan yang hanya dipaku tembak, serta komunikasi tukang yang lambat membaca gambar kerja arsitektur.
+        </p>
+        <p>
+          Rezeki Lancar didirikan untuk menjembatani kesenjangan tersebut. Kami mengawinkan keahlian tangan tradisional ukir & pasak kayu Jepara dengan disiplin kontrol mutu modern: kayu oven kering terukur, pelaporan progres bertahap, dan kepatuhan dimensi gambar kerja AutoCAD maupun 3D SketchUp.
+        </p>
+      </div>
+
+      <div class="pillar-box">
+        <div class="pillar-title">Spesifikasi Bengkel Kami</div>
+        <ul class="pillar-list">
+          <li><span>Material Baku</span> <strong>Kayu Jati Solid, Mindi, Mahoni, Rotan Asli</strong></li>
+          <li><span>Perlakuan Kayu</span> <strong>Chemical Anti-Rayap &amp; Kiln-Dried Chamber</strong></li>
+          <li><span>Standar Finishing</span> <strong>Polyurethane (PU), NC Matte, Natural Oil</strong></li>
+          <li><span>Kapasitas Proyek</span> <strong>Loose Furniture Residensial, Cafe, Villa Bali</strong></li>
+          <li><span>Pengiriman</span> <strong>Packing Palet Kayu Tertutup Seluruh Indonesia</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Flagship Works -->
+  <section class="section-gallery wrap" id="koleksi">
+    <div class="section-head">
+      <div>
+        <div class="hero-label">Arsip Karya Pilihan</div>
+        <h2 class="section-title">Koleksi Desain &amp; Loose Furniture</h2>
+      </div>
+      <div class="section-sub">
+        Setiap karya dapat disesuaikan (custom) dimensi, jenis kayu, dan warnanya.
+      </div>
+    </div>
+
+    <div class="curated-grid" id="galleryGrid"></div>
+  </section>
+
+  <!-- B2B Workflow for Architects -->
+  <section class="section-flow" id="kerjasama">
+    <div class="wrap">
+      <div class="flow-head">
+        <div class="hero-label" style="color: #c4976c;">Alur Kerja Sama Mitra</div>
+        <h3>Bagaimana Kami Bekerja Bersama Arsitek &amp; Desainer Interior</h3>
+        <p>Sistematis, transparan, dan terukur agar proyek Anda selesai tepat waktu dengan kualitas yang disetujui klien Anda.</p>
+      </div>
+
+      <div class="flow-steps">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-name">Kirim Gambar Kerja</div>
+          <div class="step-desc">Kirimkan file PDF, AutoCAD, atau 3D SketchUp denah furniture ruangan proyek Anda via WhatsApp atau email.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-name">RAB &amp; Sampel Kayu</div>
+          <div class="step-desc">Kami hitung penawaran harga workshop tangan pertama dalam 1x24 jam dan siapkan sampel finishing jika dibutuhkan.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-name">Laporan Progres Fisik</div>
+          <div class="step-desc">Kami kirimkan dokumentasi foto &amp; video di setiap fase: pemilihan kayu, assembling mentah, hingga proses finishing.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <div class="step-name">QC &amp; Palet Kargo</div>
+          <div class="step-desc">Pemeriksaan ketat kadar air dan kehalusan sebelum dibungkus kardus tebal dan peti palet kayu menuju lokasi proyek.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap foot-grid">
+      <div>
+        <div class="brand-mark" style="font-size: 18px; margin-bottom: 6px;">Rezeki Lancar Furniture</div>
+        <p style="max-width: 420px; line-height: 1.7;">
+          Bengkel pengerjaan mebel kayu solid &amp; mitra manufaktur desainer interior. Berakar dari tradisi pertukangan kayu Jepara, Jawa Tengah.
+        </p>
+      </div>
+      <div>
+        <div class="foot-h">Workshop &amp; Studio</div>
+        <p>Jepara, Jawa Tengah<br>Indonesia</p>
+        <p style="margin-top: 8px;">Kunjungan workshop dengan perjanjian.</p>
+      </div>
+      <div>
+        <div class="foot-h">Kontak Proyek</div>
+        <p>WhatsApp: +62 812-3456-7890</p>
+        <p>Email: proyek@rezekilancar.id</p>
+      </div>
+    </div>
+    <div class="wrap" style="border-top: 1px solid var(--border); padding-top: 24px; text-align: center; font-size: 11px;">
+      &copy; 2026 Rezeki Lancar Furniture. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Modal Detail -->
+  <div class="modal-backdrop" id="modal" onclick="if(event.target===this)closeModal()">
+    <div class="modal-window">
+      <div class="modal-close-btn" onclick="closeModal()">&times;</div>
+      <img id="mImg" class="modal-media" src="" alt="" />
+      <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);" id="mCat"></div>
+      <h3 style="font-family: var(--font-serif); font-size: 22px; margin: 4px 0 8px;" id="mTitle"></h3>
+      <div style="font-size: 15px; font-weight: 700; color: var(--text);" id="mPrice"></div>
+      
+      <div style="margin: 18px 0; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.8;">
+        <div><strong>Dimensi:</strong> <span id="mDim"></span></div>
+        <div><strong>Material:</strong> <span id="mMat"></span></div>
+        <div><strong>Finishing:</strong> <span id="mFin"></span></div>
+      </div>
+      
+      <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7;" id="mDesc"></p>
+      
+      <a id="mWa" href="#" target="_blank" class="btn-wa-modal">Konsultasikan Karya Ini via WhatsApp →</a>
+    </div>
+  </div>
+
+  <script>
+    const items = {curated_json};
+    const grid = document.getElementById('galleryGrid');
+
+    items.forEach(item => {{
+      const card = document.createElement('div');
+      card.className = 'work-card';
+      card.onclick = () => openModal(item);
+
+      card.innerHTML = `
+        <div class="work-img-box">
+          <img class="work-img" src="${{item.img}}" alt="${{item.title}}" loading="lazy" decoding="async" />
+        </div>
+        <div class="work-info">
+          <div>
+            <div class="work-meta">
+              <span>${{item.category}}</span>
+            </div>
+            <div class="work-name">${{item.title}}</div>
+            <div class="work-dim">📐 ${{item.dim}}</div>
+          </div>
+          <div class="work-foot">
+            <span class="work-price">${{item.price}}</span>
+            <span class="work-inquire">Detail &amp; Custom →</span>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    }});
+
+    function openModal(item) {{
+      document.getElementById('mImg').src = item.img;
+      document.getElementById('mCat').innerText = item.category;
+      document.getElementById('mTitle').innerText = item.title;
+      document.getElementById('mPrice').innerText = item.price;
+      document.getElementById('mDim').innerText = item.dim;
+      document.getElementById('mMat').innerText = item.material;
+      document.getElementById('mFin').innerText = item.finishing;
+      document.getElementById('mDesc').innerText = item.desc;
+      
+      const msg = encodeURIComponent(`Halo Rezeki Lancar Furniture, saya tertarik dengan ${{item.title}} (Dimensi: ${{item.dim}}). Mohon informasi opsi kayu & penawaran RAB.`);
+      document.getElementById('mWa').href = `https://wa.me/6281234567890?text=${{msg}}`;
+      
+      document.getElementById('modal').classList.add('open');
+    }}
+
+    function closeModal() {{
+      document.getElementById('modal').classList.remove('open');
+    }}
+  </script>
+</body>
+</html>'''
+
+with open(os.path.join(repo_dir, 'index.html'), 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print(f"Generated architectural company profile index.html ({len(html_content)/1024:.1f} KB)")
