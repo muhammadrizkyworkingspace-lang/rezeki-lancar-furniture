@@ -51,7 +51,7 @@
       .wrap { padding: 0 24px; }
     }
 
-    /* Top Announcement Bar (Static, doesn't eat screen space) */
+    /* Top Announcement Bar */
     .topbar {
       background: #361e0f;
       color: #fef3c7;
@@ -143,7 +143,7 @@
       .btn-contact:hover { background: var(--text); color: #fff !important; }
     }
 
-    /* Hero / Company Statement */
+    /* Hero */
     .hero {
       padding: 28px 0 24px;
       border-bottom: 1px solid var(--border);
@@ -225,74 +225,129 @@
       .spec-label { font-size: 10px; letter-spacing: 0.8px; }
     }
 
-    /* Company Profile & Philosophy */
+    /* Company Profile & Philosophy (Mobile-Optimized Editorial Card) */
     .section-about {
-      padding: 32px 0;
+      padding: 24px 0 32px;
       border-bottom: 1px solid var(--border);
     }
     @media (min-width: 640px) {
-      .section-about { padding: 56px 0; }
+      .section-about { padding: 48px 0 56px; }
     }
-    .about-grid {
+    .about-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 16px;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 24px;
     }
     @media (min-width: 860px) {
-      .about-grid { grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
+      .about-card {
+        grid-template-columns: 1.25fr 1fr;
+        padding: 36px 32px;
+        gap: 36px;
+        align-items: start;
+      }
     }
     .about-h {
       font-family: var(--font-serif);
       font-size: 19px;
-      line-height: 1.3;
-      margin-bottom: 12px;
+      line-height: 1.35;
+      margin: 6px 0 12px;
+      color: var(--text);
     }
     @media (min-width: 640px) {
-      .about-h { font-size: 26px; margin-bottom: 16px; }
+      .about-h { font-size: 25px; margin: 8px 0 16px; }
     }
-    .about-p {
-      margin-bottom: 12px;
+    .about-lead {
       font-size: 13px;
       line-height: 1.7;
       color: var(--text-muted);
+      margin-bottom: 10px;
     }
+    .about-sub {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .about-points {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid #f2ede8;
+    }
+    .point-item {
+      display: flex;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .point-icon {
+      color: #15803d;
+      font-weight: 800;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    
     .pillar-box {
-      background: var(--card-bg);
+      background: #faf8f5;
       border: 1px solid var(--border);
       padding: 16px;
       border-radius: 4px;
     }
     @media (min-width: 640px) {
-      .pillar-box { padding: 24px; }
+      .pillar-box { padding: 22px; }
     }
     .pillar-title {
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .pillar-list {
+      list-style: none;
     }
     .pillar-list li {
-      list-style: none;
-      font-size: 11px;
       padding: 8px 0;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid #eeebe6;
       display: flex;
       flex-direction: column;
       gap: 2px;
-      color: var(--text-muted);
     }
     @media (min-width: 480px) {
       .pillar-list li {
         flex-direction: row;
         justify-content: space-between;
-        font-size: 12px;
-        padding: 10px 0;
+        align-items: center;
+        gap: 12px;
       }
     }
     .pillar-list li:last-child { border-bottom: none; }
-    .pillar-list strong { color: var(--text); }
+    .p-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .p-val {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    @media (min-width: 480px) {
+      .p-val { text-align: right; }
+    }
 
     /* Full 500-Item Catalog Section */
     .section-catalog {
@@ -572,7 +627,7 @@
       line-height: 1.45;
     }
 
-    /* Detail Modal (Slide Up on Mobile, Centered on Desktop) */
+    /* Detail Modal */
     .drawer-overlay {
       display: none;
       position: fixed;
@@ -765,27 +820,60 @@
     </div>
   </section>
 
-  <!-- Company Profile & Philosophy -->
+  <!-- Company Profile & Philosophy (Mobile-Optimized Editorial Card) -->
   <section class="section-about wrap" id="tentang">
-    <div class="about-grid">
-      <div>
-        <div class="hero-label">Profil Perusahaan &amp; Etos Kerja</div>
+    <div class="about-card">
+      <div class="about-main">
+        <span class="hero-label">Profil Perusahaan &amp; Etos Kerja</span>
         <h2 class="about-h">Bukan makelar retail. Kami bertumpu pada kayu yang benar dan tukang yang terlatih.</h2>
-        <p class="about-p">
+        
+        <p class="about-lead">
           Banyak proyek interior kecewa dengan mebel asal Jepara akibat kayu basah yang melengkung setelah 3 bulan di ruang ber-AC, sambungan yang hanya dipaku tembak, serta komunikasi bengkel yang tidak disiplin membaca gambar kerja arsitektur.
         </p>
-        <p class="about-p">
-          Rezeki Lancar didirikan untuk menjembatani kesenjangan tersebut. Kami mengawinkan keahlian tangan tradisional ukir & pasak kayu Jepara dengan disiplin kontrol mutu modern: kayu oven kering terukur, pelaporan progres bertahap, dan kepatuhan dimensi gambar kerja AutoCAD maupun 3D SketchUp.
+
+        <p class="about-sub">
+          <strong>Rezeki Lancar</strong> didirikan untuk menjembatani kesenjangan tersebut. Kami mengawinkan keahlian tangan tradisional ukir &amp; pasak kayu Jepara dengan kontrol mutu modern: kayu oven kering terukur (MC &lt; 12%), pelaporan progres bertahap, dan kepatuhan dimensi gambar kerja AutoCAD maupun 3D SketchUp.
         </p>
+
+        <div class="about-points">
+          <div class="point-item">
+            <span class="point-icon">✓</span>
+            <div><strong>Kayu Oven Terukur:</strong> Standar oven kiln-dried garansi MC &lt; 12% anti-retak di ruang ber-AC.</div>
+          </div>
+          <div class="point-item">
+            <span class="point-icon">✓</span>
+            <div><strong>Konstruksi Pasak Tradisional:</strong> Sambungan purus (mortise &amp; tenon) kokoh tanpa paku tembak ringkih.</div>
+          </div>
+          <div class="point-item">
+            <span class="point-icon">✓</span>
+            <div><strong>Presisi Gambar Kerja:</strong> Dikerjakan patuh dimensi AutoCAD &amp; 3D SketchUp arsitek.</div>
+          </div>
+        </div>
       </div>
+
       <div class="pillar-box">
-        <div class="pillar-title">Spesifikasi Bengkel Kami</div>
+        <div class="pillar-title">Standar Spesifikasi Bengkel</div>
         <ul class="pillar-list">
-          <li><span>Material Baku</span> <strong>Kayu Jati Solid, Mindi, Mahoni, Rotan</strong></li>
-          <li><span>Perlakuan Kayu</span> <strong>Chemical Anti-Rayap &amp; Kiln-Dried</strong></li>
-          <li><span>Standar Finishing</span> <strong>Polyurethane (PU), NC Matte, Oil</strong></li>
-          <li><span>Kapasitas Proyek</span> <strong>Residensial, Cafe, Villa Bali</strong></li>
-          <li><span>Pengiriman</span> <strong>Packing Peti Palet Kayu Tertutup</strong></li>
+          <li>
+            <span class="p-label">Material Baku</span>
+            <span class="p-val">Kayu Jati Solid, Mindi, Mahoni, Rotan</span>
+          </li>
+          <li>
+            <span class="p-label">Perlakuan Kayu</span>
+            <span class="p-val">Chemical Anti-Rayap &amp; Kiln-Dried</span>
+          </li>
+          <li>
+            <span class="p-label">Standar Finishing</span>
+            <span class="p-val">Polyurethane (PU), NC Matte, Oil</span>
+          </li>
+          <li>
+            <span class="p-label">Kapasitas Proyek</span>
+            <span class="p-val">Residensial, Cafe, Villa Bali</span>
+          </li>
+          <li>
+            <span class="p-label">Proteksi Kargo</span>
+            <span class="p-val">Packing Peti Palet Kayu Tertutup</span>
+          </li>
         </ul>
       </div>
     </div>
@@ -1158,7 +1246,7 @@
     </div>
   </footer>
 
-  <!-- Detail Modal (Slide Up on Mobile, Centered on Desktop) -->
+  <!-- Detail Modal -->
   <div class="drawer-overlay" id="drawer" onclick="if(event.target===this)closeDetail()">
     <div class="drawer-body">
       <div class="drawer-drag-bar"></div>
@@ -1209,7 +1297,6 @@
 
   <!-- Ultra-lightweight Async Catalog Engine -->
   <script>
-    // 16 initial items available INSTANTLY on millisecond 0 (zero tap lag!)
     const initialItems = [{"id": 1, "t": "Salami Mirror", "c": "Cermin & Dekorasi Dinding", "p": "Rp 450.000", "d": "40 × 40 × 2 cm", "m": "Mirror, Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "5,4 kg", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Aksesoris-Salami-Mirror-Uwitan.jpg", "desc": "Cermin dinding Salami Mirror dengan dimensi 40 × 40 × 2 cm. Bingkai kayu Mirror, Pine Wood bertekstur natural membingkai pantulan kaca jernih, menciptakan ilusi ruangan yang lebih luas dan terang. Dilengkapi sistem gantungan kokoh untuk pemasangan dinding yang aman.", "slug": "001-salami-mirror", "url": "produk/001-salami-mirror.html"}, {"id": 2, "t": "Woodletter", "c": "Home Decor & Living", "p": "Rp 35.000", "d": "5 × 5 × 5 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "0,5625 kg", "img": "https://uwitan.id/wp-content/uploads/2018/07/aksesoris-woodletter-2.webp", "desc": "Woodletter berdimensi 5 × 5 × 5 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "002-woodletter", "url": "produk/002-woodletter.html"}, {"id": 3, "t": "Cakra Arm Chair 3 Seater", "c": "Kursi & Bangku", "p": "Rp 2.200.000", "d": "165 × 60 × 79 cm", "m": "Foam, Rattan", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "181,7 kg", "img": "https://uwitan.id/wp-content/uploads/2019/01/SAM9546.jpg", "desc": "Tempat duduk ergonomis Cakra Arm Chair 3 Seater dirancang dengan perpaduan kenyamanan dan kekuatan struktur kayu solid. Dimensi 165 × 60 × 79 cm memberikan proporsi duduk yang proporsional untuk ruang tamu, sudut santai, maupun area komersial cafe. Sambungan rangka diperkuat konstruksi kayu presisi dengan sentuhan finishing NC Lacquer yang menonjolkan keaslian material Foam, Rattan.", "slug": "003-cakra-arm-chair-3-seater", "url": "produk/003-cakra-arm-chair-3-seater.html"}, {"id": 4, "t": "Papan Menu", "c": "Home Decor & Living", "p": "Rp 195.000", "d": "32 × 32 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Knockdown", "b": "2,3 kg", "img": "https://uwitan.id/wp-content/uploads/2023/07/sampul-scaled.jpg", "desc": "Papan Menu berdimensi 32 × 32 × 2 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "004-papan-menu", "url": "produk/004-papan-menu.html"}, {"id": 5, "t": "Jamur Mini Basket", "c": "Home Decor & Living", "p": "Rp 145.000", "d": "15 × 15 × 15 cm", "m": "Rattan", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "1 kg", "img": "https://uwitan.id/wp-content/uploads/2021/02/1-aksesoris-jamur-mini-basket.jpeg", "desc": "Jamur Mini Basket berdimensi 15 × 15 × 15 cm yang memadukan fungsionalitas dan nilai estetika kayu Rattan. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "005-jamur-mini-basket", "url": "produk/005-jamur-mini-basket.html"}, {"id": 6, "t": "Tigo Keychain", "c": "Home Decor & Living", "p": "Rp 9.900", "d": "7,5 × 5,5 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "1 kg", "img": "https://uwitan.id/wp-content/uploads/2025/10/IMG_7785-min.jpeg", "desc": "Tigo Keychain berdimensi 7,5 × 5,5 × 2 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "006-tigo-keychain", "url": "produk/006-tigo-keychain.html"}, {"id": 7, "t": "Kitchen Shelf Natural", "c": "Rak & Storage", "p": "Rp 2.450.000", "d": "59 × 46 × 111,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "70,6 kg", "img": "https://uwitan.id/wp-content/uploads/2018/06/1-furniture-rak-kitchen-shelf-natural.jpg", "desc": "Rak penyimpanan terbuka Kitchen Shelf Natural (dimensi 59 × 46 × 111,5 cm) yang memudahkan display buku, tanaman hias, maupun dekorasi interior. Struktur rangka Pine Wood kokoh dengan finishing NC Lacquer, memberikan kesan ruangan yang lebih lapang dan tertata estetik.", "slug": "007-kitchen-shelf-natural", "url": "produk/007-kitchen-shelf-natural.html"}, {"id": 8, "t": "Kalender Uwitan 2026", "c": "Home Decor & Living", "p": "Rp 185.000", "d": "27 × 8,5 × 20 cm", "m": "Pine Wood, Recycle Polimer Sheet", "f": "NC Lacquer / Natural", "k": "Full Assembly", "b": "N/A", "img": "https://uwitan.id/wp-content/uploads/2023/01/IMG_0061-min.jpeg", "desc": "Kalender Uwitan 2026 berdimensi 27 × 8,5 × 20 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood, Recycle Polimer Sheet. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "008-kalender-uwitan-2026", "url": "produk/008-kalender-uwitan-2026.html"}, {"id": 9, "t": "Wall Decor – Set A Isi 3pcs", "c": "Home Decor & Living", "p": "Rp 369.000", "d": "61 × 61 × 8 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "k": "Full Assembly", "b": "25 kg", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1908.jpg", "desc": "Wall Decor – Set A Isi 3pcs berdimensi 61 × 61 × 8 cm yang memadukan fungsionalitas dan nilai estetika kayu Rattan. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "009-wall-decor-set-a-isi-3pcs", "url": "produk/009-wall-decor-set-a-isi-3pcs.html"}, {"id": 10, "t": "Wall Decor – Set D Isi 4pcs", "c": "Home Decor & Living", "p": "Rp 495.000", "d": "61 × 61 × 10 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "k": "Full Assembly", "b": "30 kg", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1884.jpg", "desc": "Wall Decor – Set D Isi 4pcs berdimensi 61 × 61 × 10 cm yang memadukan fungsionalitas dan nilai estetika kayu Rattan. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "010-wall-decor-set-d-isi-4pcs", "url": "produk/010-wall-decor-set-d-isi-4pcs.html"}, {"id": 11, "t": "Wall Decor – Set 5 Isi 6pcs", "c": "Home Decor & Living", "p": "Rp 695.000", "d": "60 × 2 × 60 cm", "m": "Kayu Solid", "f": "NC Lacquer / Natural", "k": "Assembled / Knockdown", "b": "-", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_1839.jpg", "desc": "Wall Decor – Set 5 Isi 6pcs berdimensi 60 × 2 × 60 cm yang memadukan fungsionalitas dan nilai estetika kayu Kayu Solid. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "011-wall-decor-set-5-isi-6pcs", "url": "produk/011-wall-decor-set-5-isi-6pcs.html"}, {"id": 12, "t": "Wall Decor – Set B Isi 3pcs", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "51 × 51 × 8 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "k": "Full Assembly", "b": "25 kg", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1927.jpg", "desc": "Wall Decor – Set B Isi 3pcs berdimensi 51 × 51 × 8 cm yang memadukan fungsionalitas dan nilai estetika kayu Rattan. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "012-wall-decor-set-b-isi-3pcs", "url": "produk/012-wall-decor-set-b-isi-3pcs.html"}, {"id": 13, "t": "Wall Decor – Set C Isi 3pcs", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "46 × 46 × 8 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "k": "Full Assembly", "b": "25 kg", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1901.jpg", "desc": "Wall Decor – Set C Isi 3pcs berdimensi 46 × 46 × 8 cm yang memadukan fungsionalitas dan nilai estetika kayu Rattan. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer / Natural tahan lama.", "slug": "013-wall-decor-set-c-isi-3pcs", "url": "produk/013-wall-decor-set-c-isi-3pcs.html"}, {"id": 14, "t": "Robobox Natural", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "28 × 14 × 20 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "5,89 kg", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-furniture-aksesoris-robobox-natural.jpg", "desc": "Robobox Natural berdimensi 28 × 14 × 20 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood, Plywood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "014-robobox-natural", "url": "produk/014-robobox-natural.html"}, {"id": 15, "t": "Nine Interphone Natural White", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "30 × 10 × 33 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "5,733333333 kg", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-furniture-aksesoris-nine-interphone-natural-white.jpg", "desc": "Nine Interphone Natural White berdimensi 30 × 10 × 33 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "015-nine-interphone-natural-white", "url": "produk/015-nine-interphone-natural-white.html"}, {"id": 16, "t": "Wooden Snack Box Natural White", "c": "Home Decor & Living", "p": "Rp 385.000", "d": "42 × 28 × 22 cm", "m": "Pine Wood", "f": "NC Lacquer", "k": "Assembled / Knockdown", "b": "11,74833333 kg", "img": "https://uwitan.id/wp-content/uploads/2017/12/furniture-aksesoris-wooden-snack-box-nw-1.jpg", "desc": "Wooden Snack Box Natural White berdimensi 42 × 28 × 22 cm yang memadukan fungsionalitas dan nilai estetika kayu Pine Wood. Dikerjakan secara cermat di workshop Jepara dengan kontrol kadar air kayu terukur dan pelapisan NC Lacquer tahan lama.", "slug": "016-wooden-snack-box-natural-white", "url": "produk/016-wooden-snack-box-natural-white.html"}];
     let fullCatalog = initialItems;
     let currentCat = 'Semua';
