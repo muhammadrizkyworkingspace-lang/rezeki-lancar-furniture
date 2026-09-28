@@ -3,541 +3,670 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rezeki Lancar Furniture — Jepara Woodworks & Interior Partner</title>
-  <meta name="description" content="Workshop mebel kayu solid Jepara. Spesialis custom furniture & mitra produksi arsitek dan desainer interior." />
+  <title>Rezeki Lancar — Bengkel Mebel Kayu Solid & Mitra Produksi Interior Jepara</title>
+  <meta name="description" content="Bengkel kayu keluarga di Jepara. Mitra eksekusi produksi mebel custom kayu solid kiln-dried untuk arsitek, desainer interior, dan proyek residensial mewah." />
   <style>
-    /* Ultra-lightweight native CSS (<3KB). Zero external frameworks. Instant render. */
+    /* Architectural Editorial Style. Zero AI Slop. Zero External CDN Bloat. <6KB total CSS. */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --bg: #f9f7f4;
+      --card-bg: #ffffff;
+      --text: #1a1816;
+      --text-muted: #6b6661;
+      --border: #e3ded8;
+      --accent: #2e2620;
+      --wood-dark: #3b281c;
+      --font-serif: "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Noto Serif", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #faf9f6;
-      color: #1c1917;
-      line-height: 1.5;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
+
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: pointer; border: none; background: none; }
-    
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
-    
-    /* Top Bar */
-    .topbar {
-      background: #3c1e08;
-      color: #fef3c7;
-      font-size: 11px;
-      font-weight: 500;
-      text-align: center;
-      padding: 6px 12px;
-      letter-spacing: 0.5px;
-    }
-    
-    /* Nav */
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e7e5e4;
+
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation */
+    nav {
+      border-bottom: 1px solid var(--border);
+      background: rgba(249, 247, 244, 0.95);
       position: sticky;
       top: 0;
-      z-index: 30;
+      z-index: 40;
     }
-    .nav-inner {
+    .nav-bar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      height: 56px;
-    }
-    .brand {
-      display: flex;
       align-items: center;
-      gap: 10px;
+      height: 72px;
     }
-    .brand-logo {
-      width: 32px;
-      height: 32px;
-      background: #78350f;
-      color: #fff;
+    .brand-mark {
+      font-family: var(--font-serif);
+      font-size: 20px;
       font-weight: 700;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
+      letter-spacing: -0.5px;
+      color: var(--text);
     }
-    .brand-name { font-size: 15px; font-weight: 700; color: #1c1917; line-height: 1.1; }
-    .brand-sub { font-size: 10px; color: #78350f; font-weight: 600; text-transform: uppercase; }
-    .btn-wa-header {
-      background: #78350f;
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 6px;
-    }
-    
-    /* Hero */
-    .hero {
-      padding: 32px 0 24px;
-      text-align: center;
-      background: #f4f1ec;
-      border-bottom: 1px solid #e7e5e4;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: #fef3c7;
-      color: #92400e;
+    .brand-sub {
       font-size: 10px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 12px;
-      margin-bottom: 10px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: -2px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .nav-links a:hover { color: var(--text); }
+    .btn-contact {
+      border: 1px solid var(--text);
+      padding: 8px 16px;
+      border-radius: 2px;
+      color: var(--text) !important;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .btn-contact:hover {
+      background: var(--text);
+      color: #fff !important;
+    }
+
+    /* Hero / Company Statement */
+    .hero {
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 24px;
     }
     .hero-title {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: #1c1917;
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      max-width: 900px;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+    .hero-title em {
+      font-style: italic;
+      font-family: var(--font-serif);
+    }
+    .hero-lead {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-muted);
       max-width: 680px;
-      margin: 0 auto;
-      line-height: 1.25;
     }
-    .hero-desc {
-      font-size: 13px;
-      color: #57534e;
-      max-width: 540px;
-      margin: 8px auto 0;
-    }
-    
-    /* Controls */
-    .controls {
-      margin: 18px auto 0;
-      max-width: 480px;
-    }
-    .search-box {
-      width: 100%;
-      padding: 10px 14px;
-      font-size: 13px;
-      border: 1px solid #d6d3d1;
-      border-radius: 8px;
-      background: #ffffff;
-      outline: none;
-    }
-    .search-box:focus { border-color: #78350f; }
-    
-    .cat-bar {
-      display: flex;
-      gap: 6px;
-      overflow-x: auto;
-      padding: 12px 0 4px;
-      white-space: nowrap;
-      justify-content: flex-start;
-      -webkit-overflow-scrolling: touch;
-    }
-    @media(min-width: 640px) {
-      .cat-bar { justify-content: center; }
-      .hero-title { font-size: 32px; }
-    }
-    .cat-pill {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 5px 12px;
-      border-radius: 20px;
-      background: #ffffff;
-      border: 1px solid #d6d3d1;
-      color: #44403c;
-    }
-    .cat-pill.active {
-      background: #78350f;
-      color: #ffffff;
-      border-color: #78350f;
-    }
-    
-    /* Stats Bar */
-    .meta-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 0 8px;
-      font-size: 12px;
-      color: #78716c;
-      border-bottom: 1px solid #f0ede9;
-    }
-    
-    /* Grid */
-    .catalog-grid {
+
+    /* Numbers / Atelier Specs Bar */
+    .specs-strip {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 14px;
+      gap: 24px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
     }
     @media(min-width: 768px) {
-      .catalog-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .specs-strip { grid-template-columns: repeat(4, 1fr); }
     }
-    @media(min-width: 1024px) {
-      .catalog-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .spec-item {
+      border-left: 2px solid var(--text);
+      padding-left: 16px;
+    }
+    .spec-num {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .spec-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* About Company Profile Section */
+    .section-about {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    @media(min-width: 860px) {
+      .about-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+    }
+    .about-h {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+    .about-body p {
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+    .pillar-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 32px;
+      border-radius: 4px;
+    }
+    .pillar-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+    .pillar-list {
+      list-style: none;
+    }
+    .pillar-list li {
+      font-size: 13px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+    }
+    .pillar-list li:last-child { border-bottom: none; }
+    .pillar-list strong { color: var(--text); }
+
+    /* Curated Works Gallery */
+    .section-gallery {
+      padding: 80px 0;
+    }
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    @media(min-width: 640px) {
+      .section-head { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      letter-spacing: -0.5px;
+    }
+    .section-sub {
+      font-size: 13px;
+      color: var(--text-muted);
     }
     
-    /* Card */
-    .card {
-      background: #ffffff;
-      border: 1px solid #e7e5e4;
-      border-radius: 8px;
-      overflow: hidden;
+    .curated-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    @media(min-width: 640px) {
+      .curated-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(min-width: 992px) {
+      .curated-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    .work-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
       display: flex;
       flex-direction: column;
       cursor: pointer;
+      transition: border-color 0.2s ease;
     }
-    .card-img-wrap {
-      position: relative;
-      aspect-ratio: 1/1;
-      background: #f5f5f4;
+    .work-card:hover { border-color: var(--text); }
+    .work-img-box {
+      aspect-ratio: 4/3;
+      background: #f0ece6;
       overflow: hidden;
+      position: relative;
     }
-    .card-img {
+    .work-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.4s ease;
     }
-    .card-body {
-      padding: 10px;
+    .work-card:hover .work-img {
+      transform: scale(1.03);
+    }
+    .work-info {
+      padding: 20px;
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    .card-cat {
-      font-size: 9px;
-      font-weight: 700;
-      color: #78350f;
-      text-transform: uppercase;
-    }
-    .card-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: #1c1917;
-      margin-top: 2px;
-      line-height: 1.25;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .card-dim {
-      font-size: 11px;
-      color: #78716c;
-      margin-top: 4px;
-    }
-    .card-footer {
-      margin-top: 8px;
-      padding-top: 6px;
-      border-top: 1px solid #f5f5f4;
+    .work-meta {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-    }
-    .card-price {
-      font-size: 11px;
-      font-weight: 800;
-      color: #78350f;
-    }
-    .card-btn {
       font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .work-name {
+      font-family: var(--font-serif);
+      font-size: 17px;
       font-weight: 600;
-      background: #fef3c7;
-      color: #92400e;
-      padding: 3px 6px;
-      border-radius: 4px;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 8px;
     }
-    
-    /* Load More Button */
-    .load-more-wrap {
-      text-align: center;
-      margin: 28px 0 40px;
-    }
-    .btn-load-more {
-      background: #1c1917;
-      color: #ffffff;
+    .work-dim {
       font-size: 12px;
-      font-weight: 600;
-      padding: 10px 20px;
-      border-radius: 6px;
-      display: inline-block;
+      color: var(--text-muted);
+      margin-bottom: 12px;
     }
-    
-    /* B2B Section */
-    .b2b-banner {
-      background: #1c1917;
-      color: #ffffff;
-      padding: 32px 16px;
-      border-radius: 10px;
-      text-align: center;
-      margin: 32px auto;
+    .work-foot {
+      border-top: 1px solid #f2ede8;
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
     }
-    .b2b-sub { font-size: 10px; font-weight: 700; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.8px; }
-    .b2b-h { font-size: 20px; font-weight: 800; margin: 6px 0; }
-    .b2b-p { font-size: 12px; color: #a8a29e; max-width: 540px; margin: 0 auto 16px; }
-    .b2b-btn {
-      display: inline-block;
-      background: #d97706;
-      color: #ffffff;
+    .work-price {
       font-weight: 700;
-      font-size: 12px;
-      padding: 9px 18px;
-      border-radius: 6px;
+      color: var(--text);
     }
-    
+    .work-inquire {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Workflow for Architects */
+    .section-flow {
+      background: #24201d;
+      color: #ede8e3;
+      padding: 80px 0;
+    }
+    .flow-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 56px;
+    }
+    .flow-head h3 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: #f7f4f0;
+    }
+    .flow-head p { font-size: 14px; color: #a39c94; }
+    .flow-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media(min-width: 768px) {
+      .flow-steps { grid-template-columns: repeat(4, 1fr); }
+    }
+    .step-card {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 24px;
+      border-radius: 2px;
+    }
+    .step-num {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: #c4976c;
+      margin-bottom: 12px;
+    }
+    .step-name {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .step-desc {
+      font-size: 12px;
+      color: #a39c94;
+      line-height: 1.6;
+    }
+
+    /* Footer & Workshop Location */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 60px 0 40px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+    @media(min-width: 768px) {
+      .foot-grid { grid-template-columns: 2fr 1fr 1fr; }
+    }
+    .foot-h {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
     /* Modal */
-    .modal-overlay {
+    .modal-backdrop {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 50;
+      background: rgba(20, 18, 16, 0.75);
+      z-index: 100;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 20px;
     }
-    .modal-overlay.open { display: flex; }
-    .modal-card {
+    .modal-backdrop.open { display: flex; }
+    .modal-window {
       background: #ffffff;
-      border-radius: 12px;
-      max-width: 520px;
+      max-width: 640px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      padding: 18px;
+      padding: 28px;
       position: relative;
+      border-radius: 2px;
     }
-    .modal-close {
+    .modal-close-btn {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 20px;
-      color: #78716c;
-      width: 28px;
-      height: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      top: 16px;
+      right: 16px;
+      font-size: 24px;
+      color: var(--text-muted);
+      cursor: pointer;
     }
-    .modal-img {
+    .modal-media {
+      aspect-ratio: 4/3;
       width: 100%;
-      aspect-ratio: 1/1;
       object-fit: cover;
-      border-radius: 6px;
-      background: #f5f5f4;
+      background: #f0ece6;
+      margin-bottom: 20px;
     }
-    .modal-specs {
-      margin: 12px 0;
-      font-size: 12px;
-      border-top: 1px solid #f0ede9;
-      border-bottom: 1px solid #f0ede9;
-      padding: 8px 0;
-    }
-    .modal-specs div { margin-bottom: 3px; }
-    .modal-btn {
+    .btn-wa-modal {
       display: block;
       width: 100%;
       text-align: center;
-      background: #78350f;
-      color: #fff;
+      background: var(--text);
+      color: #ffffff;
+      padding: 14px;
       font-size: 12px;
       font-weight: 700;
-      padding: 11px;
-      border-radius: 6px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 24px;
     }
   </style>
 </head>
 <body>
 
-  <div class="topbar">
-    JEPARA WOODWORKS • KAYU OVEN KILN-DRIED (MC &lt; 12%) • TERIMA GAMBAR KERJA CAD / 3D
-  </div>
-
-  <header>
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="brand-logo">RL</div>
-        <div>
-          <div class="brand-name">Rezeki Lancar</div>
-          <div class="brand-sub">Furniture Jepara</div>
-        </div>
+  <!-- Navigation -->
+  <nav>
+    <div class="wrap nav-bar">
+      <div>
+        <div class="brand-mark">Rezeki Lancar</div>
+        <div class="brand-sub">Bengkel Mebel Kayu Jepara</div>
       </div>
-      <a href="https://wa.me/6281234567890?text=Halo%20Rezeki%20Lancar%20Furniture%2C%20saya%20mau%20konsultasi%20custom%20mebel" target="_blank" class="btn-wa-header">
-        Konsultasi WA
-      </a>
+      <div class="nav-links">
+        <a href="#tentang">Tentang Bengkel</a>
+        <a href="#koleksi">Karya Pilihan</a>
+        <a href="#kerjasama">Mitra Arsitek</a>
+        <a href="https://wa.me/6281234567890?text=Halo%20Rezeki%20Lancar%2C%20saya%20mau%20konsultasi%20produksi%20mebel" target="_blank" class="btn-contact">Konsultasi WA</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
+  <!-- Hero Statement -->
   <section class="hero">
-    <div class="container">
-      <span class="hero-badge">Workshop Jepara — Handcrafted</span>
-      <h1 class="hero-title">Kejujuran Kayu & Presisi Tukang Jepara</h1>
-      <p class="hero-desc">
-        Katalog produk mebel solid & mitra eksekusi produksi gambar kerja interior di Jakarta, Bali, dan kota lainnya.
+    <div class="wrap">
+      <div class="hero-label">Atelier Mebel Solid • Est. Jepara</div>
+      <h1 class="hero-title">
+        Menerjemahkan visi arsitek ke dalam <em>ketulusan kayu solid</em> dengan presisi tangan pengrajin Jepara.
+      </h1>
+      <p class="hero-lead">
+        Rezeki Lancar adalah bengkel mebel keluarga di Jepara. Kami tidak memproduksi mebel massal cepat saji. Fokus kami adalah pengerjaan loose furniture dan custom carpentry berkualitas tinggi untuk proyek residensial, villa, dan komersial terpilih.
       </p>
+    </div>
+  </section>
 
-      <div class="controls">
-        <input type="text" id="searchInput" class="search-box" placeholder="Ketik untuk mencari produk (contoh: meja, sofa, rak)..." />
-        <div class="cat-bar" id="catBar">
-          <button class="cat-pill active" onclick="setCategory('Semua')">Semua (500)</button>
-          <button class="cat-pill" onclick="setCategory('Kursi & Sofa')">Kursi & Sofa</button>
-          <button class="cat-pill" onclick="setCategory('Meja & Konsol')">Meja & Konsol</button>
-          <button class="cat-pill" onclick="setCategory('Lemari & Storage')">Lemari & Storage</button>
-          <button class="cat-pill" onclick="setCategory('Rak & Display')">Rak & Display</button>
-          <button class="cat-pill" onclick="setCategory('Cermin & Dekorasi')">Cermin & Dekorasi</button>
+  <!-- Workshop Standards Strip -->
+  <section class="wrap">
+    <div class="specs-strip">
+      <div class="spec-item">
+        <div class="spec-num">&lt; 12% MC</div>
+        <div class="spec-label">Kiln-Dried Oven Moisture</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-num">Mortise &amp; Tenon</div>
+        <div class="spec-label">Konstruksi Pasak Kayu Tradisional</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-num">Jati &amp; Mindi</div>
+        <div class="spec-label">Kayu Legal Perhutani Terkurasi</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-num">1x24 Jam</div>
+        <div class="spec-label">Estimasi RAB Gambar CAD / 3D</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Profile Section -->
+  <section class="section-about wrap" id="tentang">
+    <div class="about-grid">
+      <div class="about-body">
+        <div class="hero-label">Profil Perusahaan &amp; Etos Kerja</div>
+        <h2 class="about-h">Bukan makelar retail. Kami bertumpu pada kayu yang benar dan tukang yang terlatih.</h2>
+        <p>
+          Banyak proyek interior kecewa dengan mebel asal Jepara akibat kayu mentah yang melengkung setelah 3 bulan di ruang ber-AC, sambungan yang hanya dipaku tembak, serta komunikasi tukang yang lambat membaca gambar kerja arsitektur.
+        </p>
+        <p>
+          Rezeki Lancar didirikan untuk menjembatani kesenjangan tersebut. Kami mengawinkan keahlian tangan tradisional ukir & pasak kayu Jepara dengan disiplin kontrol mutu modern: kayu oven kering terukur, pelaporan progres bertahap, dan kepatuhan dimensi gambar kerja AutoCAD maupun 3D SketchUp.
+        </p>
+      </div>
+
+      <div class="pillar-box">
+        <div class="pillar-title">Spesifikasi Bengkel Kami</div>
+        <ul class="pillar-list">
+          <li><span>Material Baku</span> <strong>Kayu Jati Solid, Mindi, Mahoni, Rotan Asli</strong></li>
+          <li><span>Perlakuan Kayu</span> <strong>Chemical Anti-Rayap &amp; Kiln-Dried Chamber</strong></li>
+          <li><span>Standar Finishing</span> <strong>Polyurethane (PU), NC Matte, Natural Oil</strong></li>
+          <li><span>Kapasitas Proyek</span> <strong>Loose Furniture Residensial, Cafe, Villa Bali</strong></li>
+          <li><span>Pengiriman</span> <strong>Packing Palet Kayu Tertutup Seluruh Indonesia</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Flagship Works -->
+  <section class="section-gallery wrap" id="koleksi">
+    <div class="section-head">
+      <div>
+        <div class="hero-label">Arsip Karya Pilihan</div>
+        <h2 class="section-title">Koleksi Desain &amp; Loose Furniture</h2>
+      </div>
+      <div class="section-sub">
+        Setiap karya dapat disesuaikan (custom) dimensi, jenis kayu, dan warnanya.
+      </div>
+    </div>
+
+    <div class="curated-grid" id="galleryGrid"></div>
+  </section>
+
+  <!-- B2B Workflow for Architects -->
+  <section class="section-flow" id="kerjasama">
+    <div class="wrap">
+      <div class="flow-head">
+        <div class="hero-label" style="color: #c4976c;">Alur Kerja Sama Mitra</div>
+        <h3>Bagaimana Kami Bekerja Bersama Arsitek &amp; Desainer Interior</h3>
+        <p>Sistematis, transparan, dan terukur agar proyek Anda selesai tepat waktu dengan kualitas yang disetujui klien Anda.</p>
+      </div>
+
+      <div class="flow-steps">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-name">Kirim Gambar Kerja</div>
+          <div class="step-desc">Kirimkan file PDF, AutoCAD, atau 3D SketchUp denah furniture ruangan proyek Anda via WhatsApp atau email.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-name">RAB &amp; Sampel Kayu</div>
+          <div class="step-desc">Kami hitung penawaran harga workshop tangan pertama dalam 1x24 jam dan siapkan sampel finishing jika dibutuhkan.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-name">Laporan Progres Fisik</div>
+          <div class="step-desc">Kami kirimkan dokumentasi foto &amp; video di setiap fase: pemilihan kayu, assembling mentah, hingga proses finishing.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <div class="step-name">QC &amp; Palet Kargo</div>
+          <div class="step-desc">Pemeriksaan ketat kadar air dan kehalusan sebelum dibungkus kardus tebal dan peti palet kayu menuju lokasi proyek.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <main class="container">
-    <div class="meta-bar">
-      <div>Menampilkan <span id="countText" style="font-weight:700; color:#1c1917;">16</span> dari <span id="totalMatchText">500</span> produk</div>
-      <div>Klik foto untuk spesifikasi detail</div>
+  <!-- Footer -->
+  <footer>
+    <div class="wrap foot-grid">
+      <div>
+        <div class="brand-mark" style="font-size: 18px; margin-bottom: 6px;">Rezeki Lancar Furniture</div>
+        <p style="max-width: 420px; line-height: 1.7;">
+          Bengkel pengerjaan mebel kayu solid &amp; mitra manufaktur desainer interior. Berakar dari tradisi pertukangan kayu Jepara, Jawa Tengah.
+        </p>
+      </div>
+      <div>
+        <div class="foot-h">Workshop &amp; Studio</div>
+        <p>Jepara, Jawa Tengah<br>Indonesia</p>
+        <p style="margin-top: 8px;">Kunjungan workshop dengan perjanjian.</p>
+      </div>
+      <div>
+        <div class="foot-h">Kontak Proyek</div>
+        <p>WhatsApp: +62 812-3456-7890</p>
+        <p>Email: proyek@rezekilancar.id</p>
+      </div>
     </div>
-
-    <div class="catalog-grid" id="grid"></div>
-
-    <div class="load-more-wrap">
-      <button id="loadMoreBtn" class="btn-load-more" onclick="loadMore()">Muat 16 Produk Lainnya ↓</button>
+    <div class="wrap" style="border-top: 1px solid var(--border); padding-top: 24px; text-align: center; font-size: 11px;">
+      &copy; 2026 Rezeki Lancar Furniture. All rights reserved.
     </div>
-
-    <!-- B2B Section for Architects -->
-    <div class="b2b-banner">
-      <div class="b2b-sub">Mitra Produksi Arsitek & Desainer Interior</div>
-      <div class="b2b-h">Punya Gambar Kerja Sendiri? Kami Buatkan Estimasi RAB</div>
-      <div class="b2b-p">Kirim file 3D SketchUp, PDF, atau CAD Anda. Kami hitung estimasi biaya produksi kayu solid langsung dari tangan pertama pengrajin Jepara.</div>
-      <a href="https://wa.me/6281234567890?text=Halo%20Rezeki%20Lancar%2C%20saya%20arsitek%2Fdesainer%20interior%20mau%20kirim%20gambar%20kerja%20untuk%20RAB" target="_blank" class="b2b-btn">Kirim Gambar Kerja via WhatsApp →</a>
-    </div>
-  </main>
-
-  <footer style="text-align:center; padding:20px 16px; font-size:11px; color:#78716c; border-top:1px solid #e7e5e4;">
-    &copy; 2026 Rezeki Lancar Furniture • Workshop Mebel Jepara, Jawa Tengah.
   </footer>
 
-  <!-- Modal -->
-  <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <img id="mImg" class="modal-img" src="" alt="" />
-      <div style="margin-top:10px;">
-        <span id="mCat" style="font-size:10px; font-weight:700; color:#78350f; text-transform:uppercase;"></span>
-        <h3 id="mTitle" style="font-size:15px; font-weight:800; margin-top:2px;"></h3>
-        <div id="mPrice" style="font-size:13px; font-weight:800; color:#78350f; margin-top:2px;"></div>
-      </div>
-      <div class="modal-specs">
+  <!-- Modal Detail -->
+  <div class="modal-backdrop" id="modal" onclick="if(event.target===this)closeModal()">
+    <div class="modal-window">
+      <div class="modal-close-btn" onclick="closeModal()">&times;</div>
+      <img id="mImg" class="modal-media" src="" alt="" />
+      <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);" id="mCat"></div>
+      <h3 style="font-family: var(--font-serif); font-size: 22px; margin: 4px 0 8px;" id="mTitle"></h3>
+      <div style="font-size: 15px; font-weight: 700; color: var(--text);" id="mPrice"></div>
+      
+      <div style="margin: 18px 0; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.8;">
         <div><strong>Dimensi:</strong> <span id="mDim"></span></div>
         <div><strong>Material:</strong> <span id="mMat"></span></div>
         <div><strong>Finishing:</strong> <span id="mFin"></span></div>
       </div>
-      <p id="mDesc" style="font-size:11px; color:#57534e; margin-bottom:14px;"></p>
-      <a id="mWa" href="#" target="_blank" class="modal-btn">Pesan / Diskusi Produk via WhatsApp</a>
+      
+      <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7;" id="mDesc"></p>
+      
+      <a id="mWa" href="#" target="_blank" class="btn-wa-modal">Konsultasikan Karya Ini via WhatsApp →</a>
     </div>
   </div>
 
   <script>
-    const data = [{"id": 1, "t": "Salami Mirror", "c": "Cermin & Dekorasi Dinding", "p": "Rp 450.000", "d": "40 × 40 × 2 cm", "m": "Mirror, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-Aksesoris-Salami-Mirror-Uwitan.jpg", "desc": ""}, {"id": 2, "t": "Woodletter", "c": "Home Decor & Living", "p": "Rp 35.000", "d": "5 × 5 × 5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/aksesoris-woodletter-2.webp", "desc": ""}, {"id": 3, "t": "Cakra Arm Chair 3 Seater", "c": "Kursi & Bangku", "p": "Rp 2.200.000", "d": "165 × 60 × 79 cm", "m": "Foam, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/SAM9546.jpg", "desc": ""}, {"id": 4, "t": "Papan Menu", "c": "Home Decor & Living", "p": "Rp 195.000", "d": "32 × 32 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/07/sampul-scaled.jpg", "desc": ""}, {"id": 5, "t": "Jamur Mini Basket", "c": "Home Decor & Living", "p": "Rp 145.000", "d": "15 × 15 × 15 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/02/1-aksesoris-jamur-mini-basket.jpeg", "desc": ""}, {"id": 6, "t": "Tigo Keychain", "c": "Home Decor & Living", "p": "Rp 9.900", "d": "7,5 × 5,5 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/10/IMG_7785-min.jpeg", "desc": ""}, {"id": 7, "t": "Kitchen Shelf Natural", "c": "Rak & Storage", "p": "Rp 2.450.000", "d": "59 × 46 × 111,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1-furniture-rak-kitchen-shelf-natural.jpg", "desc": ""}, {"id": 8, "t": "Kalender Uwitan 2026", "c": "Home Decor & Living", "p": "Rp 185.000", "d": "27 × 8,5 × 20 cm", "m": "Pine Wood, Recycle Polimer Sheet", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2023/01/IMG_0061-min.jpeg", "desc": ""}, {"id": 9, "t": "Wall Decor – Set A Isi 3pcs", "c": "Home Decor & Living", "p": "Rp 369.000", "d": "61 × 61 × 8 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1908.jpg", "desc": ""}, {"id": 10, "t": "Wall Decor – Set D Isi 4pcs", "c": "Home Decor & Living", "p": "Rp 495.000", "d": "61 × 61 × 10 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1884.jpg", "desc": ""}, {"id": 11, "t": "Wall Decor – Set 5 Isi 6pcs", "c": "Home Decor & Living", "p": "Rp 695.000", "d": "60 × 2 × 60 cm", "m": "Kayu Solid", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_1839.jpg", "desc": ""}, {"id": 12, "t": "Wall Decor – Set B Isi 3pcs", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "51 × 51 × 8 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1927.jpg", "desc": ""}, {"id": 13, "t": "Wall Decor – Set C Isi 3pcs", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "46 × 46 × 8 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2026/02/IMG_1901.jpg", "desc": ""}, {"id": 14, "t": "Robobox Natural", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "28 × 14 × 20 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-furniture-aksesoris-robobox-natural.jpg", "desc": ""}, {"id": 15, "t": "Nine Interphone Natural White", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "30 × 10 × 33 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-furniture-aksesoris-nine-interphone-natural-white.jpg", "desc": ""}, {"id": 16, "t": "Wooden Snack Box Natural White", "c": "Home Decor & Living", "p": "Rp 385.000", "d": "42 × 28 × 22 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/furniture-aksesoris-wooden-snack-box-nw-1.jpg", "desc": ""}, {"id": 17, "t": "Single Hook Natural", "c": "Home Decor & Living", "p": "Rp 295.000", "d": "80 × 15 × 20 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-Furniture-Single-Hook-Natural-Uwitan.jpg", "desc": ""}, {"id": 18, "t": "Wooden Tray Large", "c": "Home Decor & Living", "p": "Rp 215.000", "d": "50 × 25 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/3-Furniture-Wooden-Tray-Large.jpg", "desc": ""}, {"id": 19, "t": "Standing Handphone White", "c": "Rak & Storage", "p": "Rp 55.000", "d": "7 × 11 × 17 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-Aksesoris-Standing-Handphone-Full-White-uwitan.jpg", "desc": ""}, {"id": 20, "t": "Bench Industrial Black", "c": "Kursi & Bangku", "p": "Rp 985.000", "d": "80 × 30 × 50 cm", "m": "Metal, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1.-Furniture-Bench-Bench-Industrial-Black.jpg", "desc": ""}, {"id": 21, "t": "Simple Side Table Natural", "c": "Meja & Konsol", "p": "Rp 1.100.000", "d": "40 × 30 × 55 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/furniture-simple-side-table-natural-2.webp", "desc": ""}, {"id": 22, "t": "Set Bangku Teras Natural White", "c": "Home Decor & Living", "p": "Rp 1.500.000", "d": "Custom", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/1-Furniture-Set-Bangku-Teras-Natural-White-Uwitan.jpg", "desc": ""}, {"id": 23, "t": "Rak Miguna 3 Tingkat – Rak Tingkat Serbaguna", "c": "Rak & Storage", "p": "Rp 585.000", "d": "67 × 27 × 77 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/Rak-Miguna-3-Tingkat-Single-3-1.jpg", "desc": ""}, {"id": 24, "t": "Flower Stand", "c": "Rak & Storage", "p": "Rp 825.000", "d": "43 × 6 × 149 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/1-furniture-rak-flower-stand.jpg", "desc": ""}, {"id": 25, "t": "1 Drawer Solid", "c": "Lemari & Laci", "p": "Rp 925.000", "d": "39 × 30 × 54 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/FURNITURE-RAK-1-DRAWER-SOLID-1-scaled.jpg", "desc": ""}, {"id": 26, "t": "Tray Storage", "c": "Home Decor & Living", "p": "Rp 320.000", "d": "42 × 28 × 11 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/1-Furniture-Tray-Storage-Uwitan.jpg", "desc": ""}, {"id": 27, "t": "Round Chair Natural", "c": "Kursi & Bangku", "p": "Rp 925.000", "d": "42 × 50 × 86 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1-furniture-kursi-round-chair-natural.jpg", "desc": ""}, {"id": 28, "t": "Sponge Chair Natural", "c": "Kursi & Bangku", "p": "Rp 985.000", "d": "43 × 53 × 85 cm", "m": "Pine Wood, Premium Sponge", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/furniture-kursi-sponge-chair.jpg", "desc": ""}, {"id": 29, "t": "Classic Chair Natural", "c": "Kursi & Bangku", "p": "Rp 985.000", "d": "42 × 49,5 × 86 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1.-Furniture-Kursi-Classic-Chair-Natural.jpeg", "desc": ""}, {"id": 30, "t": "Rak Miguna 2 Tingkat – Rak Tingkat Serbaguna", "c": "Rak & Storage", "p": "Rp 485.000", "d": "67 × 27 × 47 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/1-furniture-rak-miguna-2-tingkat.jpg", "desc": ""}, {"id": 31, "t": "Cakra Arm Chair 1 Seater", "c": "Kursi & Bangku", "p": "Rp 985.000", "d": "60 × 60 × 79 cm", "m": "Foam, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/01/1-furniture-kursi-cakra-arm-chair.jpg", "desc": ""}, {"id": 32, "t": "Bench 2 Drawer", "c": "Kursi & Bangku", "p": "Rp 1.850.000", "d": "90 × 33 × 45 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/1.-Furniture-Kursi-Bench-2-Drawer.jpeg", "desc": ""}, {"id": 33, "t": "Rak Dinding Panel Natural White", "c": "Rak & Storage", "p": "Rp 495.000", "d": "80 × 16 × 53 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/1.jpg", "desc": ""}, {"id": 34, "t": "Stool L Natural", "c": "Kursi & Bangku", "p": "Rp 520.000", "d": "30 × 30 × 56 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1-Furniture-Stool-L-Natural-Uwitan.jpg", "desc": ""}, {"id": 35, "t": "Sketsel Vitrage New Natural", "c": "Home Decor & Living", "p": "Rp 1.650.000", "d": "45 × 11 × 165 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1-Aksesoris-Sketsel-Vitrage-New-Natural.jpg", "desc": ""}, {"id": 36, "t": "Oval Tea Table Brown", "c": "Meja & Konsol", "p": "Rp 1.450.000", "d": "80 × 45 × 40 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/SAM0086.jpg", "desc": ""}, {"id": 37, "t": "3×1 Drawer Solid Brown", "c": "Lemari & Laci", "p": "Rp 2.350.000", "d": "114 × 30 × 53 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1.-Furniture-Rak-3x1-Drawer-Solid-Brown.jpeg", "desc": ""}, {"id": 38, "t": "Bench Sponge L Cream", "c": "Kursi & Bangku", "p": "Rp 1.450.000", "d": "130 × 32 × 45 cm", "m": "Pine Wood, Premium Sponge", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1.-Furniture-Bench-Bench-Sponge-L-Cream.jpg", "desc": ""}, {"id": 39, "t": "Rak Dinding Rumah Natural White", "c": "Rak & Storage", "p": "Rp 420.000", "d": "75 × 15 × 51 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/Furniture-aksesoris-rak-dinding-rumah-nw-5.jpeg", "desc": ""}, {"id": 40, "t": "Rak Dinding Panel Natural", "c": "Rak & Storage", "p": "Rp 495.000", "d": "80 × 16 × 53 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/IMG_5217.jpg", "desc": ""}, {"id": 41, "t": "Squarebob Natural", "c": "Home Decor & Living", "p": "Rp 170.000", "d": "16 × 14 × 21 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-aksesoris-squarebob-natural.jpg", "desc": ""}, {"id": 42, "t": "Squarebob Natural White", "c": "Home Decor & Living", "p": "Rp 170.000", "d": "16 × 14 × 21 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/01/1-Aksesoris-Squarebob-Tissue-Box-Natural-White-uwitan.jpg", "desc": ""}, {"id": 43, "t": "Salami Meja Kerja 2 Laci Natural", "c": "Meja & Konsol", "p": "Rp 3.200.000", "d": "140 × 45 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/1-Furnitiure-Salami-Meja-Kerja-2-Laci-Natural.jpg", "desc": ""}, {"id": 44, "t": "Ambalan U Natural", "c": "Home Decor & Living", "p": "Rp 225.000", "d": "60 × 15 × 10 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/08/1-furniture-rak-ambalan-u-natural.jpg", "desc": ""}, {"id": 45, "t": "Estu Vanity Mirror Natural", "c": "Cermin & Dekorasi Dinding", "p": "Rp 985.000", "d": "56 × 16 × 67 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/1-Furniture-Cermin-Estu-Vanity-Mirror-Natural.jpg", "desc": ""}, {"id": 46, "t": "Set Salami Rak Tangga", "c": "Rak & Storage", "p": "Rp 2.150.000", "d": "65 × 30 × 188 cm", "m": "Pine Wood, Plywood, Stailess Steel", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/DSC01894-copy-scaled.jpg", "desc": ""}, {"id": 47, "t": "Kinata Hanger Shelf Natural White", "c": "Rak & Storage", "p": "Rp 2.350.000", "d": "76 × 40 × 197 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/1-furniture-rak-gantung-kinata-hanger-shelf-natural-white.jpg", "desc": ""}, {"id": 48, "t": "Half Moon Rattan Chair Black", "c": "Kursi & Bangku", "p": "Rp 1.150.000", "d": "75 × 62 × 90 cm", "m": "Metal, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/04/20190416_111558-copy.jpg", "desc": ""}, {"id": 49, "t": "2×2 Book Case Natural", "c": "Home Decor & Living", "p": "Rp 2.650.000", "d": "72 × 30 × 89 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/10/Bookcase-2x2-Natural-Set-1.jpg", "desc": ""}, {"id": 50, "t": "Cakra Arm Chair 2 Seater", "c": "Kursi & Bangku", "p": "Rp 1.950.000", "d": "115 × 60 × 79 cm", "m": "Foam, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/furniture-kursi-cakra-arm-chair-1.jpg", "desc": ""}, {"id": 51, "t": "Nine Interphone Natural", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "30 × 10 × 33 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/10/SAM8976-1.jpg", "desc": ""}, {"id": 52, "t": "1×2 Drawer Solid Small", "c": "Lemari & Laci", "p": "Rp 1.350.000", "d": "39 × 35 × 60 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/11/furniture-1x2-drawer-solid-small-3.webp", "desc": ""}, {"id": 53, "t": "Miguna Box S", "c": "Home Decor & Living", "p": "Rp 245.000", "d": "42,5 × 28 × 15 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/11/1-furniture-aksesoris-miguna-box-s.jpg", "desc": ""}, {"id": 54, "t": "Sketsel Vitrage New Large White", "c": "Home Decor & Living", "p": "Rp 2.450.000", "d": "230 × 23 × 195 cm", "m": "Pine Wood, Plywood, Vitrage", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/1-Aksesoris-Sketsel-Vitrage-New-Large-White.jpg", "desc": ""}, {"id": 55, "t": "Sketsel Vitrage Natural", "c": "Home Decor & Living", "p": "Rp 1.450.000", "d": "130 × 23 × 165 cm", "m": "Pine Wood, Vitrage", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1-Aksesoris-Sketsel-Vitrage-Natural-Uwitan.jpg", "desc": ""}, {"id": 56, "t": "Standing Mirror White", "c": "Rak & Storage", "p": "Rp 1.150.000", "d": "50 × 5 × 150 cm", "m": "Mirror, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/12/1-Furniture-Standing-Mirror-White-Uwitan.jpg", "desc": ""}, {"id": 57, "t": "Asoka Tray", "c": "Home Decor & Living", "p": "Rp 135.000", "d": "41 × 41 × 5 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/03/CHO04443-scaled.jpg", "desc": ""}, {"id": 58, "t": "Ona Tray", "c": "Home Decor & Living", "p": "Rp 225.000", "d": "34,5 × 34,5 × 5,5 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/03/CHO04444-1.jpg", "desc": ""}, {"id": 59, "t": "Salami Rak Toilet", "c": "Rak & Storage", "p": "Rp 1.250.000", "d": "65 × 40 × 184 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/10/1-Furniture-Salami-Rak-Toilet-Uwitan.jpg", "desc": ""}, {"id": 60, "t": "Rak Buku Slim 3 Tingkat", "c": "Rak & Storage", "p": "Rp 985.000", "d": "80 × 10,5 × 100 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/11/1-furniture-rak-buku-slim-3-tingkat.jpg", "desc": ""}, {"id": 61, "t": "Ladder Shelf Natural", "c": "Rak & Storage", "p": "Rp 425.000", "d": "41,5 × 43 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_5590-scaled.jpg", "desc": ""}, {"id": 62, "t": "Standing Hanger Round", "c": "Rak & Storage", "p": "Rp 450.000", "d": "55 × 55 × 160 cm", "m": "Mahogany Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_7635-2-min-scaled.jpg", "desc": ""}, {"id": 63, "t": "Vintage Bread Box Natural White", "c": "Home Decor & Living", "p": "Rp 350.000", "d": "50 × 25 × 20 cm", "m": "Metal, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-furniture-aksesoris-vintage-breadbox-natural-white.jpg", "desc": ""}, {"id": 64, "t": "Slide Box Natural White", "c": "Home Decor & Living", "p": "Rp 350.000", "d": "40 × 27 × 20 cm", "m": "MDF, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-furniture-aksesoris-slide-box-natural-white.jpg", "desc": ""}, {"id": 65, "t": "Elephant Pen Holder", "c": "Home Decor & Living", "p": "Rp 90.000", "d": "10 × 16 × 10 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1.-Furniture-Aksesoris-Elephant-Pen-Holder.jpg", "desc": ""}, {"id": 66, "t": "Salami Stool – Bangku Makan Minimalis", "c": "Kursi & Bangku", "p": "Rp 420.000", "d": "29 × 29 × 44 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/1-Furniture-Salami-Stool-Uwitan.jpg", "desc": ""}, {"id": 67, "t": "Melati Rattan Tray Natural", "c": "Home Decor & Living", "p": "Rp 350.000", "d": "48 × 36 × 11 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/1-furniture-aksesoris-melati-rattan-tray-natural.jpg", "desc": ""}, {"id": 68, "t": "Cakra Mini Round Table", "c": "Meja & Konsol", "p": "Rp 485.000", "d": "40 × 40 × 48 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/1.-Furniture-Meja-Cakra-Mini-Round-Table.jpg", "desc": ""}, {"id": 69, "t": "Rotan Ikan", "c": "Home Decor & Living", "p": "Rp 365.000", "d": "49 × 60 × 40 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1-furniture-aksesoris-rotan-ikan.jpg", "desc": ""}, {"id": 70, "t": "Melati Rattan Tray Round Natural", "c": "Home Decor & Living", "p": "Rp 385.000", "d": "45 × 45 × 15 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/1-furniture-aksesoris-melati-rattan-tray-round-natural.jpg", "desc": ""}, {"id": 71, "t": "Rotan Kucing", "c": "Home Decor & Living", "p": "Rp 345.000", "d": "50 × 40 × 50 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/Rotan-Kucing-02.jpg", "desc": ""}, {"id": 72, "t": "Kitchen Shelf Natural White", "c": "Rak & Storage", "p": "Rp 2.450.000", "d": "59 × 46 × 111,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1-furniture-kitchen-shelf-natural-white.jpg", "desc": ""}, {"id": 73, "t": "TV Table U", "c": "Meja & Konsol", "p": "Rp 2.350.000", "d": "100 × 35 × 45 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/1-Furniture-TV-Table-U-Uwitan.jpg", "desc": ""}, {"id": 74, "t": "Folding Hook Natural White", "c": "Home Decor & Living", "p": "Rp 150.000", "d": "60 × 10 × 32 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1-furniture-aksesoris-folding-hook-natural-white.jpeg", "desc": ""}, {"id": 75, "t": "Slide Box Natural", "c": "Home Decor & Living", "p": "Rp 350.000", "d": "40 × 27 × 20 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/03/1-Aksesoris-Slide-Box-Full-Natural.jpg", "desc": ""}, {"id": 76, "t": "Sketsel Vitrage New Large Natural", "c": "Home Decor & Living", "p": "Rp 2.450.000", "d": "230 × 23 × 185 cm", "m": "Mindi Wood, Plywood, Vitrage", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/IMG_6668-scaled.jpg", "desc": ""}, {"id": 77, "t": "Alana Sofa 1 Seater", "c": "Kursi & Bangku", "p": "Rp 3.550.000", "d": "75 × 80 × 80 cm", "m": "Pine Wood, Premium Foam", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/08/1.-Furniture-Kursi-Alana-Sofa-1-Seater.jpg", "desc": ""}, {"id": 78, "t": "Estu Vanity Mirror Natural White", "c": "Cermin & Dekorasi Dinding", "p": "Rp 985.000", "d": "56 × 16 × 67 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/1-Furniture-Cermin-Estu-Vanity-Mirror-Natural-White.jpeg", "desc": ""}, {"id": 79, "t": "Rak Sudut", "c": "Rak & Storage", "p": "Rp 985.000", "d": "30 × 30 × 85 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/08/CHO03454-scaled.jpg", "desc": ""}, {"id": 80, "t": "Meja Konsol 1 Laci Coak", "c": "Meja & Konsol", "p": "Rp 2.250.000", "d": "90 × 40 × 75 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/02/1-furniture-meja-konsol-1-laci-coak.jpeg", "desc": ""}, {"id": 81, "t": "Brianna 1 Drawer 2 Basket", "c": "Lemari & Laci", "p": "Rp 1.300.000", "d": "35 × 35 × 75 cm", "m": "Mahogany Wood, MDF, Mindi Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/10/IMG_9537-scaled.jpg", "desc": ""}, {"id": 82, "t": "Mirror M Natural", "c": "Cermin & Dekorasi Dinding", "p": "Rp 825.000", "d": "80 × 60 × 5 cm", "m": "Mirror, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/09/DSCF0575-1-1.jpg", "desc": ""}, {"id": 83, "t": "Meja Kerja 1 Laci", "c": "Meja & Konsol", "p": "Rp 2.650.000", "d": "120 × 60 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/11/Furniture-Meja-Kerja-1-Laci.jpg", "desc": ""}, {"id": 84, "t": "Ladder Hanger L", "c": "Rak & Storage", "p": "Rp 450.000", "d": "90 × 4 × 180 cm", "m": "Mahogany Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/02/furniture-aksesoris-ladder-hanger-L.jpg", "desc": ""}, {"id": 85, "t": "Book Case 5 Tingkat White", "c": "Home Decor & Living", "p": "Rp 1.650.000", "d": "64 × 32 × 140 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1-furniture-rak-book-case-5-tingkat-white.jpg", "desc": ""}, {"id": 86, "t": "Stool S White", "c": "Kursi & Bangku", "p": "Rp 450.000", "d": "30 × 30 × 41,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/09/1-Furniture-Stool-S-White.jpg", "desc": ""}, {"id": 87, "t": "Tobo Stool", "c": "Kursi & Bangku", "p": "Rp 685.000", "d": "30,5 × 30 × 46 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/10/IMG_1342-01-min-scaled.jpeg", "desc": ""}, {"id": 88, "t": "Kisaku Sofa", "c": "Kursi & Bangku", "p": "Rp 2.850.000", "d": "75 × 85 × 85 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/2-furniture-kursi-kisaku-sofa.jpg", "desc": ""}, {"id": 89, "t": "Salami Sofa Bed Headboard & Arm", "c": "Kursi & Bangku", "p": "Rp 9.850.000", "d": "165 × 80 × 50 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/03/IMG_5801-scaled.jpg", "desc": ""}, {"id": 90, "t": "Papasan", "c": "Home Decor & Living", "p": "Rp 1.350.000", "d": "115 × 115 × 89 cm", "m": "Foam, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/08/IMG_3067.jpg", "desc": ""}, {"id": 91, "t": "Beranda Chair", "c": "Kursi & Bangku", "p": "Rp 685.000", "d": "59 × 55 × 85 cm", "m": "Rattan, Besi", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/10/IMG_2756-01-min.jpeg", "desc": ""}, {"id": 92, "t": "Kagumi Chair Black", "c": "Kursi & Bangku", "p": "Rp 1.350.000", "d": "70 × 59 × 87 cm", "m": "Foam, Iron, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/09/furniture-kursi-kagumi-chair-black-1.jpg", "desc": ""}, {"id": 93, "t": "Baden Chair", "c": "Kursi & Bangku", "p": "Rp 1.150.000", "d": "42 × 48 × 88 cm", "m": "Mindi Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/20240703125058_IMG_9300-01-scaled.jpeg", "desc": ""}, {"id": 94, "t": "Menjalin Sofa 1 Seater", "c": "Kursi & Bangku", "p": "Rp 1.650.000", "d": "107 × 93 × 82 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/10/IMG_2532-01-min.jpeg", "desc": ""}, {"id": 95, "t": "Brono Stool", "c": "Kursi & Bangku", "p": "Rp 385.000", "d": "38 × 38 × 45 cm", "m": "Teak Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/03/IMG_3675-01-min.jpeg", "desc": ""}, {"id": 96, "t": "Pita Kids Chair", "c": "Kursi & Bangku", "p": "Rp 460.000", "d": "45 × 31 × 65 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/CHO07210-1-min-scaled.jpg", "desc": ""}, {"id": 97, "t": "Rantang Shelf Rotan Natural", "c": "Rak & Storage", "p": "Rp 745.000", "d": "40 × 40 × 80 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_3544-scaled.jpg", "desc": ""}, {"id": 98, "t": "Citra Arm Chair", "c": "Kursi & Bangku", "p": "Rp 925.000", "d": "66 × 60 × 82 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/09/1.-Furniture-Kursi-Citra-Arm-Chair.jpg", "desc": ""}, {"id": 99, "t": "Fitrit Bench – Bench Rotan dengan Penyimpanan", "c": "Kursi & Bangku", "p": "Rp 1.350.000", "d": "120 × 37 × 42 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_0640-01.jpeg", "desc": ""}, {"id": 100, "t": "Bona Chair", "c": "Kursi & Bangku", "p": "Rp 1.100.000", "d": "45 × 45 × 85 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/11/IMG_0241-01-min.jpeg", "desc": ""}, {"id": 101, "t": "Lenggah Kursi Teras Set", "c": "Kursi & Bangku", "p": "Rp 3.450.000", "d": "113 × 65 × 78 cm", "m": "Rattan, Besi", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_8068-1.jpeg", "desc": ""}, {"id": 102, "t": "Harumi Stool", "c": "Kursi & Bangku", "p": "Rp 650.000", "d": "30 × 30 × 46 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/02/1-furniture-kursi-harumi-stool.jpeg", "desc": ""}, {"id": 103, "t": "Bona Sofa", "c": "Kursi & Bangku", "p": "Rp 8.650.000", "d": "200 × 80 × 80 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/06/20250312152608_IMG_3561-01-min.jpeg", "desc": ""}, {"id": 104, "t": "Sintesa Bench Green", "c": "Kursi & Bangku", "p": "Rp 1.450.000", "d": "115 × 52 × 81 cm", "m": "Sintetis, Besi", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_8149.jpeg", "desc": ""}, {"id": 105, "t": "Tobo Bench", "c": "Kursi & Bangku", "p": "Rp 2.400.000", "d": "160 × 33 × 45 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/06/IMG_0721-01-min.jpeg", "desc": ""}, {"id": 106, "t": "Single Sofa 196", "c": "Kursi & Bangku", "p": "Rp 7.400.000", "d": "196 × 85 × 75 cm", "m": "Pine Wood, Premium Sponge", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/11/1-Furniture-Single-Sofa-196.jpg", "desc": ""}, {"id": 107, "t": "Sagoya Chair", "c": "Kursi & Bangku", "p": "Rp 2.100.000", "d": "61 × 83 × 91 cm", "m": "Rattan, Teak Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/5-furniture-kursi-sagoya-chair.jpg", "desc": ""}, {"id": 108, "t": "Moku Stool", "c": "Kursi & Bangku", "p": "Rp 420.000", "d": "30 × 30 × 44 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_2073-01-min.jpeg", "desc": ""}, {"id": 109, "t": "Rak Susun Natural White", "c": "Rak & Storage", "p": "Rp 240.000", "d": "66 × 30 × 40 cm", "m": "MDF, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/furniture-aksesoris-rak-susun-nw-1.jpg", "desc": ""}, {"id": 110, "t": "Koru Chair", "c": "Kursi & Bangku", "p": "Rp 985.000", "d": "55 × 56 × 73 cm", "m": "Metal, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/10/furniture-chair-koru-chair-1.jpg", "desc": ""}, {"id": 111, "t": "Moto Chair", "c": "Kursi & Bangku", "p": "Rp 1.850.000", "d": "51 × 45 × 84 cm", "m": "Teak Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/20240829135157_IMG_0023-01-min-scaled.jpeg", "desc": ""}, {"id": 112, "t": "Moon Rattan Chair", "c": "Kursi & Bangku", "p": "Rp 1.100.000", "d": "72 × 60 × 83 cm", "m": "Iron, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/09/furniture-kursi-moon-rattan-chair-3.jpg", "desc": ""}, {"id": 113, "t": "Alana Sofa 3 Seater", "c": "Kursi & Bangku", "p": "Rp 7.850.000", "d": "200 × 80 × 80 cm", "m": "Pine Wood, Premium Foam", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/10/1.-Furniture-Kursi-Alana-Sofa-3-Seater.jpg", "desc": ""}, {"id": 114, "t": "Tigo Chair", "c": "Kursi & Bangku", "p": "Rp 1.950.000", "d": "45 × 45 × 85 cm", "m": "Teak Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/20240829142806_IMG_0081-01-min.jpeg", "desc": ""}, {"id": 115, "t": "Rona Sofa", "c": "Kursi & Bangku", "p": "Rp 7.800.000", "d": "197,5 × 78 × 72 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/08/IMG_9613-01-min.jpeg", "desc": ""}, {"id": 116, "t": "Bench Industrial White", "c": "Kursi & Bangku", "p": "Rp 985.000", "d": "80 × 30 × 50 cm", "m": "Metal, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/05/1.-Furniture-Bench-Bench-Industrial-White.jpg", "desc": ""}, {"id": 117, "t": "Sewesi Rattan Chair", "c": "Kursi & Bangku", "p": "Rp 925.000", "d": "40 × 49 × 82 cm", "m": "Iron, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/3-Furniture-Sewesi-Rattan-Uwitan.jpg", "desc": ""}, {"id": 118, "t": "Salami Sofa Bed", "c": "Kursi & Bangku", "p": "Rp 8.950.000", "d": "165 × 80 × 50 cm", "m": "Foam, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/01/FURNITURE-KURSI-SALAMI-SOFA-BED-3-scaled.jpg", "desc": ""}, {"id": 119, "t": "Kagumi Chair White", "c": "Kursi & Bangku", "p": "Rp 1.350.000", "d": "70 × 59 × 87 cm", "m": "Foam, Iron, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/01/1-furniture-kursi-kagumi-chair-white.jpeg", "desc": ""}, {"id": 120, "t": "Rattan Tray Large", "c": "Home Decor & Living", "p": "Rp 215.000", "d": "40 × 34 × 5 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/aksesoris-rattan-tray-large-2.webp", "desc": ""}, {"id": 121, "t": "Keranjang Ester", "c": "Home Decor & Living", "p": "Rp 110.000", "d": "31 × 30 × 39 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2025/10/20250224130418_IMG_3086-01-min.jpeg", "desc": ""}, {"id": 122, "t": "Alana Sofa 2 Seater", "c": "Kursi & Bangku", "p": "Rp 5.950.000", "d": "140 × 80 × 80 cm", "m": "Pine Wood, Premium Foam", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/04/1000193756-01-01-min.jpeg", "desc": ""}, {"id": 123, "t": "Kagumi Chair 3 Seater Black", "c": "Kursi & Bangku", "p": "Rp 3.200.000", "d": "160 × 60 × 87 cm", "m": "Metal, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/05/1-furniture-kursi-kagumi-chair-3-seater-black.jpeg", "desc": ""}, {"id": 124, "t": "Minima Sofa", "c": "Kursi & Bangku", "p": "Rp 5.950.000", "d": "165 × 82 × 76 cm", "m": "Pine Wood, Plywood, Premium Foam", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/01/1-furniture-kursi-minima-sofa.jpeg", "desc": ""}, {"id": 125, "t": "Mizan Sofa Bed – Sofa Bed Minimalis", "c": "Kursi & Bangku", "p": "Rp 14.800.000", "d": "205,5 × 160 × 52 cm", "m": "Pine Wood, Polyester, Premium Sponge", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/03/CHO04897-1-scaled.jpg", "desc": ""}, {"id": 126, "t": "Kubo 2 Shelf", "c": "Rak & Storage", "p": "Rp 1.150.000", "d": "47 × 47 × 103 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/10/IMG_9157-min.jpeg", "desc": ""}, {"id": 127, "t": "Mida Chair Natural", "c": "Kursi & Bangku", "p": "Rp 1.100.000", "d": "43 × 52 × 80 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/02/furniture-kursi-mida-chair.jpg", "desc": ""}, {"id": 128, "t": "Tako Stool", "c": "Kursi & Bangku", "p": "Rp 385.000", "d": "50 × 50 × 38 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/1-Tako-Stool-Furniture-Uwitan.jpg", "desc": ""}, {"id": 129, "t": "Flat Single Sofa", "c": "Kursi & Bangku", "p": "Rp 1.950.000", "d": "85 × 65 × 40 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/09/1-furniture-kursi-flat-single-sofa.jpg", "desc": ""}, {"id": 130, "t": "Daaru Bench", "c": "Kursi & Bangku", "p": "Rp 1.850.000", "d": "125 × 32 × 45 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/07/furniture-daaru-bench-1.jpg", "desc": ""}, {"id": 131, "t": "Daaru Stool", "c": "Kursi & Bangku", "p": "Rp 785.000", "d": "32,5 × 32,5 × 44 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/07/furniture-daaru-stool-1.jpg", "desc": ""}, {"id": 132, "t": "Chest 4 Drawer", "c": "Lemari & Laci", "p": "Rp 2.100.000", "d": "41 × 33 × 102 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/12/20220609-CHO09560-2-scaled.jpg", "desc": ""}, {"id": 133, "t": "Bench 3 Drawer", "c": "Kursi & Bangku", "p": "Rp 2.450.000", "d": "135 × 33 × 45 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/03/1.-Furniture-Bench-Bench-3-Drawer.jpg", "desc": ""}, {"id": 134, "t": "Ona Dining Table", "c": "Meja & Konsol", "p": "Rp 2.850.000", "d": "140 × 65 × 75 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/CHO00289-scaled.jpg", "desc": ""}, {"id": 135, "t": "Kagumi Chair 3 Seater White", "c": "Kursi & Bangku", "p": "Rp 3.200.000", "d": "160 × 60 × 87 cm", "m": "Metal, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/04/1-furniture-kursi-kagumi-chair-3-seater-white.jpeg", "desc": ""}, {"id": 136, "t": "Kagumi Chair 2 Seater Black", "c": "Kursi & Bangku", "p": "Rp 2.650.000", "d": "120 × 60 × 87 cm", "m": "Metal, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/04/1-furniture-kursi-kagumi-chair-2-seater-black.jpg", "desc": ""}, {"id": 137, "t": "Ona Bench", "c": "Kursi & Bangku", "p": "Rp 1.450.000", "d": "110 × 32 × 44 cm", "m": "MDF, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/CHO03110-scaled.jpg", "desc": ""}, {"id": 138, "t": "Stool L White", "c": "Kursi & Bangku", "p": "Rp 520.000", "d": "30 × 30 × 56 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/1-furniture-kursi-stool-l-white.jpg", "desc": ""}, {"id": 139, "t": "Jerujen Bench", "c": "Kursi & Bangku", "p": "Rp 1.650.000", "d": "105 × 36,5 × 66 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/04/IMG_7451-scaled-1.jpeg", "desc": ""}, {"id": 140, "t": "Sada Stool", "c": "Kursi & Bangku", "p": "Rp 985.000", "d": "31,5 × 31,5 × 42 cm", "m": "Pine Wood, Recycle Polimer Sheet", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/06/furniture-kursi-sada-stool-1.jpg", "desc": ""}, {"id": 141, "t": "Book Case 5 Tingkat Natural", "c": "Home Decor & Living", "p": "Rp 1.650.000", "d": "64 × 32 × 140 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/12/DSC01515-2-scaled.jpg", "desc": ""}, {"id": 142, "t": "Ona Chair", "c": "Kursi & Bangku", "p": "Rp 1.650.000", "d": "42 × 46 × 85 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/05/CHO05450-scaled.jpg", "desc": ""}, {"id": 143, "t": "Bolo Chair", "c": "Kursi & Bangku", "p": "Rp 1.350.000", "d": "44,5 × 57 × 86 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/05/CHO05322-scaled.jpg", "desc": ""}, {"id": 144, "t": "Moku Sofa Single", "c": "Kursi & Bangku", "p": "Rp 2.350.000", "d": "67 × 66,5 × 69,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/Moku-sofa-single-scaled.jpg", "desc": ""}, {"id": 145, "t": "Moto Stool", "c": "Kursi & Bangku", "p": "Rp 950.000", "d": "48,3 × 48,3 × 41,8 cm", "m": "Pine Wood, Premium Sponge", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/05/CHO05323-scaled.jpg", "desc": ""}, {"id": 146, "t": "Moku Sofa Sudut", "c": "Kursi & Bangku", "p": "Rp 2.950.000", "d": "67 × 66,5 × 69,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/Moku-sofa-sudut-scaled.jpg", "desc": ""}, {"id": 147, "t": "Moku Sofa Ottoman", "c": "Kursi & Bangku", "p": "Rp 1.500.000", "d": "67 × 66,5 × 27 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/Moku-sofa-ottoman-1-scaled.jpg", "desc": ""}, {"id": 148, "t": "Sewesiji Chair", "c": "Kursi & Bangku", "p": "Rp 725.000", "d": "44 × 50 × 82 cm", "m": "Iron", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/01/furniture-kursi-sewesiji-2.jpg", "desc": ""}, {"id": 149, "t": "Kagumi Chair 2 Seater White", "c": "Kursi & Bangku", "p": "Rp 2.650.000", "d": "120 × 60 × 87 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/09/1-furniture-kursi-kagumi-chair-2-seater-white.jpeg", "desc": ""}, {"id": 150, "t": "Kubo 2 Shelf Solid", "c": "Rak & Storage", "p": "Rp 1.450.000", "d": "40 × 40 × 85 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/09/IMG_0932-01-1-min.jpeg", "desc": ""}, {"id": 151, "t": "Plat Shelf Small Natural White", "c": "Rak & Storage", "p": "Rp 225.000", "d": "90 × 15 × 18 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_5751-1-scaled.jpg", "desc": ""}, {"id": 152, "t": "Mida Bench – Bangku Panjang Minimalis", "c": "Kursi & Bangku", "p": "Rp 1.450.000", "d": "115 × 32,5 × 44,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/02/furniture-kursi-mida-bench.jpg", "desc": ""}, {"id": 153, "t": "Rak Kembang 4 Tingkat", "c": "Rak & Storage", "p": "Rp 585.000", "d": "50 × 26 × 150 cm", "m": "Pine Wood", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2025/09/IMG_8186-1-min.jpeg", "desc": ""}, {"id": 154, "t": "Kursi Lesehan", "c": "Kursi & Bangku", "p": "Rp 550.000", "d": "40 × 43 × 39,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/1-furniture-kursi-lesehan.jpg", "desc": ""}, {"id": 155, "t": "Rak Kembang 3 Tingkat", "c": "Rak & Storage", "p": "Rp 485.000", "d": "50 × 26 × 62 cm", "m": "Pine Wood", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2025/09/IMG_8202-min.jpeg", "desc": ""}, {"id": 156, "t": "Bench L Natural", "c": "Kursi & Bangku", "p": "Rp 1.450.000", "d": "Custom", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/03/DSCF7906-copy.jpg", "desc": ""}, {"id": 157, "t": "Sewesi Chair", "c": "Kursi & Bangku", "p": "Rp 875.000", "d": "43 × 50 × 82 cm", "m": "Iron, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/1-Furniture-Sewesi-Chair-Uwitan.jpg", "desc": ""}, {"id": 158, "t": "Half Moon Rattan Chair White", "c": "Kursi & Bangku", "p": "Rp 1.150.000", "d": "75 × 62 × 90 cm", "m": "Metal, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-furniture-kursi-halfmoon-chair-white.jpg", "desc": ""}, {"id": 159, "t": "Sintesa Bistro Chair", "c": "Kursi & Bangku", "p": "Rp 985.000", "d": "48 × 52 × 90 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/11/furniture-sintesa-bistro-chair-1.jpg", "desc": ""}, {"id": 160, "t": "Bench Sponge M Cream", "c": "Kursi & Bangku", "p": "Rp 1.100.000", "d": "104 × 32 × 45 cm", "m": "Pine Wood, Premium Sponge", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/1.-Furniture-Bench-Bench-Sponge-M-Cream.jpg", "desc": ""}, {"id": 161, "t": "Kubo 60", "c": "Home Decor & Living", "p": "Rp 950.000", "d": "58 × 58 × 58 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/10/IMG_6985-1-min.jpeg", "desc": ""}, {"id": 162, "t": "Minima Rak Dinding", "c": "Rak & Storage", "p": "Rp 365.000", "d": "70 × 15 × 35 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/08/1000100902-01-min.jpeg", "desc": ""}, {"id": 163, "t": "1×3 Drawer Solid Natural", "c": "Lemari & Laci", "p": "Rp 2.150.000", "d": "39 × 30 × 128 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/03/furniture-drawer-1x3-drawer-solid-nat.jpg", "desc": ""}, {"id": 164, "t": "3×3 Drawer Rangka Natural – Rak Buku Tingkat", "c": "Lemari & Laci", "p": "Rp 4.350.000", "d": "113 × 30 × 128 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/11/CHO08290-scaled.jpg", "desc": ""}, {"id": 165, "t": "Plat Shelf Large Natural", "c": "Rak & Storage", "p": "Rp 325.000", "d": "80 × 25 × 27 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/1.-Furniture-Rak-Plat-Shelf-Large-Natural.jpeg", "desc": ""}, {"id": 166, "t": "Chest 3 Drawer Natural", "c": "Lemari & Laci", "p": "Rp 1.600.000", "d": "41 × 33 × 84 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/11/1.-Furniture-Rak-Chest-3-Drawer-Natural.jpeg", "desc": ""}, {"id": 167, "t": "Chest 4 Drawer Natural", "c": "Lemari & Laci", "p": "Rp 2.100.000", "d": "40 × 33 × 102 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/11/1.-Furniture-Rak-Chest-4-Drawer-Natural.jpeg", "desc": ""}, {"id": 168, "t": "Rak Sepatu Industrial Black", "c": "Rak & Storage", "p": "Rp 985.000", "d": "80 × 26 × 80 cm", "m": "Metal, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/drawer-rak-sepatu-industrial-black-3.webp", "desc": ""}, {"id": 169, "t": "Chest 3 Drawer", "c": "Lemari & Laci", "p": "Rp 1.600.000", "d": "41 × 33 × 84 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/1.-Furniture-Rak-Chest-3-Drawer-NW.jpeg", "desc": ""}, {"id": 170, "t": "Chest 2 Drawer", "c": "Lemari & Laci", "p": "Rp 1.200.000", "d": "40 × 33 × 56 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/1.-Furniture-Rak-Chest-2-Drawer-NW.jpeg", "desc": ""}, {"id": 171, "t": "1×2 Drawer Solid Natural", "c": "Lemari & Laci", "p": "Rp 1.450.000", "d": "39 × 30 × 91 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/05/Furniture-1x2-Drawer-Solid-1.jpg", "desc": ""}, {"id": 172, "t": "Chest 2×2 Drawer", "c": "Lemari & Laci", "p": "Rp 2.100.000", "d": "75 × 33 × 57 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/1.-Furniture-Rak-Chest-2x2-Drawer-NW.jpeg", "desc": ""}, {"id": 173, "t": "Chest 2×2 Drawer Natural", "c": "Lemari & Laci", "p": "Rp 2.100.000", "d": "75 × 33 × 55 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/11/1.-Furniture-Rak-Chest-2x2-Drawer-Natural.jpeg", "desc": ""}, {"id": 174, "t": "Alana Island Table", "c": "Meja & Konsol", "p": "Rp 9.850.000", "d": "160 × 75 × 90 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_7196-min.jpeg", "desc": ""}, {"id": 175, "t": "Sejen Bookshelf", "c": "Rak & Storage", "p": "Rp 2.650.000", "d": "42 × 42 × 180 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/08/20250820142546_IMG_7207-min.jpeg", "desc": ""}, {"id": 176, "t": "1×2 Drawer Rangka Natural", "c": "Lemari & Laci", "p": "Rp 1.150.000", "d": "39 × 30 × 91 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/Furniture-1x2-Drawer-Rangka-1-scaled.jpg", "desc": ""}, {"id": 177, "t": "Salami Multidrawer", "c": "Lemari & Laci", "p": "Rp 5.300.000", "d": "150 × 30 × 85 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/01/1-Furniture-Salami-Multidrawer-Uwitan.jpg", "desc": ""}, {"id": 178, "t": "3×2 Drawer Solid Natural", "c": "Lemari & Laci", "p": "Rp 3.350.000", "d": "113 × 30 × 91 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1.-Furniture-Rak-3x2-Drawer-Solid-Natural.jpeg", "desc": ""}, {"id": 179, "t": "2×3 Drawer Solid Natural", "c": "Lemari & Laci", "p": "Rp 3.550.000", "d": "76 × 30 × 128 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1.-Furniture-Rak-2x3-Drawer-Solid-Natural.jpeg", "desc": ""}, {"id": 180, "t": "2×2 Drawer Solid Natural", "c": "Lemari & Laci", "p": "Rp 2.450.000", "d": "75 × 30 × 91 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1.-Furniture-Rak-2x2-Drawer-Solid-Natural.jpeg", "desc": ""}, {"id": 181, "t": "1×3 Drawer Rangka Natural", "c": "Lemari & Laci", "p": "Rp 1.850.000", "d": "39 × 30 × 123 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1.-Furniture-Rak-1x3-Drawer-Rangka.jpeg", "desc": ""}, {"id": 182, "t": "1×4 Drawer Solid Natural", "c": "Lemari & Laci", "p": "Rp 2.450.000", "d": "39 × 30 × 164 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/07/1.-Furniture-Rak-1x4-Drawer-Solid-Natural.jpeg", "desc": ""}, {"id": 183, "t": "Rak Sudut 5 Tingkat Natural", "c": "Rak & Storage", "p": "Rp 1.450.000", "d": "45 × 45 × 170 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/04/1-furniture-rak-sudut-5-tingkat-natural.jpeg", "desc": ""}, {"id": 184, "t": "Rak Sudut 5 Tingkat Natural White", "c": "Rak & Storage", "p": "Rp 1.550.000", "d": "45 × 45 × 170 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/01/IMG_1043-scaled.jpg", "desc": ""}, {"id": 185, "t": "Ladder Shelf Natural White", "c": "Rak & Storage", "p": "Rp 425.000", "d": "41,5 × 43 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-furniture-rak-ladder-shelf-white-natural.jpeg", "desc": ""}, {"id": 186, "t": "Rak Susun Trolley", "c": "Rak & Storage", "p": "Rp 685.000", "d": "53 × 33 × 80 cm", "m": "Pine Wood; Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/09/IMG_8226-min.jpeg", "desc": ""}, {"id": 187, "t": "Yana Shelf", "c": "Rak & Storage", "p": "Rp 985.000", "d": "75 × 15 × 61 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/12/1-aksesoris-yana-shelf.jpg", "desc": ""}, {"id": 188, "t": "3×3 Drawer Solid Natural", "c": "Lemari & Laci", "p": "Rp 4.650.000", "d": "113 × 30 × 128 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/11/1.-Furniture-Rak-3x3-Drawer-Solid-Natural.jpeg", "desc": ""}, {"id": 189, "t": "Rak Sepatu Industrial White", "c": "Rak & Storage", "p": "Rp 985.000", "d": "80 × 26 × 80 cm", "m": "Metal, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/03/1-furniture-rak-sepatu-industrial-white.jpg", "desc": ""}, {"id": 190, "t": "Harumi Drawer", "c": "Lemari & Laci", "p": "Rp 3.800.000", "d": "75 × 35 × 128 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/1-furniture-rak-lemari-harumi-drawer.jpg", "desc": ""}, {"id": 191, "t": "Rak Miguna 5 Tingkat – Rak Serbaguna Minimalis", "c": "Rak & Storage", "p": "Rp 950.000", "d": "67 × 27 × 127 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/12/1-furniture-rak-miguna-5-tingkat.jpg", "desc": ""}, {"id": 192, "t": "Rak Dinding Minimo", "c": "Rak & Storage", "p": "Rp 120.000", "d": "39 × 7 × 39 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_0760-01-min.jpeg", "desc": ""}, {"id": 193, "t": "Rak Miguna 6 Tingkat – Rak Serbaguna Minimalis", "c": "Rak & Storage", "p": "Rp 1.250.000", "d": "67 × 26,5 × 154 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/1-furniture-rak-miguna-6-tingkat.jpg", "desc": ""}, {"id": 194, "t": "1×5 Drawer Solid Natural", "c": "Lemari & Laci", "p": "Rp 2.850.000", "d": "39 × 30 × 197 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/07/1.-Furniture-Rak-1x5-Drawer-Solid-Natural.jpeg", "desc": ""}, {"id": 195, "t": "Putar Book Shelf – Rak Buku Putar", "c": "Rak & Storage", "p": "Rp 3.200.000", "d": "39 × 39 × 150 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/08/1000105208-01-min.jpeg", "desc": ""}, {"id": 196, "t": "Rak Dinding Minime", "c": "Rak & Storage", "p": "Rp 120.000", "d": "32 × 7 × 32 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_1049-01-1-min.jpeg", "desc": ""}, {"id": 197, "t": "kWh Meter Box", "c": "Home Decor & Living", "p": "Rp 385.000", "d": "26 × 10 × 49 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_5918-min.jpeg", "desc": ""}, {"id": 198, "t": "1×2 Drawer Solid White", "c": "Lemari & Laci", "p": "Rp 1.450.000", "d": "39 × 30 × 91 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/1.-Furniture-Rak-1x2-Drawer-Solid-White.jpeg", "desc": ""}, {"id": 199, "t": "Rak Susun Natural", "c": "Rak & Storage", "p": "Rp 240.000", "d": "66 × 31 × 41 cm", "m": "MDF, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1-furniture-rak-susun-natural.jpg", "desc": ""}, {"id": 200, "t": "Book Case 4 Tingkat Natural White", "c": "Home Decor & Living", "p": "Rp 1.350.000", "d": "64 × 32 × 113 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/06/furniture-rak-book-case-4-tingkat-natural-white-1.jpg", "desc": ""}, {"id": 201, "t": "Standing Mirror Round Natural", "c": "Rak & Storage", "p": "Rp 1.150.000", "d": "50 × 5 × 150 cm", "m": "Mirror, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/CHO00225-1-scaled.jpg", "desc": ""}, {"id": 202, "t": "Rando Mirror", "c": "Cermin & Dekorasi Dinding", "p": "Rp 1.650.000", "d": "70 × 7 × 160 cm", "m": "Pine Wood, Mirror", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/08/20240807155555_IMG_1759-01-min.jpeg", "desc": ""}, {"id": 203, "t": "Chest 2 Drawer Natural", "c": "Lemari & Laci", "p": "Rp 1.200.000", "d": "41 × 33 × 58 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/11/1.-Furniture-Rak-Chest-2-Drawer-Natural.jpeg", "desc": ""}, {"id": 204, "t": "Rak Sepatu Harumi", "c": "Rak & Storage", "p": "Rp 2.250.000", "d": "50 × 40 × 80 cm", "m": "Pine Wood, Plywood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/04/1-furniture-rak-sepatu-harumi.jpg", "desc": ""}, {"id": 205, "t": "Mirror M Round Natural", "c": "Cermin & Dekorasi Dinding", "p": "Rp 825.000", "d": "60 × 5 × 80 cm", "m": "Mirror, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/EDITCHO00244-2-scaled.jpg", "desc": ""}, {"id": 206, "t": "2×2 Drawer Rangka Natural", "c": "Lemari & Laci", "p": "Rp 2.150.000", "d": "76 × 30 × 91 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1.-Furniture-Rak-2x2-Drawer-Rangka-Natural.jpeg", "desc": ""}, {"id": 207, "t": "Sugo Mirror", "c": "Cermin & Dekorasi Dinding", "p": "Rp 585.000", "d": "45 × 12 × 65 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2026/01/IMG_1514.jpg", "desc": ""}, {"id": 208, "t": "Nafa Multidrawer Natural", "c": "Lemari & Laci", "p": "Rp 2.850.000", "d": "70 × 30 × 89 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/01/Nafa-Multidrawer-Natural.jpg", "desc": ""}, {"id": 209, "t": "Rak Miguna 4 Tingkat", "c": "Rak & Storage", "p": "Rp 725.000", "d": "67 × 27 × 105 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/10/1-furniture-rak-miguna-4-tingkat.jpg", "desc": ""}, {"id": 210, "t": "Lio Book Case Natural", "c": "Home Decor & Living", "p": "Rp 2.250.000", "d": "65 × 36 × 155 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/1-furniture-rak-lio-book-case-natural.jpg", "desc": ""}, {"id": 211, "t": "Ladder 3 Shelf Natural", "c": "Rak & Storage", "p": "Rp 575.000", "d": "42 × 55 × 99 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/01/Ladder-3-Shelf.jpg", "desc": ""}, {"id": 212, "t": "Broma 1 Shelf", "c": "Rak & Storage", "p": "Rp 1.650.000", "d": "65 × 35 × 99 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/07/1.-Furniture-Rak-Broma-1-Shelf.jpg", "desc": ""}, {"id": 213, "t": "Ona Putar Standing Mirror", "c": "Rak & Storage", "p": "Rp 1.950.000", "d": "45,5 × 45,5 × 173 cm", "m": "Cermin, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/11/WhatsApp-Image-2024-10-31-at-2.49.17-PM.png", "desc": ""}, {"id": 214, "t": "Koru Shoe Cabinet – Lemari Sepatu Besar Minimalis", "c": "Lemari & Laci", "p": "Rp 2.850.000", "d": "50 × 30 × 137 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/11/CHO09962-scaled.jpg", "desc": ""}, {"id": 215, "t": "1×3 Drawer Solid White", "c": "Lemari & Laci", "p": "Rp 2.150.000", "d": "39 × 30 × 128 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/01/furniture-rak-1x3-drawer-solid-white.jpg", "desc": ""}, {"id": 216, "t": "Cabinet 134 Natural", "c": "Lemari & Laci", "p": "Rp 1.725.000", "d": "26 × 42 × 75 cm", "m": "Kaca, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/01/1.-Furniture-Rak-Cabinet-134-Natural.jpeg", "desc": ""}, {"id": 217, "t": "Pir Wall Mirror", "c": "Cermin & Dekorasi Dinding", "p": "Rp 485.000", "d": "46 × 9,5 × 62 cm", "m": "Pine Wood, Mirror", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/7.jpg", "desc": ""}, {"id": 218, "t": "Kinata Hanger Shelf Full Natural", "c": "Rak & Storage", "p": "Rp 2.350.000", "d": "76 × 40 × 197 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/09/1-furniture-rak-gantung-kinata-hanger-shelf-natural.jpg", "desc": ""}, {"id": 219, "t": "Book Case 3 Tingkat Natural", "c": "Home Decor & Living", "p": "Rp 925.000", "d": "64 × 32 × 80 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/Furniture-drawer-book-case-3-tingkat.jpg", "desc": ""}, {"id": 220, "t": "Rak Dinding Rumah Green Natural", "c": "Rak & Storage", "p": "Rp 420.000", "d": "75 × 15 × 51 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/03/CHO03228-scaled.jpg", "desc": ""}, {"id": 221, "t": "Alana Mirror L Natural", "c": "Cermin & Dekorasi Dinding", "p": "Rp 1.850.000", "d": "100 × 7 × 100 cm", "m": "Mirror, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/11/1.-Furniture-Cermin-Alana-Mirror-L-Natural.jpeg", "desc": ""}, {"id": 222, "t": "Citra Magazine Rack", "c": "Home Decor & Living", "p": "Rp 450.000", "d": "41 × 41 × 49 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/1.-Furniture-Rak-Citra-Magazine-Rack.jpg", "desc": ""}, {"id": 223, "t": "Dodo Toy Shelf", "c": "Rak & Storage", "p": "Rp 2.600.000", "d": "120 × 30 × 90 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/1.-Furniture-Rak-Dodo-Toy-Shelf.jpg", "desc": ""}, {"id": 224, "t": "Book Case 4 Tingkat Natural", "c": "Home Decor & Living", "p": "Rp 1.350.000", "d": "64 × 32 × 113 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/1.-Furniture-Rak-Book-Case-4-Tingkat.jpeg", "desc": ""}, {"id": 225, "t": "Broma 2×1 Shelf", "c": "Rak & Storage", "p": "Rp 3.250.000", "d": "135 × 35 × 105 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/furniture-rak-broma-2x1-shelf-1.jpg", "desc": ""}, {"id": 226, "t": "Cabinet 134 Natural White", "c": "Lemari & Laci", "p": "Rp 1.725.000", "d": "26 × 42 × 75 cm", "m": "Kaca, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/02/furniture-lemari-cabinet-134-nw-1.jpg", "desc": ""}, {"id": 227, "t": "Hexa Mirror", "c": "Cermin & Dekorasi Dinding", "p": "Rp 225.000", "d": "39 × 4 × 34 cm", "m": "Mirror, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/02/1-furniture-cermin-hexa-mirror.jpg", "desc": ""}, {"id": 228, "t": "Broma 3×1 Shelf", "c": "Rak & Storage", "p": "Rp 4.500.000", "d": "202 × 35 × 105 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/furniture-rak-broma-3x1-shelf-1.jpg", "desc": ""}, {"id": 229, "t": "Ona Wardrobe", "c": "Home Decor & Living", "p": "Rp 6.500.000", "d": "80 × 53 × 186 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/02/furniture-lemari-ona-wardrobe-5.jpg", "desc": ""}, {"id": 230, "t": "Alana Wardrobe Pintu Kaca", "c": "Home Decor & Living", "p": "Rp 7.750.000", "d": "80 × 50 × 200 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/03/1-furniture-lemari-alana-wardrobe-2-pintu-kaca.jpg", "desc": ""}, {"id": 231, "t": "Ciko Hanger", "c": "Rak & Storage", "p": "Rp 1.150.000", "d": "150 × 37 × 156 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/10/IMG_9223-min.jpeg", "desc": ""}, {"id": 232, "t": "Deski 1×3 Natural – Storage Meja Minimalis", "c": "Meja & Konsol", "p": "Rp 340.000", "d": "18 × 15 × 23 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/11/CHO05511-scaled.jpg", "desc": ""}, {"id": 233, "t": "Alana Mirror S Natural", "c": "Cermin & Dekorasi Dinding", "p": "Rp 850.000", "d": "50 × 5 × 50 cm", "m": "Mirror, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/1.-Furniture-Cermin-Alana-Mirror-S-Natural.jpeg", "desc": ""}, {"id": 234, "t": "Alana 1×4 Cabinet", "c": "Lemari & Laci", "p": "Rp 4.650.000", "d": "64 × 45 × 105 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/10/DSC02188-scaled.jpg", "desc": ""}, {"id": 235, "t": "Alana 2×3 Cabinet", "c": "Lemari & Laci", "p": "Rp 6.300.000", "d": "125 × 45 × 82 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/10/1.-Furniture-Lemari-Alana-2x3-Cabinet.jpg", "desc": ""}, {"id": 236, "t": "Simple Hanger Large 2 Shelf – Standing Hanger Minimalis", "c": "Rak & Storage", "p": "Rp 1.200.000", "d": "90 × 40,5 × 151 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/03/CHO01727-scaled.jpg", "desc": ""}, {"id": 237, "t": "Veromi Kitchen Cabinet", "c": "Lemari & Laci", "p": "Rp 5.300.000", "d": "110 × 45 × 125 cm", "m": "Pine Wood, Plywood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/04/1-Furniture-Veromi-Kitchen-Cabinet.jpg", "desc": ""}, {"id": 238, "t": "Alano 2×2 Drawer", "c": "Lemari & Laci", "p": "Rp 5.800.000", "d": "125 × 49 × 79,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_6488-min.jpeg", "desc": ""}, {"id": 239, "t": "Harumi Side Board", "c": "Home Decor & Living", "p": "Rp 4.800.000", "d": "130 × 40 × 75 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/1-furniture-kabinet-harumi-side-board.jpeg", "desc": ""}, {"id": 240, "t": "Alana Pantry Cabinet", "c": "Lemari & Laci", "p": "Rp 9.400.000", "d": "165 × 48 × 195 cm", "m": "Kaca, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/07/furniture-alana-pantry-cabinet-4.jpg", "desc": ""}, {"id": 241, "t": "Nafa Credenza", "c": "Lemari & Laci", "p": "Rp 2.985.000", "d": "70 × 30 × 89 cm", "m": "Kaca, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/01/1-furniture-lemari-nafa-crerdenza.jpeg", "desc": ""}, {"id": 242, "t": "Koru Wardrobe", "c": "Home Decor & Living", "p": "Rp 11.500.000", "d": "130 × 50 × 200 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/07/1.-Furniture-Lemari-Koru-Wardrobe.jpg", "desc": ""}, {"id": 243, "t": "Ona Dresser – Cermin Badan Cermin Gantung Laci Minimalis", "c": "Cermin & Dekorasi Dinding", "p": "Rp 3.200.000", "d": "72,5 × 43 × 200 cm", "m": "Mirror, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/11/CHO05447-edit-1024x768.png", "desc": ""}, {"id": 244, "t": "Ona Mirror", "c": "Cermin & Dekorasi Dinding", "p": "Rp 1.875.000", "d": "60 × 58 × 160 cm", "m": "Mirror, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/editCHO00986-scaled.jpg", "desc": ""}, {"id": 245, "t": "Sliding Credenza", "c": "Lemari & Laci", "p": "Rp 4.200.000", "d": "120 × 35 × 95 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/2-Furniture-Sliding-Credenza-Uwitan.jpg", "desc": ""}, {"id": 246, "t": "Alana 1×5 Cabinet", "c": "Lemari & Laci", "p": "Rp 5.200.000", "d": "64 × 45 × 126 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/1.-Furniture-Lemari-Alana-1x5-Cabinet.jpeg", "desc": ""}, {"id": 247, "t": "Simple Hanger Large Natural – Standing Hanger Minimalis", "c": "Rak & Storage", "p": "Rp 985.000", "d": "90 × 40,5 × 151 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/05/CHO01731-min-2-scaled.jpg", "desc": ""}, {"id": 248, "t": "Harumi Credenza", "c": "Lemari & Laci", "p": "Rp 2.850.000", "d": "80 × 35 × 95 cm", "m": "Pine Wood, Plywood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/Furniture-Harumi-Cabinet-02.jpg", "desc": ""}, {"id": 249, "t": "Haruco Wardrobe Drawer", "c": "Lemari & Laci", "p": "Rp 3.500.000", "d": "80 × 40 × 160 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/02/1-furniture-lemari-haruco-wardrobe-drawer.jpg", "desc": ""}, {"id": 250, "t": "Jerujen Wardrobe", "c": "Home Decor & Living", "p": "Rp 7.300.000", "d": "120 × 47 × 180 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/05/1-furniture-lemari-jerujen-wardrobe.jpeg", "desc": ""}, {"id": 251, "t": "Salami Wardrobe", "c": "Home Decor & Living", "p": "Rp 4.800.000", "d": "100 × 40 × 180 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/1-Furniture-Salami-Wardrobe-Uwitan.jpg", "desc": ""}, {"id": 252, "t": "Tetra Mirror L", "c": "Cermin & Dekorasi Dinding", "p": "Rp 650.000", "d": "69 × 4 × 69 cm", "m": "Pine Wood, Mirror", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/2.jpg", "desc": ""}, {"id": 253, "t": "Komang Wardrobe", "c": "Home Decor & Living", "p": "Rp 8.500.000", "d": "104 × 52 × 200 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/09/furniture-komang-wardrobe-3.jpg", "desc": ""}, {"id": 254, "t": "Veromi Book Case", "c": "Home Decor & Living", "p": "Rp 4.850.000", "d": "60 × 30 × 200 cm", "m": "Kaca, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/03/1-Furniture-Veromi-Book-Case.jpg", "desc": ""}, {"id": 255, "t": "Alana 2×4 Cabinet", "c": "Lemari & Laci", "p": "Rp 7.800.000", "d": "130 × 48 × 107 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/07/1.-Furniture-Lemari-Alana-2x4-Cabinet.jpeg", "desc": ""}, {"id": 256, "t": "Mentari Mirror", "c": "Cermin & Dekorasi Dinding", "p": "Rp 325.000", "d": "83 × 83 × 5 cm", "m": "Mirror, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/05/1-furniture-aksesoris-mentari-mirror.jpg", "desc": ""}, {"id": 257, "t": "Harumi Dining Table", "c": "Meja & Konsol", "p": "Rp 4.800.000", "d": "31 × 80 × 75 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/1-furniture-meja-harumi-dining-table.jpg", "desc": ""}, {"id": 258, "t": "Harumi Wardrobe + Drawer", "c": "Lemari & Laci", "p": "Rp 3.950.000", "d": "80 × 40 × 160 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/10/furniture-harumi-wardrobe-drawer.jpg", "desc": ""}, {"id": 259, "t": "Alana Bed 3 Side Drawer 180", "c": "Lemari & Laci", "p": "Rp 7.950.000", "d": "205 × 185 × 25 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/01/furniture-bed-alana-bed-3-side-drawer-160.jpg", "desc": ""}, {"id": 260, "t": "Alana Wardrobe", "c": "Home Decor & Living", "p": "Rp 7.950.000", "d": "80 × 50 × 200 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/12/1.-Furniture-Lemari-Alana-Wardrobe.jpeg", "desc": ""}, {"id": 261, "t": "Salami Pantry Cabinet", "c": "Lemari & Storage", "p": "Rp 10.800.000", "d": "160 × 35 × 200 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/1-Furniture-Salami-Pantry-Cabinet-Uwitan.jpg", "desc": ""}, {"id": 262, "t": "Harumi Cabinet", "c": "Lemari & Storage", "p": "Rp 13.500.000", "d": "150 × 50 × 200 cm", "m": "Pine Wood, Plywood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/01/furniture-lemari-penyimpanan-harumi-cabinet.jpg", "desc": ""}, {"id": 263, "t": "Alana Wardrobe 3 Pintu", "c": "Home Decor & Living", "p": "Rp 9.250.000", "d": "120 × 50 × 200 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/02/1-furniture-lemari-Alana-Wardrobe-3-Pintu.jpg", "desc": ""}, {"id": 264, "t": "Econo Wardrobe", "c": "Home Decor & Living", "p": "Rp 5.950.000", "d": "120 × 50 × 180 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/03/1.-Furniture-Lemari-Econo-Wardrobe.jpeg", "desc": ""}, {"id": 265, "t": "Nafa Shelf and Desk", "c": "Meja & Konsol", "p": "Rp 5.350.000", "d": "80 × 35 × 200 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/1-furniture-meja-nafa-shelf-and-desk.jpeg", "desc": ""}, {"id": 266, "t": "Ladder Mirror", "c": "Cermin & Dekorasi", "p": "Rp 685.000", "d": "34 × 10 × 173 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/08/20240702142747_IMG_9198-01-min-scaled.jpeg", "desc": ""}, {"id": 267, "t": "Econo Bedframe 90", "c": "Tempat Tidur", "p": "Rp 4.200.000", "d": "Custom Sesuai Pesanan", "m": "Kayu Solid Pilihan", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2020/09/Copy-of-IMG_6977.jpg", "desc": ""}, {"id": 268, "t": "Simple Credenza", "c": "Lemari & Storage", "p": "Rp 2.650.000", "d": "80 × 35 × 95 cm", "m": "Kaca, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/1-Furniture-Simple-Credenza-Uwitan.jpg", "desc": ""}, {"id": 269, "t": "Alana Side Board", "c": "Home Decor & Living", "p": "Rp 6.500.000", "d": "160 × 35 × 80 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/2.-Furniture-Lemari-Alana-Side-Board.jpg", "desc": ""}, {"id": 270, "t": "Harumi Dressing Table (salin)", "c": "Meja & Konsol", "p": "Rp 3.650.000", "d": "90 × 42 × 140 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2026/01/IMG_1093.jpeg", "desc": ""}, {"id": 271, "t": "Dressing Table 134 Natural White", "c": "Meja & Konsol", "p": "Rp 2.750.000", "d": "67 × 40 × 78 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1.-Furniture-Meja-Dressing-Table-134-Natural-white.jpg", "desc": ""}, {"id": 272, "t": "Wolu Coffee Table", "c": "Meja & Konsol", "p": "Rp 1.850.000", "d": "90,5 × 45 × 61 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/10/IMG_9331-min.jpeg", "desc": ""}, {"id": 273, "t": "Alana Dressing Table S", "c": "Meja & Konsol", "p": "Rp 2.750.000", "d": "50 × 40 × 75 cm", "m": "Mirror, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/10/1.-Furniture-Meja-Rias-Alana-Dressing-Table-S.jpeg", "desc": ""}, {"id": 274, "t": "Ayem Coffee Table", "c": "Meja & Konsol", "p": "Rp 1.850.000", "d": "99,5 × 50 × 50,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_6879-min.jpeg", "desc": ""}, {"id": 275, "t": "Akar Mini Table", "c": "Meja & Konsol", "p": "Rp 530.000", "d": "45 × 45 × 53 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_5810-min.jpeg", "desc": ""}, {"id": 276, "t": "Daaru Table", "c": "Meja & Konsol", "p": "Rp 3.300.000", "d": "150 × 91 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/07/furniture-daaru-table-1.jpg", "desc": ""}, {"id": 277, "t": "Ciko 2 Shelf", "c": "Rak & Display", "p": "Rp 735.000", "d": "42,5 × 42,5 × 55 cm", "m": "Pine Wood, Patterned Glass", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_6905-min.jpeg", "desc": ""}, {"id": 278, "t": "Ona TV Table", "c": "Meja & Konsol", "p": "Rp 3.600.000", "d": "140 × 35 × 45 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/08/20240814111616_IMG_9163-01-min.jpeg", "desc": ""}, {"id": 279, "t": "Salami Coffee Table Small", "c": "Meja & Konsol", "p": "Rp 1.100.000", "d": "60 × 60 × 31,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/04/1-Furniture-Salami-Coffee-Table-Small-Uwitan.jpg", "desc": ""}, {"id": 280, "t": "Lio Ladder Table Natural", "c": "Meja & Konsol", "p": "Rp 2.450.000", "d": "90 × 40 × 160 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/1-furniture-meja-lio-ladder-table-natural.jpeg", "desc": ""}, {"id": 281, "t": "Alana Dressing Table L", "c": "Meja & Konsol", "p": "Rp 3.250.000", "d": "90 × 40 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1.-Furniture-Meja-Alana-Dressing-Table-L.jpeg", "desc": ""}, {"id": 282, "t": "Alana TV Table 4 Laci", "c": "Meja & Konsol", "p": "Rp 3.200.000", "d": "160 × 30 × 42 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1.-Furniture-Meja-TV-Alana-tv-table-4-laci.jpeg", "desc": ""}, {"id": 283, "t": "Alana TV Table 3 Laci + Rak", "c": "Meja & Konsol", "p": "Rp 2.750.000", "d": "105 × 35 × 60 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1.-Furniture-Meja-Tv-Alana-tv-table-3-laci-rak.jpeg", "desc": ""}, {"id": 284, "t": "Alana TV Table 3 Laci", "c": "Meja & Konsol", "p": "Rp 2.450.000", "d": "120 × 35 × 35 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1.-Furniture-Meja-TV-Alana-TV-Table-3-Laci.jpg", "desc": ""}, {"id": 285, "t": "Liliput Table", "c": "Meja & Konsol", "p": "Rp 2.200.000", "d": "120 × 55 × 50,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/1000107524-01-min.jpeg", "desc": ""}, {"id": 286, "t": "Meja Kerja Liliput", "c": "Meja & Konsol", "p": "Rp 2.850.000", "d": "121 × 56 × 77 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/11/IMG_4378-01-min.jpeg", "desc": ""}, {"id": 287, "t": "Bona Dining Table", "c": "Meja & Konsol", "p": "Rp 3.250.000", "d": "170 × 81 × 76 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/11/IMG_0203-01-min.jpeg", "desc": ""}, {"id": 288, "t": "Meja Lipat Mini Brown", "c": "Meja & Konsol", "p": "Rp 245.000", "d": "53 × 32 × 20 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_7299-min-scaled.jpg", "desc": ""}, {"id": 289, "t": "Valia Table", "c": "Meja & Konsol", "p": "Rp 1.750.000", "d": "50 × 40 × 68 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/12/1-furniture-valia-table.jpg", "desc": ""}, {"id": 290, "t": "Mida Console Table", "c": "Meja & Konsol", "p": "Rp 2.250.000", "d": "90 × 40 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/02/1-furniture-meja-mida-console-table.jpeg", "desc": ""}, {"id": 291, "t": "Dressing Table 134 Natural", "c": "Meja & Konsol", "p": "Rp 2.750.000", "d": "67 × 40 × 78 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/12/1.-Furniture-Meja-Dressing-Table-134-Full-Natural.jpeg", "desc": ""}, {"id": 292, "t": "Alana 1×3 Cabinet", "c": "Lemari & Storage", "p": "Rp 3.950.000", "d": "64 × 45 × 82 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/12/1.-Furniture-Lemari-Alana-1x3-Cabinet.jpg", "desc": ""}, {"id": 293, "t": "Soko Table", "c": "Meja & Konsol", "p": "Rp 1.150.000", "d": "57 × 57 × 65 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/05/CHO05424-scaled.jpg", "desc": ""}, {"id": 294, "t": "Slider TV Table", "c": "Meja & Konsol", "p": "Rp 2.350.000", "d": "90 × 45 × 102 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_0361.jpeg", "desc": ""}, {"id": 295, "t": "Citra Table", "c": "Meja & Konsol", "p": "Rp 485.000", "d": "45 × 45 × 45 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/05/CHO05899-scaled.jpg", "desc": ""}, {"id": 296, "t": "Harumi Wardrobe", "c": "Home Decor & Living", "p": "Rp 3.300.000", "d": "80 × 40 × 116 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/12/IMG_3352.jpg", "desc": ""}, {"id": 297, "t": "Rumi Tray Table", "c": "Meja & Konsol", "p": "Rp 985.000", "d": "55 × 55 × 56 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/07/IMG_5827-min.jpeg", "desc": ""}, {"id": 298, "t": "Simple Side Table Large Natural", "c": "Meja & Konsol", "p": "Rp 1.450.000", "d": "50 × 40 × 61 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/02/1-Furniture-Simple-Side-Table-Large-Uwitan.jpg", "desc": ""}, {"id": 299, "t": "Ayem Dining Table", "c": "Meja & Konsol", "p": "Rp 3.650.000", "d": "110 × 110 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/10/IMG_8951-min.jpeg", "desc": ""}, {"id": 300, "t": "Rona Coffee Table", "c": "Meja & Konsol", "p": "Rp 2.850.000", "d": "85 × 85 × 44 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/08/1000105416-01-min.jpeg", "desc": ""}, {"id": 301, "t": "Minima Dressing Table – Meja Rias Minimalis", "c": "Meja & Konsol", "p": "Rp 1.950.000", "d": "70 × 36 × 126 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/08/1000103841-01-min.jpeg", "desc": ""}, {"id": 302, "t": "Mini Round Table", "c": "Meja & Konsol", "p": "Rp 1.450.000", "d": "60 × 60 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/10/IMG_8619-min-1.jpeg", "desc": ""}, {"id": 303, "t": "Folding Coffee Table", "c": "Meja & Konsol", "p": "Rp 1.950.000", "d": "Custom Sesuai Pesanan", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/03/CHO03028-scaled.jpg", "desc": ""}, {"id": 304, "t": "Jerujen Coffee Table", "c": "Meja & Konsol", "p": "Rp 2.950.000", "d": "80 × 80 × 50 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/07/20220707-CHO02208.webp", "desc": ""}, {"id": 305, "t": "Jerujen Side Table", "c": "Meja & Konsol", "p": "Rp 1.350.000", "d": "42 × 42 × 55 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/07/furniture-jerujen-side-table-1.webp", "desc": ""}, {"id": 306, "t": "Multi Table Round S", "c": "Meja & Konsol", "p": "Rp 1.850.000", "d": "97 × 60 × 33 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/02/IMG_1120-scaled.jpg", "desc": ""}, {"id": 307, "t": "Harumi Folding Table", "c": "Meja & Konsol", "p": "Rp 850.000", "d": "59 × 42 × 69 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/07/1-furniture-meja-harumi-folding-table.jpg", "desc": ""}, {"id": 308, "t": "Classic Side Table Natural", "c": "Meja & Konsol", "p": "Rp 985.000", "d": "40 × 40 × 50 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/1.-Furniture-Meja-Classic-Side-Table-Natural.jpeg", "desc": ""}, {"id": 309, "t": "Harumi Meja Konsol", "c": "Meja & Konsol", "p": "Rp 1.850.000", "d": "60 × 45 × 75 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/5-furniture-meja-harumi-meja-konsol.jpg", "desc": ""}, {"id": 310, "t": "Pir Coffee Table", "c": "Meja & Konsol", "p": "Rp 1.850.000", "d": "100 × 52 × 45 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/06/furniture-meja-pir-coffee-table-1.jpg", "desc": ""}, {"id": 311, "t": "Harumi Side Table Square", "c": "Meja & Konsol", "p": "Rp 1.450.000", "d": "44 × 38 × 59 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/07/1-furniture-meja-harumi-side-table-square.jpg", "desc": ""}, {"id": 312, "t": "New Oval Table White Large", "c": "Meja & Konsol", "p": "Rp 1.650.000", "d": "120 × 60 × 34 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/10/IMG_2038.jpg", "desc": ""}, {"id": 313, "t": "Salami Rak Tangga", "c": "Rak & Display", "p": "Rp 1.550.000", "d": "70 × 34 × 192 cm", "m": "Pine Wood, Plywood, Stailess Steel", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/05/1-Furniture-Salami-Rak-Tangga-Uwitan.jpg", "desc": ""}, {"id": 314, "t": "Fafa TV Cabinet", "c": "Lemari & Storage", "p": "Rp 5.950.000", "d": "180 × 40 × 75 cm", "m": "Pine Wood, Plywood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/03/1-furniture-meja-fafa-tv-cabinet.jpeg", "desc": ""}, {"id": 315, "t": "New Oval Table Natural Large", "c": "Meja & Konsol", "p": "Rp 1.650.000", "d": "120 × 60 × 34 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/01/furniture-meja-new-oval-table-natural-large.jpg", "desc": ""}, {"id": 316, "t": "Oval Table Lesahan", "c": "Meja & Konsol", "p": "Rp 1.850.000", "d": "120 × 80 × 35 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/IMG_9560.jpg", "desc": ""}, {"id": 317, "t": "Meja Makan S", "c": "Meja & Konsol", "p": "Rp 1.650.000", "d": "60 × 60 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/1-furniture-meja-makan-s-natural.jpeg", "desc": ""}, {"id": 318, "t": "Veromi Table", "c": "Meja & Konsol", "p": "Rp 4.650.000", "d": "100 × 50 × 200 cm", "m": "Kaca, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/03/1-Furniture-Veromi-Table.jpg", "desc": ""}, {"id": 319, "t": "Kaja Folding Table", "c": "Meja & Konsol", "p": "Rp 3.650.000", "d": "149 × 79 × 73 cm", "m": "Teak Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/07/1.-Furniture-Meja-Kaja-Folding-Table-1.jpg", "desc": ""}, {"id": 320, "t": "Meja Lipat Besar Natural", "c": "Meja & Konsol", "p": "Rp 590.000", "d": "60 × 40 × 32 cm", "m": "Mahogany Wood, MDF, Plywood", "f": "Duco, NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/10/furniture-meja-meja-lipat-natural-3.jpg", "desc": ""}, {"id": 321, "t": "Harumi TV Table 5 Drawer", "c": "Meja & Konsol", "p": "Rp 4.850.000", "d": "200 × 35 × 50 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/08/Harumi-TV-Table-5-Laci-1.jpg", "desc": ""}, {"id": 322, "t": "Salami TV Table 4 Drawer", "c": "Meja & Konsol", "p": "Rp 3.800.000", "d": "160 × 35 × 45 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/08/1-furniture-meja-salami-tv-table-4-drawer.jpg", "desc": ""}, {"id": 323, "t": "Salami TV Table 5 Drawer", "c": "Meja & Konsol", "p": "Rp 4.650.000", "d": "200 × 35 × 45 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/1.-Furniture-Meja-TV-Alana-TV-Table-5-Laci.jpg", "desc": ""}, {"id": 324, "t": "Meja Lipat Mahoni", "c": "Meja & Konsol", "p": "Rp 385.000", "d": "89 × 89 × 45 cm", "m": "Mahogany Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/Furniture-Meja-Lipat-Mahoni-1.jpg", "desc": ""}, {"id": 325, "t": "Mida Dining Table", "c": "Meja & Konsol", "p": "Rp 2.600.000", "d": "130 × 65 × 75,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/01/furniture-meja-makan-minimalis.jpg", "desc": ""}, {"id": 326, "t": "Mida Side Table 3 Drawer", "c": "Meja & Konsol", "p": "Rp 1.650.000", "d": "40 × 40 × 46 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/03/1-furniture-meja-mida-side-table-3-drawer.jpg", "desc": ""}, {"id": 327, "t": "New Oval Table Natural", "c": "Meja & Konsol", "p": "Rp 1.450.000", "d": "90 × 40 × 34 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/4-furniture-meja-new-oval-coffee-table.jpg", "desc": ""}, {"id": 328, "t": "Meja Makan L", "c": "Meja & Konsol", "p": "Rp 3.250.000", "d": "160 × 85 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/03/1-furniture-meja-makan-L.jpg", "desc": ""}, {"id": 329, "t": "Meja Makan M", "c": "Meja & Konsol", "p": "Rp 2.750.000", "d": "120 × 66 × 75 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/09/1-furniture-meja-makan-m-natural.jpg", "desc": ""}, {"id": 330, "t": "Daarish Multi Table Round", "c": "Meja & Konsol", "p": "Rp 1.950.000", "d": "55 × 55 × 52 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/01/1.-Furniture-Meja-Daarish-Multitable-Round.jpeg", "desc": ""}, {"id": 331, "t": "Alana Coffee Table", "c": "Meja & Konsol", "p": "Rp 1.950.000", "d": "90 × 39 × 40 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/1.-Furniture-Meja-Alana-Coffee-Table.jpg", "desc": ""}, {"id": 332, "t": "Harumi Side Table", "c": "Meja & Konsol", "p": "Rp 1.450.000", "d": "44 × 38 × 59 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-furniture-meja-harumi-side-table.jpg", "desc": ""}, {"id": 333, "t": "Daarish Multi Table", "c": "Meja & Konsol", "p": "Rp 1.950.000", "d": "58 × 53 × 45 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/11/1.-Furniture-Meja-Daarish-Multitable.jpeg", "desc": ""}, {"id": 334, "t": "Oval Tea Table Natural", "c": "Meja & Konsol", "p": "Rp 1.750.000", "d": "80 × 45 × 40 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/IMG_3979.jpg", "desc": ""}, {"id": 335, "t": "Mida Side Table 2 Drawer", "c": "Meja & Konsol", "p": "Rp 1.450.000", "d": "40 × 40 × 45 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/02/1-furniture-meja-mida-side-table-2-drawer.jpg", "desc": ""}, {"id": 336, "t": "Ladder Hanger L Natural", "c": "Rak & Display", "p": "Rp 450.000", "d": "90 × 5 × 180 cm", "m": "Mahogany Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/1-furniture-rak-ladder-hanger-L-natural.jpg", "desc": ""}, {"id": 337, "t": "Jemuran Lipat Jati Small", "c": "Home Decor & Living", "p": "Rp 485.000", "d": "74 × 41 × 31 cm", "m": "Teak Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/10/furniture-aksesoris-jemuran-lipat-jati-s-1.jpg", "desc": ""}, {"id": 338, "t": "Multi Table S", "c": "Meja & Konsol", "p": "Rp 1.850.000", "d": "97,5 × 60 × 33 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/1-furniture-meja-multi-table-s.jpg", "desc": ""}, {"id": 339, "t": "Jemuran Lipat Jati Large", "c": "Home Decor & Living", "p": "Rp 985.000", "d": "150 × 89 × 46 cm", "m": "Teak Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/08/1-furniture-jemuran-lipat-jati.jpg", "desc": ""}, {"id": 340, "t": "Alana Bed 3 Drawer 120", "c": "Lemari & Storage", "p": "Rp 5.400.000", "d": "205 × 125 × 25 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/03/1-Furniture-Alana-Bed-3-Drawer-120.jpg", "desc": ""}, {"id": 341, "t": "Classic Bed 160", "c": "Tempat Tidur", "p": "Rp 6.500.000", "d": "170 × 210 × 37,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/10/1-Furniture-Dipan-Classic-Bed-160.jpg", "desc": ""}, {"id": 342, "t": "Alana Bed 3 Side Drawer 120", "c": "Lemari & Storage", "p": "Rp 5.650.000", "d": "205 × 125 × 25 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/10/1-Furniture-Dipan-Alana-Bed-3-Side-Drawer-120.jpg", "desc": ""}, {"id": 343, "t": "Ladder Hanger L Natural White", "c": "Rak & Display", "p": "Rp 450.000", "d": "90 × 5 × 180 cm", "m": "Mahogany Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/08/IMG_3923.jpg", "desc": ""}, {"id": 344, "t": "Classic Bed 120", "c": "Tempat Tidur", "p": "Rp 5.300.000", "d": "200 × 120 × 37 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-05-at-1.47.15-PM.jpeg", "desc": ""}, {"id": 345, "t": "Simple Hanger Natural", "c": "Rak & Display", "p": "Rp 595.000", "d": "64 × 40 × 146 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/20241026142541_IMG_3134-01-min.jpeg", "desc": ""}, {"id": 346, "t": "Standing Lamp Monopod", "c": "Rak & Display", "p": "Rp 1.350.000", "d": "40 × 40 × 143 cm", "m": "Teak Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/09/1-furniture-aksesoris-standing-lamp-monopod.jpg", "desc": ""}, {"id": 347, "t": "Harumi Sketsel Rattan", "c": "Home Decor & Living", "p": "Rp 2.350.000", "d": "121 × 23 × 156 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/10/Furniture-aksesoris-harumi-rattan-sketsel.jpg", "desc": ""}, {"id": 348, "t": "Dowo Hanger", "c": "Rak & Display", "p": "Rp 485.000", "d": "10 × 20 × 100 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/09/IMG_5949-min.jpeg", "desc": ""}, {"id": 349, "t": "Standing Lamp Tripod", "c": "Rak & Display", "p": "Rp 1.650.000", "d": "45 × 45 × 173 cm", "m": "Teak Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/09/furniture-aksesoris-standing-lamp-tripod-1.jpg", "desc": ""}, {"id": 350, "t": "Ona Sketsel", "c": "Home Decor & Living", "p": "Rp 3.200.000", "d": "127 × 57 × 170 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/DSC02855-scaled.jpg", "desc": ""}, {"id": 351, "t": "Simple Hanger White", "c": "Rak & Display", "p": "Rp 595.000", "d": "64 × 40 × 146 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/1-Furniture-Simple-Hanger-White-Uwitan.jpg", "desc": ""}, {"id": 352, "t": "Rumah Kucing Tingkat", "c": "Home Decor & Living", "p": "Rp 450.000", "d": "51 × 40 × 40 cm", "m": "Foam, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_5629-1-scaled.jpg", "desc": ""}, {"id": 353, "t": "Keranjang Piknik", "c": "Home Decor & Living", "p": "Rp 245.000", "d": "40 × 29 × 23 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/09/CHO09924-min-scaled.jpg", "desc": ""}, {"id": 354, "t": "New Rattan Picnic Basket", "c": "Home Decor & Living", "p": "Rp 210.000", "d": "43 × 29 × 37 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/09/20250821102817_IMG_7281-min.jpeg", "desc": ""}, {"id": 355, "t": "Mini Rug Colorful", "c": "Home Decor & Living", "p": "Rp 585.000", "d": "90 × 150 cm", "m": "Tenun", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2021/05/Rug-Colorful.jpg", "desc": ""}, {"id": 356, "t": "Salami Shelf Natural", "c": "Rak & Display", "p": "Rp 295.000", "d": "80 × 15 × 20 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/furniture-aksesoris-salami-shelf-1.jpg", "desc": ""}, {"id": 357, "t": "Salami Shelf Natural White", "c": "Rak & Display", "p": "Rp 295.000", "d": "80 × 15 × 20 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/furniture-aksesoris-salami-shelf-1-1.jpg", "desc": ""}, {"id": 358, "t": "Malas Bed", "c": "Tempat Tidur", "p": "Rp 3.250.000", "d": "200 × 106 × 62 cm", "m": "Premium Foam, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/10/furniture-tempat-tidur-malas-bed-2.jpg", "desc": ""}, {"id": 359, "t": "Uwitan Mini Rug L", "c": "Home Decor & Living", "p": "Rp 320.000", "d": "130 × 60 cm", "m": "Tenun", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2020/07/mini-rug-L-1.webp", "desc": ""}, {"id": 360, "t": "Alana Bed 3 Drawer 160", "c": "Lemari & Storage", "p": "Rp 6.950.000", "d": "205 × 165 × 25 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/10/1-Furniture-Dipan-Alana-Bed-3-Drawer-160.jpg", "desc": ""}, {"id": 361, "t": "Standing HP Pukis", "c": "Rak & Display", "p": "Rp 20.000", "d": "10 × 6 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/09/IMG_7752-min.jpeg", "desc": ""}, {"id": 362, "t": "Alana Bed 3 Side Drawer 160", "c": "Lemari & Storage", "p": "Rp 7.300.000", "d": "205 × 165 × 25 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/01/furniture-bed-alana-bed-3-side-drawer-160.jpg", "desc": ""}, {"id": 363, "t": "Minima Bedframe", "c": "Tempat Tidur", "p": "Rp 2.950.000", "d": "120 × 200 × 5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/furniture-dipan-minima-bed-1.jpg", "desc": ""}, {"id": 364, "t": "Sketsel Vitrage White", "c": "Home Decor & Living", "p": "Rp 1.450.000", "d": "130 × 23 × 165 cm", "m": "Pine Wood, Vitrage", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-Furniture-Sketsel-Vitrage-White.jpg", "desc": ""}, {"id": 365, "t": "Jerujen Bed 160", "c": "Tempat Tidur", "p": "Rp 6.950.000", "d": "160 × 200 × 85 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/05/DSC02966-scaled.jpg", "desc": ""}, {"id": 366, "t": "Alana Bed 3 Drawer 180", "c": "Lemari & Storage", "p": "Rp 7.600.000", "d": "206 × 186 × 26 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/10/1-Furniture-Dipan-Alana-Bed-3-Drawer-160.jpg", "desc": ""}, {"id": 367, "t": "Dodo Lamp", "c": "Home Decor & Living", "p": "Rp 85.000", "d": "17 × 17 × 13 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_7179-1-scaled.jpg", "desc": ""}, {"id": 368, "t": "Wooden Table Lamp", "c": "Meja & Konsol", "p": "Rp 525.000", "d": "28 × 17 × 45 cm", "m": "Mahogany Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/02/1-furniture-aksesoris-wooden-table-lamp.jpg", "desc": ""}, {"id": 369, "t": "Cakra Single Hook", "c": "Home Decor & Living", "p": "Rp 55.000", "d": "14 × 11,5 × 35 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/1.-Furniture-Hanger-Cakra-Single-Hook.jpg", "desc": ""}, {"id": 370, "t": "Folding Hook Brown", "c": "Home Decor & Living", "p": "Rp 150.000", "d": "10 × 10 × 44 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/02/1-furniture-aksesoris-folding-hook-brown.jpeg", "desc": ""}, {"id": 371, "t": "Harumi Rattan Bed 160", "c": "Tempat Tidur", "p": "Rp 6.500.000", "d": "222 × 172 × 30 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/10/1-Furniture-Dipan-Harumi-Rattan-Bed-160.jpg", "desc": ""}, {"id": 372, "t": "Rak Jemuran", "c": "Rak & Display", "p": "Rp 375.000", "d": "50 × 41 × 80 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/07/2-furniture-aksesoris-rak-jemuran.jpg", "desc": ""}, {"id": 373, "t": "Bona Sketsel", "c": "Home Decor & Living", "p": "Rp 3.650.000", "d": "138 × 4 × 170 cm", "m": "Pine Wood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/02/CHO03135-scaled.jpg", "desc": ""}, {"id": 374, "t": "Sketsel Vitrage New White", "c": "Home Decor & Living", "p": "Rp 1.650.000", "d": "130 × 23 × 165 cm", "m": "Pine Wood, Plywood, Vitrage", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/07/2-Aksesoris-Sketsel-Vitrage-New-White.jpg", "desc": ""}, {"id": 375, "t": "Arba Bed 160", "c": "Tempat Tidur", "p": "Rp 7.350.000", "d": "165 × 205 × 25 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/10/CHO05024-min-scaled.jpg", "desc": ""}, {"id": 376, "t": "Standing HP Pen Natural", "c": "Rak & Display", "p": "Rp 25.000", "d": "8 × 8 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/11/1-Aksesoris-Standing-HP-Pen-Natural-Uwitan.jpg", "desc": ""}, {"id": 377, "t": "Standing HP New", "c": "Rak & Display", "p": "Rp 20.000", "d": "7 × 11 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/11/1-Aksesoris-Standing-HP-New-Uwitan.jpg", "desc": ""}, {"id": 378, "t": "Standing Handphone Natural", "c": "Rak & Display", "p": "Rp 55.000", "d": "7 × 11 × 17 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/4-Aksesoris-Standing-Handphone-Full-Natural-Uwitan.jpg", "desc": ""}, {"id": 379, "t": "Eso Standing HP", "c": "Rak & Display", "p": "Rp 65.000", "d": "9 × 10 × 24 cm", "m": "Mahogany Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/06/1.-Furniture-Aksesoris-Eso-Standing-Hp.jpeg", "desc": ""}, {"id": 380, "t": "Ona Pot", "c": "Home Decor & Living", "p": "Rp 135.000", "d": "18 × 18 × 37 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/04/furniture-aksesoris-ona-basket-1.jpg", "desc": ""}, {"id": 381, "t": "Trolley Laundry Basket", "c": "Home Decor & Living", "p": "Rp 595.000", "d": "40 × 30 × 58 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_7655-01.jpeg", "desc": ""}, {"id": 382, "t": "Desko New D – Storage Meja Minimalis Serbaguna", "c": "Meja & Konsol", "p": "Rp 430.000", "d": "35 × 18 × 30 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/11/CHO05532-scaled.jpg", "desc": ""}, {"id": 383, "t": "Desko New E – Storage Meja Serbaguna", "c": "Meja & Konsol", "p": "Rp 450.000", "d": "35 × 18 × 30 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/11/CHO05520-scaled.jpg", "desc": ""}, {"id": 384, "t": "Rumi Bread Box Natural", "c": "Home Decor & Living", "p": "Rp 395.000", "d": "42 × 27 × 26 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/07/depan-scaled.jpg", "desc": ""}, {"id": 385, "t": "Meru Medicine – Kotak P3K Minimalis", "c": "Home Decor & Living", "p": "Rp 395.000", "d": "25 × 14 × 35 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/11/CHO05627-scaled.jpg", "desc": ""}, {"id": 386, "t": "Laundry Basket New Horizontal Small", "c": "Home Decor & Living", "p": "Rp 320.000", "d": "35 × 35 × 37 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/03/1-furniture-aksesoris-laundry-basket-new-horizontal.jpeg", "desc": ""}, {"id": 387, "t": "Rumi Medicine – Kotak P3K Rotan Asli Minimalis", "c": "Home Decor & Living", "p": "Rp 395.000", "d": "25 × 14 × 35 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/11/CHO05659-scaled.jpg", "desc": ""}, {"id": 388, "t": "Laundry Basket Large", "c": "Home Decor & Living", "p": "Rp 450.000", "d": "40 × 40 × 53 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/IMG_4944-scaled-1.jpeg", "desc": ""}, {"id": 389, "t": "Laundry Basket New Diagonal Small", "c": "Home Decor & Living", "p": "Rp 320.000", "d": "35 × 35 × 37 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/02/1-furniture-aksesoris-laundry-basket-new-small.jpg", "desc": ""}, {"id": 390, "t": "Desko C Natural", "c": "Meja & Konsol", "p": "Rp 300.000", "d": "35 × 15 × 15 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/12/aksesoris-Desko-C-1.jpg", "desc": ""}, {"id": 391, "t": "Deski 1×2 Natural", "c": "Meja & Konsol", "p": "Rp 210.000", "d": "18 × 15 × 15 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/12/1-aksesoris-deski-1x2-1.jpg", "desc": ""}, {"id": 392, "t": "Deski 2×2 Natural – Storage Meja Kerja Minimalis", "c": "Meja & Konsol", "p": "Rp 420.000", "d": "35 × 15 × 15 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/12/1-Aksesoris-Deski-2x2-1.jpg", "desc": ""}, {"id": 393, "t": "Vintage Bread Box Natural", "c": "Home Decor & Living", "p": "Rp 350.000", "d": "50 × 25 × 20 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-Furniture-Vintage-Bread-Box-Full-Natural.jpg", "desc": ""}, {"id": 394, "t": "Sewesi Storage Set", "c": "Home Decor & Living", "p": "Rp 485.000", "d": "31 × 39 × 21 cm", "m": "Metal, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2022/09/furniture-sewesi-storage-set-1.jpg", "desc": ""}, {"id": 395, "t": "Pir Basket Large", "c": "Home Decor & Living", "p": "Rp 395.000", "d": "40 × 40 × 65 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/aksesoris-pir-basket-large-1.webp", "desc": ""}, {"id": 396, "t": "Standing HP Pen Brown", "c": "Rak & Display", "p": "Rp 25.000", "d": "8 × 8 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/11/1-Aksesoris-Standing-HP-Pen-Brown-Uwitan.jpg", "desc": ""}, {"id": 397, "t": "Slide Box Laci Natural White", "c": "Home Decor & Living", "p": "Rp 395.000", "d": "40 × 29 × 28 cm", "m": "MDF, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/2-Aksesoris-Slide-Box-Laci-Natural-White.jpg", "desc": ""}, {"id": 398, "t": "Vintage Bread Box Green Natural", "c": "Home Decor & Living", "p": "Rp 350.000", "d": "50 × 25 × 20 cm", "m": "Metal, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/03/CHO04793-HDR-scaled.jpg", "desc": ""}, {"id": 399, "t": "Box Rotan L + Kain + Tutup – Storage Box Serbaguna Rotan Asli", "c": "Home Decor & Living", "p": "Rp 620.000", "d": "49 × 35 × 23 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/12/1-4-scaled.jpg", "desc": ""}, {"id": 400, "t": "Laundry Basket New Horizontal Large", "c": "Home Decor & Living", "p": "Rp 430.000", "d": "45 × 45 × 42 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/10/furniture-aksesoris-laundry-basket-new-large-horizontal-1.jpg", "desc": ""}, {"id": 401, "t": "Slide Box Laci Natural", "c": "Home Decor & Living", "p": "Rp 395.000", "d": "40 × 29 × 28 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/03/1-Aksesoris-Slide-Box-Laci-Full-Natural.jpg", "desc": ""}, {"id": 402, "t": "Laundry Basket New Diagonal Large", "c": "Home Decor & Living", "p": "Rp 430.000", "d": "44 × 44 × 46 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/03/1-furniture-aksesoris-laundry-basket-new-large.jpeg", "desc": ""}, {"id": 403, "t": "Fitrit Storage – Storage Rotan Serbaguna", "c": "Home Decor & Living", "p": "Rp 225.000", "d": "37 × 48 × 17,5 cm", "m": "Rattan", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2023/12/CHO08709-scaled.jpg", "desc": ""}, {"id": 404, "t": "Laundry Basket Large + Kain – Keranjang Cuci Rotan Minimalis", "c": "Home Decor & Living", "p": "Rp 495.000", "d": "40 × 40 × 53 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/12/CHO08727-scaled.jpg", "desc": ""}, {"id": 405, "t": "Hampers Rotan Bulat", "c": "Home Decor & Living", "p": "Rp 235.000", "d": "26 × 26 × 10 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/aksesoris-hampers-rotan-bulat-1.jpg", "desc": ""}, {"id": 406, "t": "Bidara Round Basket", "c": "Home Decor & Living", "p": "Rp 250.000", "d": "19 × 19 × 14 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/1.-Furniture-Basket-Bidara-Round-Basket.jpg", "desc": ""}, {"id": 407, "t": "Kimaru Basket", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "38 × 38 × 37 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/1-aksesoris-kimaru-basket.jpg", "desc": ""}, {"id": 408, "t": "Medicine Box", "c": "Home Decor & Living", "p": "Rp 350.000", "d": "37 × 15 × 30 cm", "m": "MDF, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/03/1-furniture-aksesoris-medicine-box.jpeg", "desc": ""}, {"id": 409, "t": "Oma Vas Kayu", "c": "Home Decor & Living", "p": "Rp 65.000", "d": "9 × 4 × 9 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/07/CHO07664-scaled-e1688373421526.jpg", "desc": ""}, {"id": 410, "t": "Papo Vas Kayu", "c": "Home Decor & Living", "p": "Rp 55.000", "d": "9 × 4 × 10 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/07/CHO07663-scaled-e1692091799949.jpg", "desc": ""}, {"id": 411, "t": "Tobo S Vas Kayu", "c": "Home Decor & Living", "p": "Rp 65.000", "d": "5,5 × 5,5 × 10 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/07/CHO07662-scaled-e1692093173540.jpg", "desc": ""}, {"id": 412, "t": "Wooden Planter L", "c": "Home Decor & Living", "p": "Rp 70.000", "d": "26,5 × 26,5 × 40 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/Furniture-Wooden-Planter-L.jpg", "desc": ""}, {"id": 413, "t": "Tobo M Vas Kayu", "c": "Home Decor & Living", "p": "Rp 80.000", "d": "5,5 × 5,5 × 15 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/07/CHO07661-scaled-e1692168038682.jpg", "desc": ""}, {"id": 414, "t": "Tobo L Vas Kayu", "c": "Home Decor & Living", "p": "Rp 100.000", "d": "6,5 × 6,5 × 18 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/07/CHO07660-scaled-e1692092348371.jpg", "desc": ""}, {"id": 415, "t": "Rotan Chest", "c": "Home Decor & Living", "p": "Rp 275.000", "d": "31 × 31 × 20 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/04/1-furniture-aksesoris-rotan-chest.jpg", "desc": ""}, {"id": 416, "t": "Kimaru Mini Storage", "c": "Home Decor & Living", "p": "Rp 165.000", "d": "20 × 10 × 17 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/12/1-aksesoris-kimaru-mini-storage.jpg", "desc": ""}, {"id": 417, "t": "Desko A Natural", "c": "Meja & Konsol", "p": "Rp 350.000", "d": "36 × 20 × 20 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/12/Aksesoris-Desko-A-4.jpg", "desc": ""}, {"id": 418, "t": "Wooden Snack Box Natural", "c": "Home Decor & Living", "p": "Rp 385.000", "d": "42 × 28 × 22 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-Furniture-Wooden-Snack-Box.jpg", "desc": ""}, {"id": 419, "t": "Tissue Holder", "c": "Home Decor & Living", "p": "Rp 95.000", "d": "15 × 15 × 30 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/1-Tissue-Holder-Uwitan-Aksesoris.jpg", "desc": ""}, {"id": 420, "t": "Robobox Natural White", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "27 × 14,5 × 20 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/Furniture-Aksesoris-Robobox-Natural-White-1-1.jpg", "desc": ""}, {"id": 421, "t": "Desko B Natural", "c": "Meja & Konsol", "p": "Rp 325.000", "d": "36 × 20 × 15 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/12/Aksesoris-Desko-B-3-1.jpg", "desc": ""}, {"id": 422, "t": "Jembar Basket", "c": "Home Decor & Living", "p": "Rp 225.000", "d": "53 × 50 × 39 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/10/laundry-akesoris-jembar-basket-1.jpg", "desc": ""}, {"id": 423, "t": "Robobox White Natural", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "27 × 14,5 × 20 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/IMG_7934-scaled.jpg", "desc": ""}, {"id": 424, "t": "Gunungan Tray", "c": "Home Decor & Living", "p": "Rp 875.000", "d": "35,5 × 35,5 × 77 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/05/CHO05544-scaled.jpg", "desc": ""}, {"id": 425, "t": "Mug Holder Round", "c": "Home Decor & Living", "p": "Rp 125.000", "d": "27 × 28 × 35,5 cm", "m": "Mahogany Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/IMG_5074.jpg", "desc": ""}, {"id": 426, "t": "Ona Tray Table", "c": "Meja & Konsol", "p": "Rp 1.850.000", "d": "55,5 × 55,5 × 48,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/05/IMG_1026-min.jpeg", "desc": ""}, {"id": 427, "t": "Set Planter Rotan Natural", "c": "Home Decor & Living", "p": "Rp 495.000", "d": "38 × 38 × 70 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_3622-min-scaled.jpg", "desc": ""}, {"id": 428, "t": "Salami Tray Susun", "c": "Home Decor & Living", "p": "Rp 525.000", "d": "44 × 30 × 40 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/05/CHO05566-scaled.jpg", "desc": ""}, {"id": 429, "t": "Kotak Tisu Oma", "c": "Home Decor & Living", "p": "Rp 320.000", "d": "25 × 15 × 15,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_4115-01-min-scaled.jpeg", "desc": ""}, {"id": 430, "t": "Box Rotan L", "c": "Home Decor & Living", "p": "Rp 550.000", "d": "49 × 35 × 23 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/08/1-furniture-aksesoris-box-rotan-l.jpg", "desc": ""}, {"id": 431, "t": "Wooden Tray Small", "c": "Home Decor & Living", "p": "Rp 185.000", "d": "40 × 25 × 2 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/3-Furniture-Wooden-Tray-Small.jpg", "desc": ""}, {"id": 432, "t": "Nova Sanity Station", "c": "Home Decor & Living", "p": "Rp 325.000", "d": "25 × 12 × 25 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/03/2-furniture-aksesoris-nova-sanity-station.jpg", "desc": ""}, {"id": 433, "t": "Nova Storage M", "c": "Home Decor & Living", "p": "Rp 525.000", "d": "34 × 29 × 32 cm", "m": "Pine Wood, Plywood, Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/07/1-furniture-storage-nova-storage-m.jpg", "desc": ""}, {"id": 434, "t": "Box Rotan M", "c": "Home Decor & Living", "p": "Rp 480.000", "d": "34 × 30 × 33 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/05/IMG_4936-scaled.jpg", "desc": ""}, {"id": 435, "t": "Rattan Cactus Small", "c": "Home Decor & Living", "p": "Rp 280.000", "d": "30 × 12 × 50 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/1-furniture-aksesoris-rattan-cactus-small.jpg", "desc": ""}, {"id": 436, "t": "Fitrit Tray – Nampan Rotan Asli Aesthetic", "c": "Home Decor & Living", "p": "Rp 185.000", "d": "45 × 45 × 15 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/01/CHO09035-scaled.jpg", "desc": ""}, {"id": 437, "t": "Dan Storage L", "c": "Home Decor & Living", "p": "Rp 425.000", "d": "65 × 50 × 14 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/furniture-aksesoris-dan-storage-4.jpg", "desc": ""}, {"id": 438, "t": "Rattan Cactus Large", "c": "Home Decor & Living", "p": "Rp 340.000", "d": "40 × 14 × 80 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/1-furniture-aksesoris-rattan-cactus-large.jpg", "desc": ""}, {"id": 439, "t": "Dodo Helicopter", "c": "Home Decor & Living", "p": "Rp 395.000", "d": "56 × 24 × 32 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/10/1.-Furniture-Aksesoris-Dodo-Helicopter.jpg", "desc": ""}, {"id": 440, "t": "New Melati Rattan Tray Square – Nampan Rotan Serbaguna", "c": "Home Decor & Living", "p": "Rp 290.000", "d": "40,5 × 34,5 × 5,5 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/02/CHO09159-scaled.jpg", "desc": ""}, {"id": 441, "t": "New Melati Rattan Tray Round – Nampan Serbaguna Rotan Asli", "c": "Home Decor & Living", "p": "Rp 290.000", "d": "45 × 45 × 5,5 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/02/CHO09113-scaled.jpg", "desc": ""}, {"id": 442, "t": "Seroja Vas Bunga Minimalis S", "c": "Home Decor & Living", "p": "Rp 55.000", "d": "8 × 8 × 11 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/10/1-Aksesoris-Seroja-Vas-Bunga-Minimalis-S-Uwitan.jpg", "desc": ""}, {"id": 443, "t": "Wooden Planter S", "c": "Home Decor & Living", "p": "Rp 60.000", "d": "20,5 × 20,5 × 30 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/Furniture-Wooden-Planter-S.jpg", "desc": ""}, {"id": 444, "t": "Bona Vas Kayu", "c": "Home Decor & Living", "p": "Rp 95.000", "d": "13 × 5 × 20 cm", "m": "Mahogany Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/Furniture-aksesoris-bona-vas-kayu-3-1.jpg", "desc": ""}, {"id": 445, "t": "Nina Vas Kayu", "c": "Home Decor & Living", "p": "Rp 85.000", "d": "15 × 5 × 8 cm", "m": "Mahogany Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/09/furniture-aksesoris-nina-vas-kayu-1-1.jpg", "desc": ""}, {"id": 446, "t": "Kamboja Vas Bunga Minimalis L", "c": "Home Decor & Living", "p": "Rp 95.000", "d": "7 × 7 × 20 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/07/1-aksesoris-vas-bunga-kamboja-L.jpeg", "desc": ""}, {"id": 447, "t": "Kamboja Vas Bunga Minimalis M", "c": "Home Decor & Living", "p": "Rp 75.000", "d": "7 × 7 × 15 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/07/1-aksesoris-vas-bunga-kamboja-M.jpeg", "desc": ""}, {"id": 448, "t": "Citra Vas Bunga L", "c": "Home Decor & Living", "p": "Rp 110.000", "d": "10,5 × 10,5 × 30 cm", "m": "Mahogany Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/11/1.-Furniture-Aksesoris-Vas-Bunga-Citra-L.jpg", "desc": ""}, {"id": 449, "t": "Set Planter Rotan Dark", "c": "Home Decor & Living", "p": "Rp 495.000", "d": "38 × 38 × 70 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/09/furniture-aksesoris-set-planter-rotan.jpg", "desc": ""}, {"id": 450, "t": "Kamboja Vas Bunga Minimalis S", "c": "Home Decor & Living", "p": "Rp 55.000", "d": "7 × 7 × 10 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/10/1-aksesoris-vas-bunga-kamboja.jpeg", "desc": ""}, {"id": 451, "t": "Melati Vas Bunga Minimalis M", "c": "Home Decor & Living", "p": "Rp 75.000", "d": "8,5 × 8,5 × 15 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/10/1-aksesoris-melati-vas-bunga-m.jpg", "desc": ""}, {"id": 452, "t": "Kubo Vas Kayu", "c": "Home Decor & Living", "p": "Rp 45.000", "d": "5,5 × 5,5 × 5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/07/CHO07668-scaled-e1688367235901.jpg", "desc": ""}, {"id": 453, "t": "Balo Vas Kayu", "c": "Home Decor & Living", "p": "Rp 55.000", "d": "5 × 5 × 10 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/07/CHO07667-scaled-e1692089514498.jpg", "desc": ""}, {"id": 454, "t": "Melati Vas Bunga Minimalis L", "c": "Home Decor & Living", "p": "Rp 95.000", "d": "8,5 × 8,5 × 20 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/10/1-aksesoris-vas-bunga-melati-L.jpg", "desc": ""}, {"id": 455, "t": "Asoka Vas Bunga Minimalis M", "c": "Home Decor & Living", "p": "Rp 75.000", "d": "7 × 7 × 15 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/10/1.-Furniture-Vas-Asoka-vas-Bunga-M.jpg", "desc": ""}, {"id": 456, "t": "Limo Vas Kayu", "c": "Home Decor & Living", "p": "Rp 55.000", "d": "9 × 4 × 9 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/07/CHO07665-scaled-e1692091363618.jpg", "desc": ""}, {"id": 457, "t": "Dodo Triangle Small", "c": "Home Decor & Living", "p": "Rp 4.200.000", "d": "240 × 120 × 150 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/06/1.-Furniture-Aksesoris-Dodo-triangle-Small.jpg", "desc": ""}, {"id": 458, "t": "Kotak Tisu Rotan", "c": "Home Decor & Living", "p": "Rp 215.000", "d": "26 × 14 × 13 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/05/IMG_5073-scaled.jpg", "desc": ""}, {"id": 459, "t": "Ona Stool", "c": "Kursi & Sofa", "p": "Rp 525.000", "d": "32,3 × 32,3 × 43,5 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/CHO00286-1-scaled.jpg", "desc": ""}, {"id": 460, "t": "Jiro Folding Chair", "c": "Kursi & Sofa", "p": "Rp 1.650.000", "d": "67 × 80 × 77 cm", "m": "Rattan, Teak Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/04/CHO05802-scaled.jpg", "desc": ""}, {"id": 461, "t": "Mobil Mainan VW Combi Rotan", "c": "Home Decor & Living", "p": "Rp 365.000", "d": "15 × 32 × 21 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_0414-01-min.jpeg", "desc": ""}, {"id": 462, "t": "Box Montesori M", "c": "Home Decor & Living", "p": "Rp 95.000", "d": "13 × 14 × 7 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/CHO00903-scaled.jpg", "desc": ""}, {"id": 463, "t": "Mobil Mainan VW Kodok Rotan", "c": "Home Decor & Living", "p": "Rp 365.000", "d": "22 × 32 × 18 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_0444-01-min-scaled.jpeg", "desc": ""}, {"id": 464, "t": "Box Montesori S", "c": "Home Decor & Living", "p": "Rp 80.000", "d": "11 × 12 × 5 cm", "m": "MDF, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/CHO00919-scaled.jpg", "desc": ""}, {"id": 465, "t": "Sender Shelf", "c": "Rak & Display", "p": "Rp 485.000", "d": "49,5 × 27 × 47,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/05/CHO05518-scaled.jpg", "desc": ""}, {"id": 466, "t": "Medicine Box Green Natural", "c": "Home Decor & Living", "p": "Rp 350.000", "d": "Custom Sesuai Pesanan", "m": "MDF, Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/03/CHO03340-scaled.jpg", "desc": ""}, {"id": 467, "t": "Seroja Vas Bunga Minimalis L", "c": "Home Decor & Living", "p": "Rp 95.000", "d": "7,5 × 7,5 × 20 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/07/1-Aksesoris-Seroja-Vas-Bunga-Minimalis-L-Uwitan.jpg", "desc": ""}, {"id": 468, "t": "Ranting Shelf – Standing Hanger Minimalis", "c": "Rak & Display", "p": "Rp 1.200.000", "d": "33 × 46 × 160 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/08/1000078778-01-min-scaled.jpeg", "desc": ""}, {"id": 469, "t": "Standing Rattan Pot", "c": "Rak & Display", "p": "Rp 350.000", "d": "30 × 30 × 57 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/12/1-Furniture-Standing-Rattan-Pot-Uwitan.jpg", "desc": ""}, {"id": 470, "t": "Seroja Vas Bunga Minimalis M", "c": "Home Decor & Living", "p": "Rp 75.000", "d": "7,5 × 7,5 × 15,5 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/07/2-Aksesoris-Seroja-Vas-Bunga-Minimalis-M-Uwitan.jpg", "desc": ""}, {"id": 471, "t": "Genaguci", "c": "Home Decor & Living", "p": "Rp 385.000", "d": "30 × 30 × 56 cm", "m": "Rattan", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/08/IMG_3265.jpg", "desc": ""}, {"id": 472, "t": "Asoka Vas Bunga Minimalis L", "c": "Home Decor & Living", "p": "Rp 95.000", "d": "7 × 7 × 20 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/07/1.-Furniture-Vas-Asoka-Vas-Bunga-L.jpeg", "desc": ""}, {"id": 473, "t": "Asoka Vas Bunga Minimalis S", "c": "Home Decor & Living", "p": "Rp 55.000", "d": "7 × 7 × 10 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/07/1.-Furniture-Vas-Asoka-Vas-Bunga-S.jpeg", "desc": ""}, {"id": 474, "t": "Melati Vas Bunga Minimalis S", "c": "Home Decor & Living", "p": "Rp 55.000", "d": "8,5 × 8,5 × 10 cm", "m": "Mahogany Wood", "f": "Waterbase", "img": "https://uwitan.id/wp-content/uploads/2020/07/1-aksesoris-vas-bunga-melati-s.jpg", "desc": ""}, {"id": 475, "t": "Mobil Mainan Kayu Medium", "c": "Home Decor & Living", "p": "Rp 85.000", "d": "15 × 4 × 7 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_6577-min.jpeg", "desc": ""}, {"id": 476, "t": "Uwitan Mini Rug S", "c": "Home Decor & Living", "p": "Rp 280.000", "d": "N/A", "m": "Tenun", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2020/10/mini-rug-s-001-1.jpg", "desc": ""}, {"id": 477, "t": "Mobil Mainan Kayu Large", "c": "Home Decor & Living", "p": "Rp 110.000", "d": "N/A", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_6601-min.jpeg", "desc": ""}, {"id": 478, "t": "Jamur Stool", "c": "Kursi & Sofa", "p": "Rp 720.000", "d": "35,5 × 35,5 × 47 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_1924-01-min.jpeg", "desc": ""}, {"id": 479, "t": "Alana Cube Series", "c": "Home Decor & Living", "p": "Rp 1.100.000", "d": "40 × 35 × 40 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/11/IMG_3683-01-min.jpeg", "desc": ""}, {"id": 480, "t": "Stool S", "c": "Kursi & Sofa", "p": "Rp 450.000", "d": "30 × 30 × 41,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/06/1-Stool-S-Natural-Furniture.jpg", "desc": ""}, {"id": 481, "t": "Econo Galon Side Table Natural dan White Natural", "c": "Meja & Konsol", "p": "Rp 985.000", "d": "38 × 38 × 58 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/12/IMG_0597-min.jpeg", "desc": ""}, {"id": 482, "t": "Mini Hook Shelf", "c": "Rak & Display", "p": "Rp 65.000", "d": "34 × 6,5 × 7 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_1112-01-min.jpeg", "desc": ""}, {"id": 483, "t": "Mobil Mainan Kayu Small", "c": "Home Decor & Living", "p": "Rp 45.000", "d": "8 × 4 × 5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_6556-1-min.jpeg", "desc": ""}, {"id": 484, "t": "Ingan Storage", "c": "Home Decor & Living", "p": "Rp 350.000", "d": "22 × 24 × 14 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/02/1-furniture-aksesoris-ingan-storage.jpeg", "desc": ""}, {"id": 485, "t": "Rantang Kayu", "c": "Home Decor & Living", "p": "Rp 285.000", "d": "15 × 15 × 34 cm", "m": "Teak Wood", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2026/04/IMG_1965-01.jpg", "desc": ""}, {"id": 486, "t": "Beranda Chair Kaki Besi Hitam", "c": "Kursi & Sofa", "p": "Rp 685.000", "d": "61 × 58 × 80 cm", "m": "Metal", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2026/04/IMG_3823-1.jpg", "desc": ""}, {"id": 487, "t": "Jerujen Stool", "c": "Kursi & Sofa", "p": "Rp 750.000", "d": "34,5 × 34,5 × 45,5 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2023/01/CHO01075-scaled.jpg", "desc": ""}, {"id": 488, "t": "Rak Dinding Minimu", "c": "Rak & Display", "p": "Rp 120.000", "d": "32 × 7 × 32 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_1068-01-1-min.jpeg", "desc": ""}, {"id": 489, "t": "Rak Dinding Minimi", "c": "Rak & Display", "p": "Rp 120.000", "d": "33 × 7 × 32 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/09/IMG_1088-01-1-min.jpeg", "desc": ""}, {"id": 490, "t": "Stando Mirror", "c": "Rak & Display", "p": "Rp 1.200.000", "d": "55 × 55 × 151 cm", "m": "Pine Wood, Mirror", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/08/IMG_6414-min.jpeg", "desc": ""}, {"id": 491, "t": "Galon Slide Table", "c": "Meja & Konsol", "p": "Rp 1.350.000", "d": "38 × 38 × 55 cm", "m": "Pine Wood, Rattan, Plywood", "f": "NC Lacquer / Natural", "img": "https://uwitan.id/wp-content/uploads/2025/09/IMG_8398-min.jpeg", "desc": ""}, {"id": 492, "t": "Galon Side Table – Wadah Galon Air Minum", "c": "Meja & Konsol", "p": "Rp 1.350.000", "d": "38 × 38 × 58 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_2039-01-1.jpeg", "desc": ""}, {"id": 493, "t": "Econo Side Table", "c": "Meja & Konsol", "p": "Rp 925.000", "d": "39 × 30 × 49 cm", "m": "Pine Wood, Plywood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2020/04/1.-Furniture-Meja-Econo-Side-Table.jpeg", "desc": ""}, {"id": 494, "t": "Salami Coffee Table Large", "c": "Meja & Konsol", "p": "Rp 1.450.000", "d": "80 × 80 × 35 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2021/04/2-Furniture-Salami-Coffee-Table-Large.jpg", "desc": ""}, {"id": 495, "t": "Alana Mirror M Natural", "c": "Cermin & Dekorasi", "p": "Rp 950.000", "d": "60 × 7 × 60 cm", "m": "Mirror, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2019/02/1.-Furniture-Cermin-Alana-Mirror-M-Natural.jpeg", "desc": ""}, {"id": 496, "t": "Box Multifungsi", "c": "Home Decor & Living", "p": "Rp 350.000", "d": "42 × 25 × 28 cm", "m": "MDF, Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2017/12/storage-box-multifungsi-1.jpg", "desc": ""}, {"id": 497, "t": "Folding Hook Natural", "c": "Home Decor & Living", "p": "Rp 150.000", "d": "90 × 10 × 32 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2018/12/1-furniture-aksesoris-folding-hook-natural.jpeg", "desc": ""}, {"id": 498, "t": "Oma Hio", "c": "Home Decor & Living", "p": "Rp 135.000", "d": "10 × 10 × 10 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2026/04/IMG_3677.jpg", "desc": ""}, {"id": 499, "t": "Lekuk Table", "c": "Meja & Konsol", "p": "Rp 2.650.000", "d": "Custom Sesuai Pesanan", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2026/05/IMG_3932.jpg", "desc": ""}, {"id": 500, "t": "Lenggah Standing HP – Holder HP Standing HP Minimalis", "c": "Rak & Display", "p": "Rp 65.000", "d": "10 × 10 × 15 cm", "m": "Pine Wood", "f": "NC Lacquer", "img": "https://uwitan.id/wp-content/uploads/2024/05/IMG_4073-01-min-scaled.jpeg", "desc": ""}];
-    let activeCat = 'Semua';
-    let query = '';
-    let page = 1;
-    const pageSize = 16;
-    let filteredList = [];
+    const items = [{"title": "Bench Industrial Black", "category": "Kursi & Bangku", "dim": "80 × 30 × 50 cm", "material": "Metal, Pine Wood", "finishing": "NC Lacquer", "price": "Rp 985.000", "img": "https://uwitan.id/wp-content/uploads/2017/12/1.-Furniture-Bench-Bench-Industrial-Black.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Rak Miguna 3 Tingkat – Rak Tingkat Serbaguna", "category": "Rak & Storage", "dim": "67 × 27 × 77 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 585.000", "img": "https://uwitan.id/wp-content/uploads/2018/05/Rak-Miguna-3-Tingkat-Single-3-1.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "1 Drawer Solid", "category": "Lemari & Laci", "dim": "39 × 30 × 54 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 925.000", "img": "https://uwitan.id/wp-content/uploads/2018/05/FURNITURE-RAK-1-DRAWER-SOLID-1-scaled.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Rak Miguna 2 Tingkat – Rak Tingkat Serbaguna", "category": "Rak & Storage", "dim": "67 × 27 × 47 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 485.000", "img": "https://uwitan.id/wp-content/uploads/2018/05/1-furniture-rak-miguna-2-tingkat.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Bench 2 Drawer", "category": "Kursi & Bangku", "dim": "90 × 33 × 45 cm", "material": "Pine Wood, Plywood", "finishing": "NC Lacquer", "price": "Rp 1.850.000", "img": "https://uwitan.id/wp-content/uploads/2018/05/1.-Furniture-Kursi-Bench-2-Drawer.jpeg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Rak Dinding Panel Natural White", "category": "Rak & Storage", "dim": "80 × 16 × 53 cm", "material": "Pine Wood, Plywood", "finishing": "NC Lacquer", "price": "Rp 495.000", "img": "https://uwitan.id/wp-content/uploads/2018/05/1.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "3×1 Drawer Solid Brown", "category": "Lemari & Laci", "dim": "114 × 30 × 53 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 2.350.000", "img": "https://uwitan.id/wp-content/uploads/2018/06/1.-Furniture-Rak-3x1-Drawer-Solid-Brown.jpeg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Bench Sponge L Cream", "category": "Kursi & Bangku", "dim": "130 × 32 × 45 cm", "material": "Pine Wood, Premium Sponge", "finishing": "NC Lacquer", "price": "Rp 1.450.000", "img": "https://uwitan.id/wp-content/uploads/2018/06/1.-Furniture-Bench-Bench-Sponge-L-Cream.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Rak Dinding Rumah Natural White", "category": "Rak & Storage", "dim": "75 × 15 × 51 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 420.000", "img": "https://uwitan.id/wp-content/uploads/2018/05/Furniture-aksesoris-rak-dinding-rumah-nw-5.jpeg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Rak Dinding Panel Natural", "category": "Rak & Storage", "dim": "80 × 16 × 53 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 495.000", "img": "https://uwitan.id/wp-content/uploads/2018/05/IMG_5217.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Salami Meja Kerja 2 Laci Natural", "category": "Meja & Konsol", "dim": "140 × 45 × 75 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 3.200.000", "img": "https://uwitan.id/wp-content/uploads/2020/06/1-Furnitiure-Salami-Meja-Kerja-2-Laci-Natural.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Set Salami Rak Tangga", "category": "Rak & Storage", "dim": "65 × 30 × 188 cm", "material": "Pine Wood, Plywood, Stailess Steel", "finishing": "NC Lacquer", "price": "Rp 2.150.000", "img": "https://uwitan.id/wp-content/uploads/2019/01/DSC01894-copy-scaled.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "1×2 Drawer Solid Small", "category": "Lemari & Laci", "dim": "39 × 35 × 60 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 1.350.000", "img": "https://uwitan.id/wp-content/uploads/2018/11/furniture-1x2-drawer-solid-small-3.webp", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Salami Rak Toilet", "category": "Rak & Storage", "dim": "65 × 40 × 184 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 1.250.000", "img": "https://uwitan.id/wp-content/uploads/2018/10/1-Furniture-Salami-Rak-Toilet-Uwitan.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Rak Buku Slim 3 Tingkat", "category": "Rak & Storage", "dim": "80 × 10,5 × 100 cm", "material": "Pine Wood, Plywood", "finishing": "NC Lacquer", "price": "Rp 985.000", "img": "https://uwitan.id/wp-content/uploads/2018/11/1-furniture-rak-buku-slim-3-tingkat.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Alana Sofa 1 Seater", "category": "Kursi & Bangku", "dim": "75 × 80 × 80 cm", "material": "Pine Wood, Premium Foam", "finishing": "NC Lacquer", "price": "Rp 3.550.000", "img": "https://uwitan.id/wp-content/uploads/2018/08/1.-Furniture-Kursi-Alana-Sofa-1-Seater.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Rak Sudut", "category": "Rak & Storage", "dim": "30 × 30 × 85 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 985.000", "img": "https://uwitan.id/wp-content/uploads/2018/08/CHO03454-scaled.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Meja Konsol 1 Laci Coak", "category": "Meja & Konsol", "dim": "90 × 40 × 75 cm", "material": "Pine Wood, Plywood", "finishing": "NC Lacquer", "price": "Rp 2.250.000", "img": "https://uwitan.id/wp-content/uploads/2019/02/1-furniture-meja-konsol-1-laci-coak.jpeg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Brianna 1 Drawer 2 Basket", "category": "Lemari & Laci", "dim": "35 × 35 × 75 cm", "material": "Mahogany Wood, MDF, Mindi Wood, Rattan", "finishing": "NC Lacquer", "price": "Rp 1.300.000", "img": "https://uwitan.id/wp-content/uploads/2018/10/IMG_9537-scaled.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Meja Kerja 1 Laci", "category": "Meja & Konsol", "dim": "120 × 60 × 75 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 2.650.000", "img": "https://uwitan.id/wp-content/uploads/2018/11/Furniture-Meja-Kerja-1-Laci.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Kisaku Sofa", "category": "Kursi & Bangku", "dim": "75 × 85 × 85 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 2.850.000", "img": "https://uwitan.id/wp-content/uploads/2020/04/2-furniture-kursi-kisaku-sofa.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Salami Sofa Bed Headboard & Arm", "category": "Kursi & Bangku", "dim": "165 × 80 × 50 cm", "material": "Pine Wood", "finishing": "NC Lacquer", "price": "Rp 9.850.000", "img": "https://uwitan.id/wp-content/uploads/2023/03/IMG_5801-scaled.jpg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Menjalin Sofa 1 Seater", "category": "Kursi & Bangku", "dim": "107 × 93 × 82 cm", "material": "Rattan", "finishing": "NC Lacquer", "price": "Rp 1.650.000", "img": "https://uwitan.id/wp-content/uploads/2024/10/IMG_2532-01-min.jpeg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}, {"title": "Fitrit Bench – Bench Rotan dengan Penyimpanan", "category": "Kursi & Bangku", "dim": "120 × 37 × 42 cm", "material": "Rattan", "finishing": "NC Lacquer", "price": "Rp 1.350.000", "img": "https://uwitan.id/wp-content/uploads/2025/12/IMG_0640-01.jpeg", "desc": "Dikerjakan dengan konstruksi pasak dan purus kayu solid (mortise & tenon), melalui proses kiln-dried oven terstandarisasi."}];
+    const grid = document.getElementById('galleryGrid');
 
-    const grid = document.getElementById('grid');
-    const countText = document.getElementById('countText');
-    const totalMatchText = document.getElementById('totalMatchText');
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
-    const searchInput = document.getElementById('searchInput');
+    items.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'work-card';
+      card.onclick = () => openModal(item);
 
-    function filterData() {
-      filteredList = data.filter(item => {
-        const matchCat = (activeCat === 'Semua') || (item.c === activeCat);
-        const matchQ = query === '' || item.t.toLowerCase().includes(query) || (item.d && item.d.toLowerCase().includes(query));
-        return matchCat && matchQ;
-      });
-      page = 1;
-      render();
-    }
-
-    function render() {
-      const limit = page * pageSize;
-      const visible = filteredList.slice(0, limit);
-      
-      grid.innerHTML = '';
-      visible.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.onclick = () => openModal(p);
-        
-        card.innerHTML = `
-          <div class="card-img-wrap">
-            <img class="card-img" src="${p.img}" alt="${p.t}" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/300x300/f5f5f4/a8a29e?text=Mebel+Jepara'" />
-          </div>
-          <div class="card-body">
-            <div>
-              <div class="card-cat">${p.c}</div>
-              <div class="card-title">${p.t}</div>
-              <div class="card-dim">📐 ${p.d}</div>
+      card.innerHTML = `
+        <div class="work-img-box">
+          <img class="work-img" src="${item.img}" alt="${item.title}" loading="lazy" decoding="async" />
+        </div>
+        <div class="work-info">
+          <div>
+            <div class="work-meta">
+              <span>${item.category}</span>
             </div>
-            <div class="card-footer">
-              <div class="card-price">${p.p}</div>
-              <span class="card-btn">Detail →</span>
-            </div>
+            <div class="work-name">${item.title}</div>
+            <div class="work-dim">📐 ${item.dim}</div>
           </div>
-        `;
-        grid.appendChild(card);
-      });
-
-      countText.innerText = visible.length;
-      totalMatchText.innerText = filteredList.length;
-
-      if (limit >= filteredList.length) {
-        loadMoreBtn.style.display = 'none';
-      } else {
-        loadMoreBtn.style.display = 'inline-block';
-        loadMoreBtn.innerText = `Muat ${Math.min(pageSize, filteredList.length - limit)} Lainnya ↓`;
-      }
-    }
-
-    function loadMore() {
-      page++;
-      render();
-    }
-
-    function setCategory(cat) {
-      activeCat = cat;
-      document.querySelectorAll('.cat-pill').forEach(btn => {
-        btn.classList.toggle('active', btn.innerText.includes(cat));
-      });
-      filterData();
-    }
-
-    searchInput.addEventListener('input', e => {
-      query = e.target.value.toLowerCase().trim();
-      filterData();
+          <div class="work-foot">
+            <span class="work-price">${item.price}</span>
+            <span class="work-inquire">Detail &amp; Custom →</span>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
     });
 
-    function openModal(p) {
-      document.getElementById('mImg').src = p.img;
-      document.getElementById('mCat').innerText = p.c;
-      document.getElementById('mTitle').innerText = p.t;
-      document.getElementById('mPrice').innerText = p.p;
-      document.getElementById('mDim').innerText = p.d;
-      document.getElementById('mMat').innerText = p.m;
-      document.getElementById('mFin').innerText = p.f;
-      document.getElementById('mDesc').innerText = p.desc || 'Kayu solid pilihan diproduksi dengan sambungan presisi dan kontrol oven (MC < 12%) di workshop Jepara.';
+    function openModal(item) {
+      document.getElementById('mImg').src = item.img;
+      document.getElementById('mCat').innerText = item.category;
+      document.getElementById('mTitle').innerText = item.title;
+      document.getElementById('mPrice').innerText = item.price;
+      document.getElementById('mDim').innerText = item.dim;
+      document.getElementById('mMat').innerText = item.material;
+      document.getElementById('mFin').innerText = item.finishing;
+      document.getElementById('mDesc').innerText = item.desc;
       
-      const msg = encodeURIComponent(`Halo Rezeki Lancar Furniture, saya tertarik dengan ${p.t} (${p.d}). Mohon info penawaran harga & estimasi pengerjaan.`);
+      const msg = encodeURIComponent(`Halo Rezeki Lancar Furniture, saya tertarik dengan ${item.title} (Dimensi: ${item.dim}). Mohon informasi opsi kayu & penawaran RAB.`);
       document.getElementById('mWa').href = `https://wa.me/6281234567890?text=${msg}`;
+      
       document.getElementById('modal').classList.add('open');
     }
 
     function closeModal() {
       document.getElementById('modal').classList.remove('open');
     }
-
-    filterData();
   </script>
 </body>
 </html>
